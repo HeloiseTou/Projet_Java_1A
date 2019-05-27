@@ -1,19 +1,15 @@
  //Classe Voiture
 
-public class Voiture {
+//public class Voiture extends VehiculeTerrestre {
 
 
    // Attributs
+  //private int nbPlace;
 
-
-  private int km;
-  private int nbPlace;
-  private int puissance;
-  
 
   // Constructeurs
 
-  public Voiture () { };
+
   
 
    // Méthodes
@@ -26,6 +22,7 @@ public class Voiture {
    // remplace la valeur de par km
   //  nouvelle : la nouvelle valeur de km
 
+  /*
   private void setKm (int nouvelle) {
     km = nouvelle;
   }
@@ -60,7 +57,7 @@ public class Voiture {
   private int getPuissance () {
     return puissance;
   }
+/*
 
 
-
-}
+//}

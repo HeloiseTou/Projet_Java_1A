@@ -3,7 +3,7 @@
 
  //Classe Vehicule
 
-public class Vehicule {
+abstract class Vehicule {
 
 
    // Attributs
