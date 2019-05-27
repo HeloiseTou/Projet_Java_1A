@@ -29,7 +29,7 @@ public class Client {
   }
 
     //Get the value of nom
-     return the value of nom
+    // return the value of nom
   private String getNom () {
     return nom;
   }
@@ -52,8 +52,8 @@ public class Client {
     age = nouvelle;
   }
 
-  Get the value of age
-  return the value of age
+  //Get the value of age
+  //return the value of age
   private int getAge () {
     return age;
   }
