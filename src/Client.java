@@ -5,24 +5,18 @@
  */
 public class Client {
 
-  //
-  // Fields
-  //
-
   private String nom;
   private String prenom;
   private int age;
   private String adresse;
   private String numeroTel;
-  
-  //
+
   // Constructors
-  //
-  public Client () { };
-  
-  //
+
+
+
   // Methods
-  //
+
 
 
   //

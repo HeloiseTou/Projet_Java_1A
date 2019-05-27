@@ -9,8 +9,8 @@ public class Voiture {
   // Fields
   //
 
-  private uDN2zAAj3hDr4 km;
-  private uDN2zAAj3hDr4 nbPlace;
+  private int km;
+  private int nbPlace;
   private uDN2zAAj3hDr4 puissance;
   
   //
