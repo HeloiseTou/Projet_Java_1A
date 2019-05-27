@@ -9,8 +9,8 @@ public class Avion {
   // Fields
   //
 
-  private uDN2zAAj3hDr4 nbHeureVol;
-  private uDN2zAAj3hDr4 nbMoteur;
+  private int nbHeureVol;
+  private int nbMoteur;
   
   //
   // Constructors
@@ -30,7 +30,7 @@ public class Avion {
    * Set the value of nbHeureVol
    * @param newVar the new value of nbHeureVol
    */
-  private void setNbHeureVol (uDN2zAAj3hDr4 newVar) {
+  private void setNbHeureVol (int newVar) {
     nbHeureVol = newVar;
   }
 
@@ -38,7 +38,7 @@ public class Avion {
    * Get the value of nbHeureVol
    * @return the value of nbHeureVol
    */
-  private uDN2zAAj3hDr4 getNbHeureVol () {
+  private int getNbHeureVol () {
     return nbHeureVol;
   }
 
@@ -46,7 +46,7 @@ public class Avion {
    * Set the value of nbMoteur
    * @param newVar the new value of nbMoteur
    */
-  private void setNbMoteur (uDN2zAAj3hDr4 newVar) {
+  private void setNbMoteur (int newVar) {
     nbMoteur = newVar;
   }
 
@@ -54,7 +54,7 @@ public class Avion {
    * Get the value of nbMoteur
    * @return the value of nbMoteur
    */
-  private uDN2zAAj3hDr4 getNbMoteur () {
+  private int getNbMoteur () {
     return nbMoteur;
   }
 
