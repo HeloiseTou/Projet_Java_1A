@@ -9,11 +9,11 @@ public class Client {
   // Fields
   //
 
-  private uAKpUjBRNjVXq nom;
-  private uAKpUjBRNjVXq prenom;
-  private uDN2zAAj3hDr4 age;
-  private uAKpUjBRNjVXq adresse;
-  private uAKpUjBRNjVXq numeroTel;
+  private String nom;
+  private String prenom;
+  private int age;
+  private String adresse;
+  private String numeroTel;
   
   //
   // Constructors
@@ -33,7 +33,7 @@ public class Client {
    * Set the value of nom
    * @param newVar the new value of nom
    */
-  private void setNom (uAKpUjBRNjVXq newVar) {
+  private void setNom (String newVar) {
     nom = newVar;
   }
 
@@ -41,7 +41,7 @@ public class Client {
    * Get the value of nom
    * @return the value of nom
    */
-  private uAKpUjBRNjVXq getNom () {
+  private String getNom () {
     return nom;
   }
 
@@ -49,7 +49,7 @@ public class Client {
    * Set the value of prenom
    * @param newVar the new value of prenom
    */
-  private void setPrenom (uAKpUjBRNjVXq newVar) {
+  private void setPrenom (String newVar) {
     prenom = newVar;
   }
 
@@ -57,7 +57,7 @@ public class Client {
    * Get the value of prenom
    * @return the value of prenom
    */
-  private uAKpUjBRNjVXq getPrenom () {
+  private String getPrenom () {
     return prenom;
   }
 
@@ -65,7 +65,7 @@ public class Client {
    * Set the value of age
    * @param newVar the new value of age
    */
-  private void setAge (uDN2zAAj3hDr4 newVar) {
+  private void setAge (int newVar) {
     age = newVar;
   }
 
@@ -73,7 +73,7 @@ public class Client {
    * Get the value of age
    * @return the value of age
    */
-  private uDN2zAAj3hDr4 getAge () {
+  private int getAge () {
     return age;
   }
 
@@ -81,7 +81,7 @@ public class Client {
    * Set the value of adresse
    * @param newVar the new value of adresse
    */
-  private void setAdresse (uAKpUjBRNjVXq newVar) {
+  private void setAdresse (String newVar) {
     adresse = newVar;
   }
 
@@ -89,7 +89,7 @@ public class Client {
    * Get the value of adresse
    * @return the value of adresse
    */
-  private uAKpUjBRNjVXq getAdresse () {
+  private String getAdresse () {
     return adresse;
   }
 
@@ -97,7 +97,7 @@ public class Client {
    * Set the value of numeroTel
    * @param newVar the new value of numeroTel
    */
-  private void setNumeroTel (uAKpUjBRNjVXq newVar) {
+  private void setNumeroTel (String newVar) {
     numeroTel = newVar;
   }
 
@@ -105,7 +105,7 @@ public class Client {
    * Get the value of numeroTel
    * @return the value of numeroTel
    */
-  private uAKpUjBRNjVXq getNumeroTel () {
+  private String getNumeroTel () {
     return numeroTel;
   }
 
