@@ -5,22 +5,20 @@ import java.awt.event.*;
 public class Interface extends JFrame implements ActionListener{
 
     //Déclaration des éléments à mettre dans la fenêtre
-    private JButton boutonConversion;
-    private JButton boutonReset;
-    private JList<String>  deviseDepart;
-    private JList<String>  deviseArrivee;
-    private JTextField entree;
-    private JTextField sortie;
+    private JButton boutonNouveauClient;
+    private JButton boutonNouveauVehicule;
+    private JButton boutonSuppressionVehicule;
+    private JButton boutonNouvelleLocation;
+    private JButton boutonRestitutionVehicule;
+    private JComboBox  listeVehicule;
 
 
-    Interface(){
+    public Interface(){
         //Création de la fenêtre
-        setBounds(100,100,700,200);
-        setTitle("ConvertisseurBis");
+        setTitle("Interface Loueur");
         setLayout(new GridLayout(3,2)); //Création d'une grille de 3 lignes et 2 colonnes
         setButtons();
-        setList();
-        setTextField();
+        setJComboBox();
         setFenetre();
         setActions();
         setSize(700,300);
@@ -31,67 +29,76 @@ public class Interface extends JFrame implements ActionListener{
     }
 
     private void setButtons(){
-        boutonConversion = new JButton ("convertir");
-        boutonReset = new JButton ("reset");
+        boutonNouveauClient= new JButton ("Nouveau Client");
+        boutonNouveauVehicule= new JButton ("Nouveau Véhicule");
+        boutonSuppressionVehicule = new JButton ("Supprimer Véhicule");
+        boutonNouvelleLocation = new JButton ("Nouvelle Location");
+        boutonRestitutionVehicule = new JButton ("Resitution Véhicule");
     }
 
-    private void setList(){
-
-        String[] tableauDevises = {"Euros", "Livres", "Dollars américains", "Dollars canadiens"};
-        deviseDepart = new JList<String>(tableauDevises);
-        deviseArrivee = new JList<String>(tableauDevises);
+    private void setJComboBox(){
+        String[] typeVehicule = {"Avions","Motos","Voitures"};
+        listeVehicule = new JComboBox(typeVehicule);
     }
 
-    private void setTextField(){
-        entree = new JTextField("");
-        sortie = new JTextField("");
-    }
+
 
     private void setFenetre(){
-        getContentPane().add(deviseDepart);
-        getContentPane().add(entree);
-        getContentPane().add(deviseArrivee);
-        getContentPane().add(sortie);
-        getContentPane().add(boutonConversion);
-        getContentPane().add(boutonReset);
+        getContentPane().add(boutonNouveauClient);
+        getContentPane().add(boutonNouveauVehicule);
+        getContentPane().add(boutonNouvelleLocation);
+        getContentPane().add(boutonSuppressionVehicule);
+        getContentPane().add(boutonRestitutionVehicule);
+        getContentPane().add(listeVehicule);
     }
 
     private void setActions(){
-        boutonConversion.addActionListener(this);
-        boutonReset.addActionListener(this);
+        boutonNouveauClient.addActionListener(this);
+        boutonNouveauVehicule.addActionListener(this);
+        boutonNouvelleLocation.addActionListener(this);
+        boutonRestitutionVehicule.addActionListener(this);
+        boutonSuppressionVehicule.addActionListener(this);
     }
 
 
+    private void ajoutClient(){
+        JOptionPane.showMessageDialog(rootPane, "Vous avez appuyé sur le bouton nouveau client");
+    }
+
+    private void ajoutVehicule(){
+        JOptionPane.showMessageDialog(rootPane, "Vous avez appuyé sur le bouton nouveau véhicule");
+    }
+
+    private void ajoutLocation(){
+        JOptionPane.showMessageDialog(rootPane, "Vous avez appuyé sur le bouton nouvelle location");
+    }
+
+    private void suppressionVehicule(){
+        JOptionPane.showMessageDialog(rootPane, "Vous voulez supprimer un véhicule");
+    }
+
+    private void restitutionVehicule(){
+        JOptionPane.showMessageDialog(rootPane, "Vous voulez restituer un véhicule");
+    }
+
     public void actionPerformed(ActionEvent e){
-        if (e.getSource() == boutonConversion){
-            if ((entree.getText().equals("")) && (sortie.getText().equals(""))){
-                JOptionPane.showMessageDialog(rootPane, "Merci de remplir le premier champ");
-            } else if (sortie.getText().equals("")){
-                Double taux = calculTaux(deviseDepart.getSelectedIndex(), deviseArrivee.getSelectedIndex());
-                taux = 2.0;
-                double valeurDepart = Double.parseDouble(this.entree.getText());
-                double valeurArrivee = taux*valeurDepart;
-                String valeurArriveeStr = String.valueOf(valeurArrivee);
-                sortie.setText(valeurArriveeStr);
-            }else if (entree.getText().equals("")){
-                JOptionPane.showMessageDialog(rootPane, "Merci de remplir uniquement le premier champ");
-            }else{
-                JOptionPane.showMessageDialog(rootPane, "Merci de remplir uniquement le premier champ");
-            }
-        } else if (e.getSource() == boutonReset){
-            entree.setText("");
-            sortie.setText("");
+        if(e.getSource() == boutonNouveauClient){
+            ajoutClient();
+        }else if (e.getSource() == boutonNouveauVehicule) {
+            ajoutVehicule();
+        }else if (e.getSource() == boutonNouvelleLocation) {
+            ajoutLocation();
+        }else if (e.getSource() == boutonSuppressionVehicule){
+            suppressionVehicule();
+        }else if (e.getSource() == boutonRestitutionVehicule){
+            restitutionVehicule();
         }
     }
 
-    private Double calculTaux (int deviseDepart, int deviseArrivee){
-        Double[] prixEuro ={1.0, 1.13, 0.89,0.66};
-        Double tauxFinal = prixEuro[deviseDepart]*(1/prixEuro[deviseArrivee]);
-        return tauxFinal;
-    }
 
-    public static void main (String args []){
-        Interface convert = new Interface();
+
+    public static void main (String args[]){
+        Interface loueur = new Interface();
     }
 
 }
