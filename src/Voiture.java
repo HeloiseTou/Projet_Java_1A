@@ -11,7 +11,7 @@ public class Voiture {
 
   private int km;
   private int nbPlace;
-  private uDN2zAAj3hDr4 puissance;
+  private int puissance;
   
   //
   // Constructors
@@ -31,7 +31,7 @@ public class Voiture {
    * Set the value of km
    * @param newVar the new value of km
    */
-  private void setKm (uDN2zAAj3hDr4 newVar) {
+  private void setKm (int newVar) {
     km = newVar;
   }
 
@@ -39,7 +39,7 @@ public class Voiture {
    * Get the value of km
    * @return the value of km
    */
-  private uDN2zAAj3hDr4 getKm () {
+  private int getKm () {
     return km;
   }
 
@@ -47,7 +47,7 @@ public class Voiture {
    * Set the value of nbPlace
    * @param newVar the new value of nbPlace
    */
-  private void setNbPlace (uDN2zAAj3hDr4 newVar) {
+  private void setNbPlace (int newVar) {
     nbPlace = newVar;
   }
 
@@ -55,7 +55,7 @@ public class Voiture {
    * Get the value of nbPlace
    * @return the value of nbPlace
    */
-  private uDN2zAAj3hDr4 getNbPlace () {
+  private int getNbPlace () {
     return nbPlace;
   }
 
@@ -63,7 +63,7 @@ public class Voiture {
    * Set the value of puissance
    * @param newVar the new value of puissance
    */
-  private void setPuissance (uDN2zAAj3hDr4 newVar) {
+  private void setPuissance (int newVar) {
     puissance = newVar;
   }
 
@@ -71,7 +71,7 @@ public class Voiture {
    * Get the value of puissance
    * @return the value of puissance
    */
-  private uDN2zAAj3hDr4 getPuissance () {
+  private int getPuissance () {
     return puissance;
   }
 
