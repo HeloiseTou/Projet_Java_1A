@@ -18,17 +18,24 @@ public class Location {
 
    //Constructeurs
 
-  public Location(Date dateDebut, Date dateFin, int prixPrevisionnel, int nbKmPrevisionnel, boolean reduction) {
+  public Location(Date dateDebut, Date dateFin, int prixPrevisionnel, int nbKmPrevisionnel) {
     this.dateDebut = dateDebut;
     this.dateFin = dateFin;
     this.prixPrevisionnel = prixPrevisionnel;
     this.nbKmPrevisionnel = nbKmPrevisionnel;
-    this.reduction = reduction;
   }
 
 
    //Méthodes :
 
+  /*void accordReduction(){         //accorde une réduction si la durée de location est supérieure à 4j...
+    Date duree;
+    duree = différence des deux dates en nb de jours...
+    if(duree>7){
+      reduction = true;
+    }
+  }
+  */
 
     //Méthodes d'accès
 
