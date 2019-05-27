@@ -13,6 +13,13 @@ public class Client {
 
   // Constructors
 
+  public Client(String nom, String prenom, int age, String adresse, String numeroTel) {
+    this.nom = nom;
+    this.prenom = prenom;
+    this.age = age;
+    this.adresse = adresse;
+    this.numeroTel = numeroTel;
+  }
 
 
   // Methods

@@ -43,7 +43,7 @@ public class Voiture {
     return km;
   }
 
-  /**
+  /**etPuissance
    * Set the value of nbPlace
    * @param newVar the new value of nbPlace
    */
@@ -63,7 +63,7 @@ public class Voiture {
    * Set the value of puissance
    * @param newVar the new value of puissance
    */
-  private void setPuissance (int newVar) {
+  private void s(int newVar) {
     puissance = newVar;
   }
 
