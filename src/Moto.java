@@ -9,8 +9,8 @@ public class Moto {
   // Fields
   //
 
-  private uDN2zAAj3hDr4 km;
-  private uDN2zAAj3hDr4 puissance;
+  private int km;
+  private int puissance;
   
   //
   // Constructors
@@ -30,7 +30,7 @@ public class Moto {
    * Set the value of km
    * @param newVar the new value of km
    */
-  private void setKm (uDN2zAAj3hDr4 newVar) {
+  private void setKm (int newVar) {
     km = newVar;
   }
 
@@ -38,7 +38,7 @@ public class Moto {
    * Get the value of km
    * @return the value of km
    */
-  private uDN2zAAj3hDr4 getKm () {
+  private int getKm () {
     return km;
   }
 
@@ -46,7 +46,7 @@ public class Moto {
    * Set the value of puissance
    * @param newVar the new value of puissance
    */
-  private void setPuissance (uDN2zAAj3hDr4 newVar) {
+  private void setPuissance (int newVar) {
     puissance = newVar;
   }
 
@@ -54,7 +54,7 @@ public class Moto {
    * Get the value of puissance
    * @return the value of puissance
    */
-  private uDN2zAAj3hDr4 getPuissance () {
+  private int getPuissance () {
     return puissance;
   }
 

@@ -9,11 +9,11 @@ public class Vehicule {
   // Fields
   //
 
-  private uAKpUjBRNjVXq marque;
-  private uAKpUjBRNjVXq modele;
-  private uDN2zAAj3hDr4 prixLocationParJour;
-  private uDN2zAAj3hDr4 vitesseMax;
-  private uAKpUjBRNjVXq etat;
+  private String marque;
+  private String modele;
+  private int prixLocationParJour;
+  private int vitesseMax;
+  private String etat;
   
   //
   // Constructors
@@ -33,7 +33,7 @@ public class Vehicule {
    * Set the value of marque
    * @param newVar the new value of marque
    */
-  private void setMarque (uAKpUjBRNjVXq newVar) {
+  private void setMarque (String newVar) {
     marque = newVar;
   }
 
@@ -41,7 +41,7 @@ public class Vehicule {
    * Get the value of marque
    * @return the value of marque
    */
-  private uAKpUjBRNjVXq getMarque () {
+  private String getMarque () {
     return marque;
   }
 
@@ -49,7 +49,7 @@ public class Vehicule {
    * Set the value of modele
    * @param newVar the new value of modele
    */
-  private void setModele (uAKpUjBRNjVXq newVar) {
+  private void setModele (String newVar) {
     modele = newVar;
   }
 
@@ -57,7 +57,7 @@ public class Vehicule {
    * Get the value of modele
    * @return the value of modele
    */
-  private uAKpUjBRNjVXq getModele () {
+  private String getModele () {
     return modele;
   }
 
@@ -65,7 +65,7 @@ public class Vehicule {
    * Set the value of prixLocationParJour
    * @param newVar the new value of prixLocationParJour
    */
-  private void setPrixLocationParJour (uDN2zAAj3hDr4 newVar) {
+  private void setPrixLocationParJour (int newVar) {
     prixLocationParJour = newVar;
   }
 
@@ -73,7 +73,7 @@ public class Vehicule {
    * Get the value of prixLocationParJour
    * @return the value of prixLocationParJour
    */
-  private uDN2zAAj3hDr4 getPrixLocationParJour () {
+  private int getPrixLocationParJour () {
     return prixLocationParJour;
   }
 
@@ -81,7 +81,7 @@ public class Vehicule {
    * Set the value of vitesseMax
    * @param newVar the new value of vitesseMax
    */
-  private void setVitesseMax (uDN2zAAj3hDr4 newVar) {
+  private void setVitesseMax (int newVar) {
     vitesseMax = newVar;
   }
 
@@ -89,7 +89,7 @@ public class Vehicule {
    * Get the value of vitesseMax
    * @return the value of vitesseMax
    */
-  private uDN2zAAj3hDr4 getVitesseMax () {
+  private int getVitesseMax () {
     return vitesseMax;
   }
 
@@ -97,7 +97,7 @@ public class Vehicule {
    * Set the value of etat
    * @param newVar the new value of etat
    */
-  private void setEtat (uAKpUjBRNjVXq newVar) {
+  private void setEtat (String newVar) {
     etat = newVar;
   }
 
@@ -105,7 +105,7 @@ public class Vehicule {
    * Get the value of etat
    * @return the value of etat
    */
-  private uAKpUjBRNjVXq getEtat () {
+  private String getEtat () {
     return etat;
   }
 
