@@ -1,13 +1,13 @@
 import java.util.Date;
 
-/**
- * Class Location
- */
+
+ //Classe Location
+
 public class Location {
 
-  //
-  // Fields
-  //
+
+   // Attributs
+
 
   private Date dateDebut;
   private Date dateFin;
@@ -15,102 +15,88 @@ public class Location {
   private int nbKmPrevisionnel;
   private boolean reduction;
   
-  //
-  // Constructors
-  //
-  public Location () { };
-  
-  //
-  // Methods
-  //
 
+   //Constructeurs
 
-  //
-  // Accessor methods
-  //
-
-  /**
-   * Set the value of dateDebut
-   * @param newVar the new value of dateDebut
-   */
-  private void setDateDebut (Date newVar) {
-    dateDebut = newVar;
+  public Location(Date dateDebut, Date dateFin, int prixPrevisionnel, int nbKmPrevisionnel, boolean reduction) {
+    this.dateDebut = dateDebut;
+    this.dateFin = dateFin;
+    this.prixPrevisionnel = prixPrevisionnel;
+    this.nbKmPrevisionnel = nbKmPrevisionnel;
+    this.reduction = reduction;
   }
 
-  /**
-   * Get the value of dateDebut
-   * @return the value of dateDebut
-   */
+
+   //Méthodes :
+
+
+    //Méthodes d'accès
+
+
+   // remplace la valeur de dateDebut par nouvelle
+  //  nouvelle : la nouvelle valeur de dateDebut
+
+  private void setDateDebut (Date nouvelle) {
+    dateDebut = nouvelle;
+  }
+
+   // reçoit la valeur de dateDebut
+
   private Date getDateDebut () {
     return dateDebut;
   }
 
-  /**
-   * Set the value of dateFin
-   * @param newVar the new value of dateFin
-   */
-  private void setDateFin (Date newVar) {
-    dateFin = newVar;
+   // remplace la valeur de par dateFin
+  //  nouvelle : la nouvelle valeur de dateFin
+
+  private void setDateFin (Date nouvelle) {
+    dateFin = nouvelle;
   }
 
-  /**
-   * Get the value of dateFin
-   * @return the value of dateFin
-   */
+   // reçoit la valeur de dateFin
+
   private Date getDateFin () {
     return dateFin;
   }
 
-  /**
-   * Set the value of prixPrevisionnel
-   * @param newVar the new value of prixPrevisionnel
-   */
-  private void setPrixPrevisionnel (int newVar) {
-    prixPrevisionnel = newVar;
+   // remplace la valeur de par prixPrevisionnel
+  //  nouvelle : la nouvelle valeur de prixPrevisionnel
+
+  private void setPrixPrevisionnel (int nouvelle) {
+    prixPrevisionnel = nouvelle;
   }
 
-  /**
-   * Get the value of prixPrevisionnel
-   * @return the value of prixPrevisionnel
-   */
+   // reçoit la valeur de prixPrevisionnel
   private int getPrixPrevisionnel () {
     return prixPrevisionnel;
   }
 
-  /**
-   * Set the value of nbKmPrevisionnel
-   * @param newVar the new value of nbKmPrevisionnel
-   */
-  private void setNbKmPrevisionnel (int newVar) {
-    nbKmPrevisionnel = newVar;
+   // remplace la valeur de par nbKmPrevisionnel
+  //  nouvelle : la nouvelle valeur de nbKmPrevisionnel
+
+  private void setNbKmPrevisionnel (int nouvelle) {
+    nbKmPrevisionnel = nouvelle;
   }
 
-  /**
-   * Get the value of nbKmPrevisionnel
-   * @return the value of nbKmPrevisionnel
-   */
+   // reçoit la valeur de nbKmPrevisionnel
+
   private int getNbKmPrevisionnel () {
     return nbKmPrevisionnel;
   }
 
-  /**
-   * Set the value of reduction
-   * @param newVar the new value of reduction
-   */
-  private void setReduction (boolean newVar) {
-    reduction = newVar;
+   // remplace la valeur de par reduction
+  //  nouvelle : la nouvelle valeur de reduction
+
+  private void setReduction (boolean nouvelle) {
+    reduction = nouvelle;
   }
 
-  /**
-   * Get the value of reduction
-   * @return the value of reduction
-   */
+   // reçoit la valeur de reduction
+
   private boolean getReduction () {
     return reduction;
   }
 
-  //
-  // Other methods
-  //
+
 
 }

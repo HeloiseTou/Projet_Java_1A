@@ -1,13 +1,13 @@
 
 
-/**
- * Class Vehicule
- */
+
+ //Classe Vehicule
+
 public class Vehicule {
 
-  //
-  // Fields
-  //
+
+   // Attributs
+
 
   private String marque;
   private String modele;
@@ -15,102 +15,87 @@ public class Vehicule {
   private int vitesseMax;
   private String etat;
   
-  //
-  // Constructors
-  //
+
+  // Constructeurs
+
   public Vehicule () { };
   
-  //
-  // Methods
-  //
+
+   // Méthodes
 
 
-  //
-  // Accessor methods
-  //
 
-  /**
-   * Set the value of marque
-   * @param newVar the new value of marque
-   */
-  private void setMarque (String newVar) {
-    marque = newVar;
+
+ // Getteurs et setteurs et setteurs
+
+
+   // remplace la valeur de par marque
+  //  nouvelle : la nouvelle valeur de marque
+
+  private void setMarque (String nouvelle) {
+    marque = nouvelle;
   }
 
-  /**
-   * Get the value of marque
-   * @return the value of marque
-   */
+   // reçoit la valeur de marque
+
   private String getMarque () {
     return marque;
   }
 
-  /**
-   * Set the value of modele
-   * @param newVar the new value of modele
-   */
-  private void setModele (String newVar) {
-    modele = newVar;
+   // remplace la valeur de par modele
+  //  nouvelle : la nouvelle valeur de modele
+
+  private void setModele (String nouvelle) {
+    modele = nouvelle;
   }
 
-  /**
-   * Get the value of modele
-   * @return the value of modele
-   */
+   // reçoit la valeur de modele
+
   private String getModele () {
     return modele;
   }
 
-  /**
-   * Set the value of prixLocationParJour
-   * @param newVar the new value of prixLocationParJour
-   */
-  private void setPrixLocationParJour (int newVar) {
-    prixLocationParJour = newVar;
+   // remplace la valeur de par prixLocationParJour
+  //  nouvelle : la nouvelle valeur de prixLocationParJour
+
+  private void setPrixLocationParJour (int nouvelle) {
+    prixLocationParJour = nouvelle;
   }
 
-  /**
-   * Get the value of prixLocationParJour
-   * @return the value of prixLocationParJour
-   */
+   // reçoit la valeur de prixLocationParJour
+
   private int getPrixLocationParJour () {
     return prixLocationParJour;
   }
 
-  /**
-   * Set the value of vitesseMax
-   * @param newVar the new value of vitesseMax
-   */
-  private void setVitesseMax (int newVar) {
-    vitesseMax = newVar;
+   // remplace la valeur de par vitesseMax
+  //  nouvelle : la nouvelle valeur de vitesseMax
+
+  private void setVitesseMax (int nouvelle) {
+    vitesseMax = nouvelle;
   }
 
-  /**
-   * Get the value of vitesseMax
-   * @return the value of vitesseMax
-   */
+   // reçoit la valeur de vitesseMax
+
   private int getVitesseMax () {
     return vitesseMax;
   }
 
-  /**
-   * Set the value of etat
-   * @param newVar the new value of etat
-   */
-  private void setEtat (String newVar) {
-    etat = newVar;
+   // remplace la valeur de par etat
+  //  nouvelle : la nouvelle valeur de etat
+
+  private void setEtat (String nouvelle) {
+    etat = nouvelle;
   }
 
-  /**
-   * Get the value of etat
-   * @return the value of etat
-   */
+   // reçoit la valeur de etat
+
   private String getEtat () {
     return etat;
   }
 
-  //
-  // Other methods
-  //
+
+   // Méthodes
+
 
 }

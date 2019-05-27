@@ -1,82 +1,66 @@
+ //Classe Voiture
 
-
-/**
- * Class Voiture
- */
 public class Voiture {
 
-  //
-  // Fields
-  //
+
+   // Attributs
+
 
   private int km;
   private int nbPlace;
   private int puissance;
   
-  //
-  // Constructors
-  //
+
+  // Constructeurs
+
   public Voiture () { };
   
-  //
-  // Methods
-  //
+
+   // Méthodes
 
 
-  //
-  // Accessor methods
-  //
 
-  /**
-   * Set the value of km
-   * @param newVar the new value of km
-   */
-  private void setKm (int newVar) {
-    km = newVar;
+
+// Getteurs et setteurs
+
+   // remplace la valeur de par km
+  //  nouvelle : la nouvelle valeur de km
+
+  private void setKm (int nouvelle) {
+    km = nouvelle;
   }
 
-  /**
-   * Get the value of km
-   * @return the value of km
-   */
+   // reçoit la valeur de km
   private int getKm () {
     return km;
   }
 
-  /**etPuissance
-   * Set the value of nbPlace
-   * @param newVar the new value of nbPlace
-   */
-  private void setNbPlace (int newVar) {
-    nbPlace = newVar;
+  // nbPlace
+  //  nouvelle : la nouvelle valeur de nbPlace
+
+  private void setNbPlace (int nouvelle) {
+    nbPlace = nouvelle;
   }
 
-  /**
-   * Get the value of nbPlace
-   * @return the value of nbPlace
-   */
+   // reçoit la valeur de nbPlace
+
   private int getNbPlace () {
     return nbPlace;
   }
 
-  /**
-   * Set the value of puissance
-   * @param newVar the new value of puissance
-   */
-  private void s(int newVar) {
-    puissance = newVar;
+   // remplace la valeur de puissance par nouvelle
+  //  nouvelle : la nouvelle valeur de puissance
+
+  private void s(int nouvelle) {
+    puissance = nouvelle;
   }
 
-  /**
-   * Get the value of puissance
-   * @return the value of puissance
-   */
+   // reçoit la valeur de puissance
+
   private int getPuissance () {
     return puissance;
   }
 
-  //
-  // Other methods
-  //
+
 
 }

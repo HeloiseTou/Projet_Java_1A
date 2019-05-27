@@ -1,65 +1,59 @@
 
 
-/**
- * Class Moto
- */
+
+ //Classe Moto
+
 public class Moto {
 
-  //
-  // Fields
-  //
+
+   // Attributs
+
 
   private int km;
   private int puissance;
   
-  //
-  // Constructors
-  //
+
+  // Constructeurs
+
   public Moto () { };
   
-  //
-  // Methods
-  //
+
+   // Méthodes
 
 
-  //
-  // Accessor methods
-  //
 
-  /**
-   * Set the value of km
-   * @param newVar the new value of km
-   */
-  private void setKm (int newVar) {
-    km = newVar;
+
+// Getteurs et setteurs // Méthodes
+
+
+   // remplace la valeur de par km
+  //  nouvelle : la nouvelle valeur de km
+
+  private void setKm (int nouvelle) {
+    km = nouvelle;
   }
 
-  /**
-   * Get the value of km
-   * @return the value of km
-   */
+  // reçoit la valeur de
+
   private int getKm () {
     return km;
   }
 
-  /**
-   * Set the value of puissance
-   * @param newVar the new value of puissance
-   */
-  private void setPuissance (int newVar) {
-    puissance = newVar;
+   // remplace la valeur de par puissance
+  //  nouvelle : la nouvelle valeur de puissance
+
+  private void setPuissance (int nouvelle) {
+    puissance = nouvelle;
   }
 
-  /**
-   * Get the value of puissance
-   * @return the value of puissance
-   */
+   // reçoit la valeur de puissance
+
   private int getPuissance () {
     return puissance;
   }
 
-  //
-  // Other methods
-  //
+
+   // Méthodes
+
 
 }

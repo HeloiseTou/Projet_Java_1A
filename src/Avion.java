@@ -1,65 +1,56 @@
 
 
-/**
- * Class Avion
- */
+
+ //Class Avion
+
 public class Avion {
 
-  //
-  // Fields
-  //
+
+   // Attributs
+
 
   private int nbHeureVol;
   private int nbMoteur;
   
-  //
-  // Constructors
-  //
+
+  // Constructeurs
+
   public Avion () { };
   
-  //
-  // Methods
-  //
+
+   // Méthodes
 
 
-  //
-  // Accessor methods
-  //
 
-  /**
-   * Set the value of nbHeureVol
-   * @param newVar the new value of nbHeureVol
-   */
-  private void setNbHeureVol (int newVar) {
-    nbHeureVol = newVar;
+
+ // Getteurs et setteurs
+
+
+   // remplace la valeur de par nbHeureVol
+  //  nouvelle : la nouvelle valeur de nbHeureVol
+  private void setNbHeureVol (int nouvelle) {
+    nbHeureVol = nouvelle;
   }
 
-  /**
-   * Get the value of nbHeureVol
-   * @return the value of nbHeureVol
-   */
+   // reçoit la valeur de nbHeureVol
+
   private int getNbHeureVol () {
     return nbHeureVol;
   }
 
-  /**
-   * Set the value of nbMoteur
-   * @param newVar the new value of nbMoteur
-   */
-  private void setNbMoteur (int newVar) {
-    nbMoteur = newVar;
+   // remplace la valeur de par nbMoteur
+
+
+  private void setNbMoteur (int nouvelle) {
+    nbMoteur = nouvelle;
   }
 
-  /**
-   * Get the value of nbMoteur
-   * @return the value of nbMoteur
-   */
+   // reçoit la valeur de nbMoteur
+
   private int getNbMoteur () {
     return nbMoteur;
   }
 
-  //
-  // Other methods
-  //
+
 
 }
