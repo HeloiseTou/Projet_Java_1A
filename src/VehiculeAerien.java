@@ -3,11 +3,8 @@ public class VehiculeAerien extends Vehicule {
 
     // Attributs
 
-    protected int nbHeureVol;
+    private int nbHeureVol;
     protected int nbMoteur;
-
-
-    // Constructeurs
 
 
     // Méthodes
@@ -18,30 +15,19 @@ public class VehiculeAerien extends Vehicule {
     // Getteurs et setteurs
 
 
-    // remplace la valeur de par nbHeureVol
-    //  nouvelle : la nouvelle valeur de nbHeureVol
-    private void setNbHeureVol (int nouvelle) {
-        nbHeureVol = nouvelle;
-    }
-
-    // reçoit la valeur de nbHeureVol
-
-    private int getNbHeureVol () {
+    public int getNbHeureVol() {
         return nbHeureVol;
     }
 
-    // remplace la valeur de par nbMoteur
-
-
-    private void setNbMoteur (int nouvelle) {
-        nbMoteur = nouvelle;
+    public void setNbHeureVol(int nbHeureVol) {
+        this.nbHeureVol = nbHeureVol;
     }
 
-    // reçoit la valeur de nbMoteur
-
-    private int getNbMoteur () {
+    public int getNbMoteur() {
         return nbMoteur;
     }
 
-
+    public void setNbMoteur(int nbMoteur) {
+        this.nbMoteur = nbMoteur;
+    }
 }
