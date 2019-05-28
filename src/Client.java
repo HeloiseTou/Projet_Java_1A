@@ -9,6 +9,7 @@ public class Client {
   private int age;
   private String adresse;
   private String numeroTel;
+  private Location location;
 
   // Constructeurs
 

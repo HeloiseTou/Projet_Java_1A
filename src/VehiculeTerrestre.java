@@ -23,7 +23,5 @@ abstract class VehiculeTerrestre extends Vehicule {
         this.km = km;
     }
 
-    //toString
-    public abstract String toString();
 
 }

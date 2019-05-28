@@ -14,6 +14,7 @@ abstract class Vehicule {
   private int prixLocationParJour;
   private int vitesseMax;
   private String etat;
+  private boolean loue = false; // disponibilité du véhicule
   
 
   // Constructeurs
@@ -23,79 +24,56 @@ abstract class Vehicule {
 
    // Méthodes
 
+  public void prix(){ //////////////////////////////////////////définir comment on fixe un prix !!!!!!!
 
+  }
 
 
  // Getteurs et setteurs et setteurs
 
-
-   // remplace la valeur de par marque
-  //  nouvelle : la nouvelle valeur de marque
-
-  private void setMarque (String nouvelle) {
-    marque = nouvelle;
-  }
-
-   // reçoit la valeur de marque
-
-  private String getMarque () {
-    return marque;
-  }
-
-   // remplace la valeur de par modele
-  //  nouvelle : la nouvelle valeur de modele
-
-  private void setModele (String nouvelle) {
-    modele = nouvelle;
-  }
-
-   // reçoit la valeur de modele
-
-  private String getModele () {
-    return modele;
-  }
-
-   // remplace la valeur de par prixLocationParJour
-  //  nouvelle : la nouvelle valeur de prixLocationParJour
-
-  private void setPrixLocationParJour (int nouvelle) {
-    prixLocationParJour = nouvelle;
-  }
-
-   // reçoit la valeur de prixLocationParJour
-
-  private int getPrixLocationParJour () {
-    return prixLocationParJour;
-  }
-
-   // remplace la valeur de par vitesseMax
-  //  nouvelle : la nouvelle valeur de vitesseMax
-
-  private void setVitesseMax (int nouvelle) {
-    vitesseMax = nouvelle;
-  }
-
-   // reçoit la valeur de vitesseMax
-
-  private int getVitesseMax () {
-    return vitesseMax;
-  }
-
-   // remplace la valeur de par etat
-  //  nouvelle : la nouvelle valeur de etat
-
-  private void setEtat (String nouvelle) {
-    etat = nouvelle;
-  }
-
-   // reçoit la valeur de etat
-
-  private String getEtat () {
+  public String getEtat() {
     return etat;
   }
 
+  public void setEtat(String etat) {
+    this.etat = etat;
+  }
 
-   // Méthodes
+  public int getVitesseMax() {
+    return vitesseMax;
+  }
 
+  public void setVitesseMax(int vitesseMax) {
+    this.vitesseMax = vitesseMax;
+  }
+
+  public int getPrixLocationParJour() {
+    return prixLocationParJour;
+  }
+
+  public void setPrixLocationParJour(int prixLocationParJour) {
+    this.prixLocationParJour = prixLocationParJour;
+  }
+
+  public String getModele() {
+    return modele;
+  }
+
+  public void setModele(String modele) {
+    this.modele = modele;
+  }
+
+  public String getMarque() {
+    return marque;
+  }
+
+  public void setMarque(String marque) {
+    this.marque = marque;
+  }
+
+
+  // toString
+
+  public abstract String toString();
 
 }

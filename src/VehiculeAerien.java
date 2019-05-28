@@ -1,10 +1,10 @@
-public class VehiculeAerien extends Vehicule {
+abstract class VehiculeAerien extends Vehicule {
 
 
     // Attributs
 
     private int nbHeureVol;
-    protected int nbMoteur;
+    private int nbMoteur;
 
 
     // Méthodes
@@ -30,4 +30,5 @@ public class VehiculeAerien extends Vehicule {
     public void setNbMoteur(int nbMoteur) {
         this.nbMoteur = nbMoteur;
     }
+
 }
