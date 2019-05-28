@@ -27,83 +27,55 @@ public class Location {
 
 
    //Méthodes :
-
-  /*void accordReduction(){         //accorde une réduction si la durée de location est supérieure à 4j...
+/*
+  void accordReduction(){         //accorde une réduction si la durée de location est supérieure à 4j...
     Date duree;
-    duree = différence des deux dates en nb de jours...
+    duree = différence des deux dates en nb de jours... //////////////////////////////////////////////////trouver comment faire différence entre deux dates...
     if(duree>7){
       reduction = true;
     }
-  }
-  */
+  }*/
 
     //Méthodes d'accès
 
 
-   // remplace la valeur de dateDebut par nouvelle
-  //  nouvelle : la nouvelle valeur de dateDebut
-
-  private void setDateDebut (Date nouvelle) {
-    dateDebut = nouvelle;
-  }
-
-   // reçoit la valeur de dateDebut
-
-  private Date getDateDebut () {
-    return dateDebut;
-  }
-
-   // remplace la valeur de par dateFin
-  //  nouvelle : la nouvelle valeur de dateFin
-
-  private void setDateFin (Date nouvelle) {
-    dateFin = nouvelle;
-  }
-
-   // reçoit la valeur de dateFin
-
-  private Date getDateFin () {
-    return dateFin;
-  }
-
-   // remplace la valeur de par prixPrevisionnel
-  //  nouvelle : la nouvelle valeur de prixPrevisionnel
-
-  private void setPrixPrevisionnel (int nouvelle) {
-    prixPrevisionnel = nouvelle;
-  }
-
-   // reçoit la valeur de prixPrevisionnel
-  private int getPrixPrevisionnel () {
-    return prixPrevisionnel;
-  }
-
-   // remplace la valeur de par nbKmPrevisionnel
-  //  nouvelle : la nouvelle valeur de nbKmPrevisionnel
-
-  private void setNbKmPrevisionnel (int nouvelle) {
-    nbKmPrevisionnel = nouvelle;
-  }
-
-   // reçoit la valeur de nbKmPrevisionnel
-
-  private int getNbKmPrevisionnel () {
-    return nbKmPrevisionnel;
-  }
-
-   // remplace la valeur de par reduction
-  //  nouvelle : la nouvelle valeur de reduction
-
-  private void setReduction (boolean nouvelle) {
-    reduction = nouvelle;
-  }
-
-   // reçoit la valeur de reduction
-
-  private boolean getReduction () {
+  public boolean isReduction() {
     return reduction;
   }
 
+  public void setReduction(boolean reduction) {
+    this.reduction = reduction;
+  }
 
+  public int getNbKmPrevisionnel() {
+    return nbKmPrevisionnel;
+  }
 
+  public void setNbKmPrevisionnel(int nbKmPrevisionnel) {
+    this.nbKmPrevisionnel = nbKmPrevisionnel;
+  }
+
+  public int getPrixPrevisionnel() {
+    return prixPrevisionnel;
+  }
+
+  public void setPrixPrevisionnel(int prixPrevisionnel) {
+    this.prixPrevisionnel = prixPrevisionnel;
+  }
+
+  public Date getDateFin() {
+    return dateFin;
+  }
+
+  public void setDateFin(Date dateFin) {
+    this.dateFin = dateFin;
+  }
+
+  public Date getDateDebut() {
+    return dateDebut;
+  }
+
+  public void setDateDebut(Date dateDebut) {
+    this.dateDebut = dateDebut;
+  }
 }
