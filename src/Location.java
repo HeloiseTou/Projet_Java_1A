@@ -14,6 +14,7 @@ public class Location {
   private int prixPrevisionnel;
   private int nbKmPrevisionnel;
   private boolean reduction;
+  private Vehicule vehicule;
   
 
    //Constructeurs

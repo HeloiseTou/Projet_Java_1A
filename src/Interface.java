@@ -5,36 +5,27 @@ import java.awt.event.*;
 public class Interface extends JFrame implements ActionListener{
 
     //Déclaration des éléments à mettre dans la fenêtre
+    private JPanel panneau = new JPanel();
     private JButton boutonNouveauClient;
     private JButton boutonNouveauVehicule;
     private JButton boutonSuppressionVehicule;
     private JButton boutonNouvelleLocation;
     private JButton boutonRestitutionVehicule;
-    private JComboBox  listeVehicule;
+    private JComboBox listeVehicule;
 
-    //Déclaration des variable lors de l'ajout d'un client
-    private JLabel nomClient;
-    private JLabel prenomClient;
-    private JLabel ageClient;
-    private JLabel adresseClient;
-    private JLabel numTelClient;
-    private JTextField entreeNom;
-    private JTextField entreePrenom;
-    private JTextField entreeAge;
-    private JTextField entreeAdresse;
-    private JTextField entreeNumTel;
-    private JButton annuler;
-    private JButton confirmer;
 
     public Interface(){
         //Création de la fenêtre
         setTitle("Interface Loueur");
-        setLayout(new GridLayout(3,2)); //Création d'une grille de 3 lignes et 2 colonnes
+        setSize(700,300);
+        Dimension localisationFenetre= Toolkit.getDefaultToolkit().getScreenSize();
+        setLocation((int)localisationFenetre.getWidth()/2 - this.getWidth()/2, (int)localisationFenetre.getHeight()/2 - this.getHeight()/2);
+        setResizable(false);
+        setContentPane(panneau);
         setButtons();
         setJComboBox();
-        setFenetre();
+        setPanel();
         setActions();
-        setSize(700,300);
 
         //Pour rendre la fenêtre visible et la fermer à la fin
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -43,26 +34,33 @@ public class Interface extends JFrame implements ActionListener{
 
     private void setButtons(){
         boutonNouveauClient= new JButton ("Nouveau Client");
+        boutonNouveauClient.setPreferredSize(new Dimension(200, 40));
         boutonNouveauVehicule= new JButton ("Nouveau Véhicule");
+        boutonNouveauVehicule.setPreferredSize(new Dimension(200, 40));
         boutonSuppressionVehicule = new JButton ("Supprimer Véhicule");
+        boutonSuppressionVehicule.setPreferredSize(new Dimension(200, 40));
         boutonNouvelleLocation = new JButton ("Nouvelle Location");
+        boutonNouvelleLocation.setPreferredSize(new Dimension(200, 40));
         boutonRestitutionVehicule = new JButton ("Resitution Véhicule");
+        boutonRestitutionVehicule.setPreferredSize(new Dimension(200, 40));
     }
 
     private void setJComboBox(){
         String[] typeVehicule = {"Avions","Motos","Voitures"};
         listeVehicule = new JComboBox(typeVehicule);
+        listeVehicule.setPreferredSize(new Dimension(200, 40));
     }
 
 
 
-    private void setFenetre(){
-        getContentPane().add(boutonNouveauClient);
-        getContentPane().add(boutonNouveauVehicule);
-        getContentPane().add(boutonNouvelleLocation);
-        getContentPane().add(boutonSuppressionVehicule);
-        getContentPane().add(boutonRestitutionVehicule);
-        getContentPane().add(listeVehicule);
+    private void setPanel(){
+        panneau.setLayout(new FlowLayout(FlowLayout.CENTER, 50, 40));
+        panneau.add(boutonNouveauClient);
+        panneau.add(boutonNouveauVehicule);
+        panneau.add(boutonNouvelleLocation);
+        panneau.add(boutonSuppressionVehicule);
+        panneau.add(boutonRestitutionVehicule);
+        panneau.add(listeVehicule);
     }
 
     private void setActions(){
@@ -74,38 +72,12 @@ public class Interface extends JFrame implements ActionListener{
     }
 
 
-    private void ajoutClient(){
-        JFrame client = new JFrame();
-        JLabel nomClient = new JLabel("Nom du client");
-        JLabel prenomClient = new JLabel("Prénom du client");
-        JLabel ageClient = new JLabel("Âge du client");
-        JLabel adresseClient = new JLabel("Adresse du client");
-        JLabel numTelClient = new JLabel("Numéro de téléphone du client");
-        JTextField entreeNom = new JTextField("");
-        JTextField entreePrenom = new JTextField("");
-        JTextField entreeAge = new JTextField("");
-        JTextField entreeAdresse = new JTextField("");
-        JTextField entreeNumTel = new JTextField("");
-        JButton annuler = new JButton("Annuler");
-        JButton confirmer = new JButton("Confirmer");
-        client.setTitle ("Ajout client");
-        client.setLayout(new GridLayout(7,2));
-        client.setSize(700,250);
-        client.getContentPane().add(nomClient);
-        client.getContentPane().add(entreeNom);
-        client.getContentPane().add(prenomClient);
-        client.getContentPane().add(entreePrenom);
-        client.getContentPane().add(ageClient);
-        client.getContentPane().add(entreeAge);
-        client.getContentPane().add(adresseClient);
-        client.getContentPane().add(entreeAdresse);
-        client.getContentPane().add(numTelClient);
-        client.getContentPane().add(entreeNumTel);
-        client.getContentPane().add(annuler);
-        client.getContentPane().add(confirmer);
+    private void verifierSaisie(){
+        JOptionPane.showMessageDialog(rootPane, "Vous voulez supprimer un véhicule");
+    }
 
-        //Pour rendre la fenêtre visible et la fermer à la fin
-        client.setVisible(true);
+    private void fermerFenetre(){
+        JOptionPane.showMessageDialog(rootPane, "Vous voulez supprimer un véhicule");
     }
 
     private void ajoutVehicule(){
@@ -125,8 +97,8 @@ public class Interface extends JFrame implements ActionListener{
     }
 
     public void actionPerformed(ActionEvent e){
-        if(e.getSource() == boutonNouveauClient){
-            ajoutClient();
+        if(e.getSource() == boutonNouveauClient) {
+            AjoutClient client = new AjoutClient();
         }else if (e.getSource() == boutonNouveauVehicule) {
             ajoutVehicule();
         }else if (e.getSource() == boutonNouvelleLocation) {
