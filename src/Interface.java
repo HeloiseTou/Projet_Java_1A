@@ -72,18 +72,6 @@ public class Interface extends JFrame implements ActionListener{
     }
 
 
-    private void verifierSaisie(){
-        JOptionPane.showMessageDialog(rootPane, "Vous voulez supprimer un véhicule");
-    }
-
-    private void fermerFenetre(){
-        JOptionPane.showMessageDialog(rootPane, "Vous voulez supprimer un véhicule");
-    }
-
-    private void ajoutVehicule(){
-        JOptionPane.showMessageDialog(rootPane, "Vous avez appuyé sur le bouton nouveau véhicule");
-    }
-
     private void ajoutLocation(){
         JOptionPane.showMessageDialog(rootPane, "Vous avez appuyé sur le bouton nouvelle location");
     }
@@ -97,11 +85,11 @@ public class Interface extends JFrame implements ActionListener{
     }
 
     public void actionPerformed(ActionEvent e){
-        if(e.getSource() == boutonNouveauClient) {
+        if(e.getSource() == boutonNouveauClient){
             AjoutClient client = new AjoutClient();
-        }else if (e.getSource() == boutonNouveauVehicule) {
+        }else if (e.getSource() == boutonNouveauVehicule){
             AjoutVehicule vehicule = new AjoutVehicule();
-        }else if (e.getSource() == boutonNouvelleLocation) {
+        }else if (e.getSource() == boutonNouvelleLocation){
             ajoutLocation();
         }else if (e.getSource() == boutonSuppressionVehicule){
             suppressionVehicule();
