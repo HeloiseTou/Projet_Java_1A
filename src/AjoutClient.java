@@ -57,7 +57,12 @@ public class AjoutClient extends JFrame implements ActionListener{
 
     public void actionPerformed(ActionEvent e) {
         if (e.getSource()== annuler){
-            System.out.println("bonjour");
+            this.setVisible(false);
+            this.dispose();
+        }else if (e.getSource()==confirmer){
+            Enregistrement nouveau = new Enregistrement();
+            nouveau.enregistrerClient(entreeNom.getText(), entreePrenom.getText(), Integer.valueOf(entreeAge.getText()), entreeAdresse.getText(), entreeNumTel.getText());
+            JOptionPane.showMessageDialog(rootPane, "Client enregistré !");
             this.setVisible(false);
             this.dispose();
         }
