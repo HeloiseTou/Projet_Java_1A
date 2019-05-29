@@ -47,6 +47,7 @@ public class AjoutVehicule extends JFrame implements ActionListener{
             this.setVisible(false);
             this.dispose();
         }else if (e.getSource()==moto){
+            AjoutMoto moto = new AjoutMoto();
             this.setVisible(false);
             this.dispose();
         }else if (e.getSource()==voiture){

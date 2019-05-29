@@ -2,51 +2,51 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class AjoutAvion extends JFrame implements ActionListener{
+public class AjoutMoto extends JFrame implements ActionListener{
 
-    //Déclaration des variable lors de l'ajout d'un avion
-    private JLabel nbHeureVol;
+    //Déclaration des variable lors de l'ajout d'une moto
+    private JLabel km;
     private JLabel etat;
     private JLabel modele;
     private JLabel marque;
     private JLabel prixLocParJour;
-    private JLabel nbMoteur;
+    private JLabel puissance;
     private JLabel vitesseMax;
-    private JTextField entreeNbHeureVol;
+    private JTextField entreeKm;
     private JTextField entreeEtat;
     private JTextField entreeModele;
     private JTextField entreeMarque;
     private JTextField entreePrix;
-    private JTextField entreeNbMoteur;
+    private JTextField entreePuissance;
     private JTextField entreeVitesse;
     private JButton annuler;
     private JButton confirmer;
 
-    AjoutAvion() {
-        nbHeureVol = new JLabel("Nombre d'heures de vol");
+    AjoutMoto() {
+        km = new JLabel("Nombre de km");
         etat = new JLabel("État de l'avion");
         modele = new JLabel("Modèle de l'avion");
         marque = new JLabel("Marque de l'avion");
         prixLocParJour = new JLabel("Prix de la location par jour");
-        nbMoteur = new JLabel("Nombre de moteurs");
+        puissance = new JLabel("Puissance");
         vitesseMax = new JLabel("Vistesse maximale");
-        entreeNbHeureVol = new JTextField("");
+        entreeKm = new JTextField("");
         entreeEtat = new JTextField("");
         entreeModele = new JTextField("");
         entreeMarque = new JTextField("");
         entreePrix = new JTextField("");
-        entreeNbMoteur = new JTextField("");
+        entreePuissance = new JTextField("");
         entreeVitesse = new JTextField("");
         annuler = new JButton("Annuler");
         confirmer = new JButton("Confirmer");
-        setTitle("Ajout avion");
+        setTitle("Ajout moto");
         setLayout(new GridLayout(8, 2));
         setSize(800, 400);
         Dimension localisationFenetre= Toolkit.getDefaultToolkit().getScreenSize();
         setLocation((int)localisationFenetre.getWidth()/2 - this.getWidth()/2, (int)localisationFenetre.getHeight()/2 - this.getHeight()/2);
         setResizable(false);
-        getContentPane().add(nbHeureVol);
-        getContentPane().add(entreeNbHeureVol);
+        getContentPane().add(km);
+        getContentPane().add(entreeKm);
         getContentPane().add(etat);
         getContentPane().add(entreeEtat);
         getContentPane().add(modele);
@@ -55,8 +55,8 @@ public class AjoutAvion extends JFrame implements ActionListener{
         getContentPane().add(entreeMarque);
         getContentPane().add(prixLocParJour);
         getContentPane().add(entreePrix);
-        getContentPane().add(nbMoteur);
-        getContentPane().add(entreeNbMoteur);
+        getContentPane().add(puissance);
+        getContentPane().add(entreePuissance);
         getContentPane().add(vitesseMax);
         getContentPane().add(entreeVitesse);
         getContentPane().add(annuler);
@@ -75,9 +75,9 @@ public class AjoutAvion extends JFrame implements ActionListener{
             this.setVisible(false);
             this.dispose();
         }else if (e.getSource()==confirmer){
-            //Enregistrement nouveau =Avion new Enregistrement();
-            //nouveau.enregistrerAvion(Integer.valueOf(entreeNbHeureVol.getText()), entreeEtat.getText(), entreeModele.getText(), entreeMarque.getText(), Integer.valueOf(entreePrix.getText()), Integer.valueOf(entreeNbMoteur.getText()), Integer.valueOf(entreeVitesse.getText()));
-            JOptionPane.showMessageDialog(rootPane, "Avion enregistré !");
+            //Enregistrement nouveau =Moto new Enregistrement();
+            //nouveau.enregistrerMoto(Integer.valueOf(entreeKm.getText()), entreeMarque.getText(), Integer.valueOf(entreePuissance.getText()), Integer.valueOf(entreePrix.getText()), entreeEtat.getText(), entreeModele.getText(), Integer.valueOf(entreeVitesse.getText()));
+            JOptionPane.showMessageDialog(rootPane, "Moto enregistrée !");
             this.setVisible(false);
             this.dispose();
         }
