@@ -100,7 +100,7 @@ public class Interface extends JFrame implements ActionListener{
         if(e.getSource() == boutonNouveauClient) {
             AjoutClient client = new AjoutClient();
         }else if (e.getSource() == boutonNouveauVehicule) {
-            ajoutVehicule();
+            AjoutVehicule vehicule = new AjoutVehicule();
         }else if (e.getSource() == boutonNouvelleLocation) {
             ajoutLocation();
         }else if (e.getSource() == boutonSuppressionVehicule){

@@ -34,6 +34,9 @@ public class AjoutClient extends JFrame implements ActionListener{
         setTitle("Ajout client");
         setLayout(new GridLayout(7, 2));
         setSize(700, 250);
+        Dimension localisationFenetre= Toolkit.getDefaultToolkit().getScreenSize();
+        setLocation((int)localisationFenetre.getWidth()/2 - this.getWidth()/2, (int)localisationFenetre.getHeight()/2 - this.getHeight()/2);
+        setResizable(false);
         getContentPane().add(nomClient);
         getContentPane().add(entreeNom);
         getContentPane().add(prenomClient);
