@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class AjoutMoto extends JFrame implements ActionListener{
+public class AjoutVoiture extends JFrame implements ActionListener{
 
     //Déclaration des variable lors de l'ajout d'une moto
     private JLabel km;
@@ -12,6 +12,7 @@ public class AjoutMoto extends JFrame implements ActionListener{
     private JLabel prixLocParJour;
     private JLabel puissance;
     private JLabel vitesseMax;
+    private JLabel nbPlace;
     private JTextField entreeKm;
     private JTextField entreeEtat;
     private JTextField entreeModele;
@@ -19,17 +20,19 @@ public class AjoutMoto extends JFrame implements ActionListener{
     private JTextField entreePrix;
     private JTextField entreePuissance;
     private JTextField entreeVitesse;
+    private JTextField entreeNbPlace;
     private JButton annuler;
     private JButton confirmer;
 
-    AjoutMoto() {
+    AjoutVoiture() {
         km = new JLabel("Nombre de km");
-        etat = new JLabel("État de la moto");
-        modele = new JLabel("Modèle dde la moto");
-        marque = new JLabel("Marque de la moto");
+        etat = new JLabel("État de la voiture");
+        modele = new JLabel("Modèle de la voiture");
+        marque = new JLabel("Marque de la voiture");
         prixLocParJour = new JLabel("Prix de la location par jour");
         puissance = new JLabel("Puissance");
         vitesseMax = new JLabel("Vistesse maximale");
+        nbPlace = new JLabel("Nombre de places");
         entreeKm = new JTextField("");
         entreeEtat = new JTextField("");
         entreeModele = new JTextField("");
@@ -37,10 +40,11 @@ public class AjoutMoto extends JFrame implements ActionListener{
         entreePrix = new JTextField("");
         entreePuissance = new JTextField("");
         entreeVitesse = new JTextField("");
+        entreeNbPlace = new JTextField("");
         annuler = new JButton("Annuler");
         confirmer = new JButton("Confirmer");
-        setTitle("Ajout moto");
-        setLayout(new GridLayout(8, 2));
+        setTitle("Ajout voiture");
+        setLayout(new GridLayout(9, 2));
         setSize(800, 400);
         Dimension localisationFenetre= Toolkit.getDefaultToolkit().getScreenSize();
         setLocation((int)localisationFenetre.getWidth()/2 - this.getWidth()/2, (int)localisationFenetre.getHeight()/2 - this.getHeight()/2);
@@ -59,6 +63,8 @@ public class AjoutMoto extends JFrame implements ActionListener{
         getContentPane().add(entreePuissance);
         getContentPane().add(vitesseMax);
         getContentPane().add(entreeVitesse);
+        getContentPane().add(nbPlace);
+        getContentPane().add(entreeNbPlace);
         getContentPane().add(annuler);
         getContentPane().add(confirmer);
         confirmer.addActionListener(this);
@@ -76,8 +82,8 @@ public class AjoutMoto extends JFrame implements ActionListener{
             this.dispose();
         }else if (e.getSource()==confirmer){
             //Enregistrement nouveau =Moto new Enregistrement();
-            //nouveau.enregistrerMoto(Integer.valueOf(entreeKm.getText()), entreeMarque.getText(), Integer.valueOf(entreePuissance.getText()), Integer.valueOf(entreePrix.getText()), entreeEtat.getText(), entreeModele.getText(), Integer.valueOf(entreeVitesse.getText()));
-            JOptionPane.showMessageDialog(rootPane, "Moto enregistrée !");
+            //nouveau.enregistrerMoto(Integer.valueOf(entreeKm.getText()), Integer.valueOf(entreeNbPlace.getText()),entreeMarque.getText(), entreeModele.getText(), Integer.valueOf(entreePuissance.getText()), Integer.valueOf(entreePrix.getText()), entreeEtat.getText(), Integer.valueOf(entreeVitesse.getText()));
+            JOptionPane.showMessageDialog(rootPane, "Voiture enregistrée !");
             this.setVisible(false);
             this.dispose();
         }
