@@ -9,7 +9,7 @@ public class Client {
   private int age;
   private String adresse;
   private String numeroTel;
-  private Location location;
+  //private Location location;
 
   // Constructeurs
 
@@ -21,67 +21,69 @@ public class Client {
     this.numeroTel = numeroTel;
   }
 
+  //Méthodes
+
+
 
    //Méthodes d'accès :
 
-    //Set the value of nom
-  private void setNom (String nouvelle) {
-    nom = nouvelle;
+
+/*  public Location getLocation() {
+    return location;
   }
 
-    //Get the value of nom
-    // return the value of nom
-  private String getNom () {
-    return nom;
+  public void setLocation(Location location) {
+    this.location = location;
   }
-
-    //Set the value of prenom
-    //param nouvelle the new value of prenom
-  private void setPrenom (String nouvelle) {
-    prenom = nouvelle;
-  }
-
-    //Get the value of prenom
-     //return the value of prenom
-  private String getPrenom () {
-    return prenom;
-  }
-
-  //Set the value of age
-  //param nouvelle the new value of age
-  private void setAge (int nouvelle) {
-    age = nouvelle;
-  }
-
-  //Get the value of age
-  //return the value of age
-  private int getAge () {
-    return age;
-  }
-
-  //Set the value of adresse
-  //param nouvelle the new value of adresse
-  private void setAdresse (String nouvelle) {
-    adresse = nouvelle;
-  }
-
-  //Get the value of adresse
-  //return the value of adresse
-  private String getAdresse () {
-    return adresse;
-  }
-
-  //Set the value of numeroTel
-  //param nouvelle the new value of numeroTel
-  private void setNumeroTel (String nouvelle) {
-    numeroTel = nouvelle;
-  }
-
-  //Récupère le numéro de téléphone numeroTel
-  //Renvoie le numéro de téléphone numeroTel
-  private String getNumeroTel () {
+*/
+  public String getNumeroTel() {
     return numeroTel;
   }
 
+  public void setNumeroTel(String numeroTel) {
+    this.numeroTel = numeroTel;
+  }
 
+  public String getAdresse() {
+    return adresse;
+  }
+
+  public void setAdresse(String adresse) {
+    this.adresse = adresse;
+  }
+
+  public int getAge() {
+    return age;
+  }
+
+  public void setAge(int age) {
+    this.age = age;
+  }
+
+  public String getPrenom() {
+    return prenom;
+  }
+
+  public void setPrenom(String prenom) {
+    this.prenom = prenom;
+  }
+
+  public String getNom() {
+    return nom;
+  }
+
+  public void setNom(String nom) {
+    this.nom = nom;
+  }
+
+  @Override
+  public String toString() {
+    return "Client{" +
+            "nom='" + nom + '\'' +
+            ", prenom='" + prenom + '\'' +
+            ", age=" + age +
+            ", adresse='" + adresse + '\'' +
+            ", numeroTel='" + numeroTel + '\'' +
+            '}';
+  }
 }

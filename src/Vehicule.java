@@ -14,13 +14,13 @@ abstract class Vehicule {
   private int prixLocationParJour;
   private int vitesseMax;
   private String etat;
-  private boolean loue = false; // disponibilité du véhicule
+//  private boolean loue = false; // disponibilité du véhicule
   
 
   // Constructeurs
 
   public Vehicule () { };
-  
+
 
    // Méthodes
 
@@ -31,28 +31,12 @@ abstract class Vehicule {
 
  // Getteurs et setteurs et setteurs
 
-  public String getEtat() {
-    return etat;
+  public String getMarque() {
+    return marque;
   }
 
-  public void setEtat(String etat) {
-    this.etat = etat;
-  }
-
-  public int getVitesseMax() {
-    return vitesseMax;
-  }
-
-  public void setVitesseMax(int vitesseMax) {
-    this.vitesseMax = vitesseMax;
-  }
-
-  public int getPrixLocationParJour() {
-    return prixLocationParJour;
-  }
-
-  public void setPrixLocationParJour(int prixLocationParJour) {
-    this.prixLocationParJour = prixLocationParJour;
+  public void setMarque(String marque) {
+    this.marque = marque;
   }
 
   public String getModele() {
@@ -63,17 +47,40 @@ abstract class Vehicule {
     this.modele = modele;
   }
 
-  public String getMarque() {
-    return marque;
+  public int getPrixLocationParJour() {
+    return prixLocationParJour;
   }
 
-  public void setMarque(String marque) {
-    this.marque = marque;
+  public void setPrixLocationParJour(int prixLocationParJour) {
+    this.prixLocationParJour = prixLocationParJour;
+  }
+
+  public int getVitesseMax() {
+    return vitesseMax;
+  }
+
+  public void setVitesseMax(int vitesseMax) {
+    this.vitesseMax = vitesseMax;
+  }
+
+  public String getEtat() {
+    return etat;
+  }
+
+  public void setEtat(String etat) {
+    this.etat = etat;
   }
 
 
   // toString
-
+  public String imprime(){
+    return  "marque='" + marque + '\'' +
+            ", modele='" + modele + '\'' +
+            ", prixLocationParJour=" + prixLocationParJour +
+            ", vitesseMax=" + vitesseMax +
+            ", etat='" + etat + '\'' +
+            ", ";
+  }
   public abstract String toString();
 
 }

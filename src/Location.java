@@ -26,7 +26,6 @@ public class Location {
     this.nbKmPrevisionnel = nbKmPrevisionnel;
   }
 
-
    //Méthodes :
 /*
   void accordReduction(){         //accorde une réduction si la durée de location est supérieure à 4j...
@@ -78,5 +77,17 @@ public class Location {
 
   public void setDateDebut(Date dateDebut) {
     this.dateDebut = dateDebut;
+  }
+
+  @Override
+  public String toString() {
+    return "Location{" +
+            "dateDebut=" + dateDebut +
+            ", dateFin=" + dateFin +
+            ", prixPrevisionnel=" + prixPrevisionnel +
+            ", nbKmPrevisionnel=" + nbKmPrevisionnel +
+            ", reduction=" + reduction +
+            ", vehicule=" + vehicule +
+            '}';
   }
 }

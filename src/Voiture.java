@@ -27,9 +27,10 @@ public class Voiture extends VehiculeTerrestre {
   }
 
   // toString
-
+//
     public String toString() {
-        return "Voiture{" +
+        return "Voiture{" +//
+                this.imprime() +
                 "nbPlace=" + nbPlace +
                 ", km=" + km +
                 ", puissance=" + puissance +

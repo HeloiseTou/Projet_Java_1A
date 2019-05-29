@@ -10,9 +10,9 @@ public class Avion extends VehiculeAerien{
     // toString()
 
 
-    @Override
     public String toString() {
         return "Avion{" +
+                this.imprime() +
                 "nbHeureVol=" + this.getNbHeureVol() +
                 ", nbMoteur=" + this.getNbMoteur() +
                 '}';
