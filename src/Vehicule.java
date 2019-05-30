@@ -9,11 +9,11 @@ abstract class Vehicule {
    // Attributs
 
 
-  private String marque;
-  private String modele;
-  private int prixLocationParJour;
-  private int vitesseMax;
-  private String etat;
+  protected String marque;
+  protected String modele;
+  protected int prixLocationParJour;
+  protected int vitesseMax;
+  protected String etat;
 //  private boolean loue = false; // disponibilité du véhicule
   
 
