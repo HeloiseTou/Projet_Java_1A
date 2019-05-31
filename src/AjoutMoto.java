@@ -75,7 +75,7 @@ public class AjoutMoto extends JFrame implements ActionListener{
             this.setVisible(false);
             this.dispose();
         }else if (e.getSource()==confirmer){
-            //Enregistrement nouveau =Moto new Enregistrement();
+            //Enregistrement nouveau = new Enregistrement();
             //nouveau.enregistrerMoto(Integer.valueOf(entreeKm.getText()), entreeMarque.getText(), Integer.valueOf(entreePuissance.getText()), Integer.valueOf(entreePrix.getText()), entreeEtat.getText(), entreeModele.getText(), Integer.valueOf(entreeVitesse.getText()));
             JOptionPane.showMessageDialog(rootPane, "Moto enregistrée !");
             this.setVisible(false);

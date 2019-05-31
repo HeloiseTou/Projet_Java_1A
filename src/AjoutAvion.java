@@ -75,7 +75,7 @@ public class AjoutAvion extends JFrame implements ActionListener{
             this.setVisible(false);
             this.dispose();
         }else if (e.getSource()==confirmer){
-            //Enregistrement nouveau =Avion new Enregistrement();
+            //Enregistrement nouveau = new Enregistrement();
             //nouveau.enregistrerAvion(Integer.valueOf(entreeNbHeureVol.getText()), entreeEtat.getText(), entreeModele.getText(), entreeMarque.getText(), Integer.valueOf(entreePrix.getText()), Integer.valueOf(entreeNbMoteur.getText()), Integer.valueOf(entreeVitesse.getText()));
             JOptionPane.showMessageDialog(rootPane, "Avion enregistré !");
             this.setVisible(false);

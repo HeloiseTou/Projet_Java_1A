@@ -72,9 +72,6 @@ public class Interface extends JFrame implements ActionListener{
     }
 
 
-    private void ajoutLocation(){
-        JOptionPane.showMessageDialog(rootPane, "Vous avez appuyé sur le bouton nouvelle location");
-    }
 
     private void suppressionVehicule(){
         JOptionPane.showMessageDialog(rootPane, "Vous voulez supprimer un véhicule");
@@ -90,7 +87,7 @@ public class Interface extends JFrame implements ActionListener{
         }else if (e.getSource() == boutonNouveauVehicule){
             AjoutVehicule vehicule = new AjoutVehicule();
         }else if (e.getSource() == boutonNouvelleLocation){
-            ajoutLocation();
+            AjoutLocation location = new AjoutLocation();
         }else if (e.getSource() == boutonSuppressionVehicule){
             suppressionVehicule();
         }else if (e.getSource() == boutonRestitutionVehicule){
