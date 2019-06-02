@@ -1,14 +1,21 @@
 import java.util.ArrayList;
+import java.util.Date;
 
 
 public class Enregistrement {
     //attributs
-    private ArrayList listeEnregistrementClient;
-    private ArrayList <Vehicule> listeEnregistrementVehicule;
+    public static ArrayList <Client> listeEnregistrementClient;
+    public static ArrayList<Location> listeEnregistrementLocation;
+    public static ArrayList <Avion> listeEnregistrementAvion;
+    public static ArrayList <Moto> listeEnregistrementMoto;
+    public static ArrayList <Voiture> listeEnregistrementVoiture;
 
     public Enregistrement() {
         this.listeEnregistrementClient = new ArrayList();
-        this.listeEnregistrementVehicule = new ArrayList();
+        this.listeEnregistrementAvion = new ArrayList();
+        this.listeEnregistrementMoto = new ArrayList();
+        this.listeEnregistrementVoiture = new ArrayList();
+        this.listeEnregistrementLocation = new ArrayList();
     }
 
     //méthodes
@@ -18,23 +25,34 @@ public class Enregistrement {
         this.listeEnregistrementClient.add(nouveauClient);
     }
 
-    public void enregistrerAvion(String marque,String modele,int prixLocationParJour,int vitesseMax,String etat) {////////// est ce qu'on doit mettre aussi dans l'enregistrement du noveau client la location???
-        Vehicule av = new Avion();
+    public void enregisterLocation(Date dateDebut, Date dateFin, int prixPrevi, int nbKmPrevisionnel, boolean reduction, Vehicule vehicule, Client client){
+        Location loc = new Location(dateDebut, dateFin, prixPrevi, nbKmPrevisionnel);
+        loc.setReduction(reduction);
+        loc.setVehicule(vehicule);
+        loc.setClient(client);
+    }
+
+    public void enregistrerAvion(int nbHeureVol,String etat, String modele,String marque,int prixLocationParJour, int nbMoteur,int vitesseMax) {////////// est ce qu'on doit mettre aussi dans l'enregistrement du noveau client la location???
+        Avion av = new Avion();
         setVehicule(marque, modele, prixLocationParJour, vitesseMax, etat, av);
-        Avion nouveau = (Avion) av;
-        this.listeEnregistrementVehicule.add(nouveau);
+        av.setNbHeureVol(nbHeureVol);
+        av.setNbMoteur(nbMoteur);
+        this.listeEnregistrementAvion.add(av);
     }
-    public void enregistrerVoiture(String marque,String modele,int prixLocationParJour,int vitesseMax,String etat){
-        Vehicule voitu = new Voiture();
+    public void enregistrerVoiture(int km, int nbPlace, String marque, String modele, int puissance,int prixLocationParJour, String etat, int vitesseMax){
+        Voiture voitu = new Voiture();
         setVehicule(marque, modele, prixLocationParJour, vitesseMax, etat, voitu);
-        Voiture nouveau = (Voiture) voitu;
-        this.listeEnregistrementVehicule.add(nouveau);
+        voitu.setKm(km);
+        voitu.setNbPlace(nbPlace);
+        voitu.setPuissance(puissance);
+        this.listeEnregistrementVoiture.add(voitu);
     }
-    public void enregistrerMoto(String marque,String modele,int prixLocationParJour,int vitesseMax,String etat){
-        Vehicule mot = new Voiture();
-        setVehicule(marque, modele, prixLocationParJour, vitesseMax, etat, mot);
-        Moto nouveau = (Moto) mot;
-        this.listeEnregistrementVehicule.add(nouveau);
+    public void enregistrerMoto(int km, String marque, int puissance,int prixLocationParJour, String etat,  String modele, int vitesseMax){
+        Moto moto = new Moto();
+        setVehicule(marque, modele, prixLocationParJour, vitesseMax, etat, moto);
+        moto.setKm(km);
+        moto.setPuissance(puissance);
+        this.listeEnregistrementMoto.add(moto);
     }
 
 
@@ -45,25 +63,39 @@ public class Enregistrement {
         vehicule.setPrixLocationParJour(prixLocationParJour);
         vehicule.setVitesseMax(vitesseMax);
     }
-    
-    public void supprmierMoto(String marq,String mod,int prixLocParJour,int veMax,String e){
-        for (int i = 0; i < this.listeEnregistrementVehicule.size(); i++){
-            if(marq.equals(this.listeEnregistrementVehicule.get(i).getMarque()) && mod.equals(this.listeEnregistrementVehicule.get(i).getModele()) && (prixLocParJour==this.listeEnregistrementVehicule.get(i).getPrixLocationParJour()) && (veMax==this.listeEnregistrementVehicule.get(i).getVitesseMax()) && e.equals(this.listeEnregistrementVehicule.get(i).getEtat())){
-               this.listeEnregistrementVehicule.remove(this.listeEnregistrementVehicule.get(i));
+
+
+    public void supprimerMoto(String marq,String mod,int prixLocParJour,int veMax,String e){
+        for (int i = 0; i < this.listeEnregistrementMoto.size(); i++){
+            if(marq.equals(this.listeEnregistrementMoto.get(i).getMarque()) && mod.equals(this.listeEnregistrementMoto.get(i).getModele()) && (prixLocParJour==this.listeEnregistrementMoto.get(i).getPrixLocationParJour()) && (veMax==this.listeEnregistrementMoto.get(i).getVitesseMax()) && e.equals(this.listeEnregistrementMoto.get(i).getEtat())){
+               this.listeEnregistrementMoto.remove(this.listeEnregistrementMoto.get(i));
             }
         }
     }
 
 
-    public String toStringVehicule() {
+    public String toStringMoto() {
         String result = "+";
-        if(!this.listeEnregistrementVehicule.isEmpty()) {
-            for (int i = 0; i < this.listeEnregistrementVehicule.size(); i++) {
-                result += " " + this.listeEnregistrementVehicule.get(i).toString();
+        if(!this.listeEnregistrementMoto.isEmpty()) {
+            for (int i = 0; i < this.listeEnregistrementMoto.size(); i++) {
+                result += " " + this.listeEnregistrementMoto.get(i).toString();
             }
         }
         return "Enregistrement{" +
                 "ListeEnregistrement=" + result +
                 '}';
     }
+
+    public String toStringAvion() {
+        String result = "+";
+        if(!this.listeEnregistrementAvion.isEmpty()) {
+            for (int i = 0; i < this.listeEnregistrementAvion.size(); i++) {
+                result += " " + this.listeEnregistrementAvion.get(i).toString();
+            }
+        }
+        return "Enregistrement{" +
+                "ListeEnregistrement=" + result +
+                '}';
+    }
+
 }

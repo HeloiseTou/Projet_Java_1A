@@ -1,3 +1,4 @@
+import java.util.Calendar;
 import java.util.Date;
 
 
@@ -15,6 +16,7 @@ public class Location {
   private int nbKmPrevisionnel;
   private boolean reduction;
   private Vehicule vehicule;
+  private Client client;
   
 
    //Constructeurs
@@ -27,14 +29,14 @@ public class Location {
   }
 
    //Méthodes :
-/*
+
   void accordReduction(){         //accorde une réduction si la durée de location est supérieure à 4j...
-    Date duree;
-    duree = différence des deux dates en nb de jours... //////////////////////////////////////////////////trouver comment faire différence entre deux dates...
-    if(duree>7){
+    Date duree = new Date();
+    duree.setTime(dateFin.getTime()-dateDebut.getTime());
+    if(duree.getTime()<604800000){
       reduction = true;
     }
-  }*/
+  }
 
     //Méthodes d'accès
 
@@ -77,6 +79,14 @@ public class Location {
 
   public void setDateDebut(Date dateDebut) {
     this.dateDebut = dateDebut;
+  }
+
+  public void setClient (Client client){
+    this.client = client;
+  }
+
+  public void setVehicule(Vehicule vehicule){
+    this.vehicule = vehicule;
   }
 
   @Override

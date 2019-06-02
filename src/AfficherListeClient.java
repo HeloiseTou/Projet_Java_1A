@@ -3,14 +3,12 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.lang.String;
-
 public class AfficherListeClient extends JFrame implements ListSelectionListener {
 
     private String[] enTete;
     private String[][] clients;
     private JTable container;
     public static Client clientChoisi;
-    public static int essai;
 
     AfficherListeClient() {
         enTete = new String[]{"Nom", "Prénom", "Age", "Adresse", "Téléphone"};
@@ -31,19 +29,20 @@ public class AfficherListeClient extends JFrame implements ListSelectionListener
 
 
         public void valueChanged(ListSelectionEvent event) {
-            // do some actions here, for example
-            // print first column value from selected row
-            System.out.println(container.getValueAt(container.getSelectedRow(), 0).toString());
-            clientChoisi = new Client("Jean", "Pierre", 59, "2 rue des Poulpes", "0605040302");//container.getSelectedRow();
-            essai = 12;
+            clientChoisi = Enregistrement.listeEnregistrementClient.get(container.getSelectedRow());
         }
 
 
     private String[][] listeClient(){
-        String[][] liste = new String[3][5];
-        liste[0]= new String[]{"Albert", "Just", "45", "2 rue des Chenes", "0342233221"};
-        liste[1] =new String[]{"Donald", "Mc", "56", "5 rue des Chapelains", "0102010011"};
-        liste[2] = new String[]{"Dupont", "Durant", "62", "2 rue de la Paix", "066666000"};
+        String[][] liste = new String[Enregistrement.listeEnregistrementClient.size()][0];
+        if (Enregistrement.listeEnregistrementClient.size() == 0){
+            JOptionPane.showMessageDialog(rootPane, "Merci d'ajouter un client !");
+        }else {
+            for (int i = 0; i < Enregistrement.listeEnregistrementClient.size(); i++) {
+                liste[i] = new String[]{Enregistrement.listeEnregistrementClient.get(i).getNom(), Enregistrement.listeEnregistrementClient.get(i).getPrenom(), String.valueOf(Enregistrement.listeEnregistrementClient.get(i).getAge()), Enregistrement.listeEnregistrementClient.get(i).getAdresse(), Enregistrement.listeEnregistrementClient.get(i).getNumeroTel()};
+            }
+        }
         return (liste);
+
     }
 }

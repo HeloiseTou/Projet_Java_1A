@@ -81,11 +81,15 @@ public class AjoutVoiture extends JFrame implements ActionListener{
             this.setVisible(false);
             this.dispose();
         }else if (e.getSource()==confirmer){
-            //Enregistrement nouveau = new Enregistrement();
-            //nouveau.enregistrerVoiture(Integer.valueOf(entreeKm.getText()), Integer.valueOf(entreeNbPlace.getText()),entreeMarque.getText(), entreeModele.getText(), Integer.valueOf(entreePuissance.getText()), Integer.valueOf(entreePrix.getText()), entreeEtat.getText(), Integer.valueOf(entreeVitesse.getText()));
-            JOptionPane.showMessageDialog(rootPane, "Voiture enregistrée !");
-            this.setVisible(false);
-            this.dispose();
+            if(entreeKm.getText().equals("")|| entreeNbPlace.getText().equals("") || entreeMarque.getText().equals("") || entreePuissance.getText().equals("") || entreePrix.getText().equals("") || entreeEtat.getText().equals("") || entreeModele.getText().equals("") || entreeVitesse.getText().equals("")){
+                JOptionPane.showMessageDialog(rootPane, "Merci de remplir toutes les cases");
+            }else {
+                Enregistrement nouveau = new Enregistrement();
+                nouveau.enregistrerVoiture(Integer.valueOf(entreeKm.getText()), Integer.valueOf(entreeNbPlace.getText()), entreeMarque.getText(), entreeModele.getText(), Integer.valueOf(entreePuissance.getText()), Integer.valueOf(entreePrix.getText()), entreeEtat.getText(), Integer.valueOf(entreeVitesse.getText()));
+                JOptionPane.showMessageDialog(rootPane, "Voiture enregistrée !");
+                this.setVisible(false);
+                this.dispose();
+            }
         }
     }
 }

@@ -25,7 +25,7 @@ public class AjoutMoto extends JFrame implements ActionListener{
     AjoutMoto() {
         km = new JLabel("Nombre de km");
         etat = new JLabel("État de la moto");
-        modele = new JLabel("Modèle dde la moto");
+        modele = new JLabel("Modèle de la moto");
         marque = new JLabel("Marque de la moto");
         prixLocParJour = new JLabel("Prix de la location par jour");
         puissance = new JLabel("Puissance");
@@ -75,11 +75,15 @@ public class AjoutMoto extends JFrame implements ActionListener{
             this.setVisible(false);
             this.dispose();
         }else if (e.getSource()==confirmer){
-            //Enregistrement nouveau = new Enregistrement();
-            //nouveau.enregistrerMoto(Integer.valueOf(entreeKm.getText()), entreeMarque.getText(), Integer.valueOf(entreePuissance.getText()), Integer.valueOf(entreePrix.getText()), entreeEtat.getText(), entreeModele.getText(), Integer.valueOf(entreeVitesse.getText()));
-            JOptionPane.showMessageDialog(rootPane, "Moto enregistrée !");
-            this.setVisible(false);
-            this.dispose();
+            if(entreeKm.getText().equals("")||entreeMarque.getText().equals("") || entreePuissance.getText().equals("") || entreePrix.getText().equals("") || entreeEtat.getText().equals("") || entreeModele.getText().equals("") || entreeVitesse.getText().equals("")){
+                JOptionPane.showMessageDialog(rootPane, "Merci de remplir toutes les cases");
+            }else{
+                Enregistrement nouveau = new Enregistrement();
+                nouveau.enregistrerMoto(Integer.valueOf(entreeKm.getText()), entreeMarque.getText(), Integer.valueOf(entreePuissance.getText()), Integer.valueOf(entreePrix.getText()), entreeEtat.getText(), entreeModele.getText(), Integer.valueOf(entreeVitesse.getText()));
+                JOptionPane.showMessageDialog(rootPane, "Moto enregistrée !");
+                this.setVisible(false);
+                this.dispose();
+            }
         }
     }
 }
