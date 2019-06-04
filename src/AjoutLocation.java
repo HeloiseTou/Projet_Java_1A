@@ -32,7 +32,7 @@ public class AjoutLocation extends JFrame implements ListSelectionListener {
 
     public void valueChanged(ListSelectionEvent event) {
         clientChoisi = AjoutClient.listeDesClients.get(container.getSelectedRow());
-        AfficherListeVehicule listeVehicule = new AfficherListeVehicule();
+        LocationVehicule listeVehicule = new LocationVehicule();
         this.setVisible(false);
         this.dispose();
     }

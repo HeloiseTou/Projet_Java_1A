@@ -43,18 +43,14 @@ public class LocationVehicule extends JFrame implements ActionListener{
         if (e.getSource()== avion){
             LocationAvion avion = new LocationAvion();
             vehiculeChoisi = LocationAvion.avionChoisi;
-            this.setVisible(false);
-            this.dispose();
         }else if (e.getSource()==moto){
             LocationMoto moto = new LocationMoto();
             vehiculeChoisi = LocationMoto.motoChoisie;
-            this.setVisible(false);
-            this.dispose();
         }else if (e.getSource()==voiture){
             LocationVoiture voit = new LocationVoiture();
             vehiculeChoisi = LocationVoiture.voitureChoisie;
-            this.setVisible(false);
-            this.dispose();
         }
+        this.setVisible(false);
+        this.dispose();
     }
 }

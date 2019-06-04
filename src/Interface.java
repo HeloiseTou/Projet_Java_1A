@@ -25,8 +25,6 @@ public class Interface extends JFrame implements ActionListener{
         setButtons();
         setPanel();
         setActions();
-
-        //Pour rendre la fenêtre visible et la fermer à la fin
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
     }
