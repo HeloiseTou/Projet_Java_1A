@@ -1,8 +1,4 @@
-import java.util.Calendar;
 import java.util.Date;
-
-
- //Classe Location
 
 public class Location {
 
