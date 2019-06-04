@@ -83,7 +83,10 @@ public class Location {
 
     //Méthodes d'accès
 
-
+    /**
+     * indique si une réduction a été accordée pour cette location.
+     * @return un booléen valant vrai si réduction a été accordée pour cette location et faux sinon
+     */
   public boolean isReduction() {
     return reduction;
   }
@@ -91,7 +94,10 @@ public class Location {
   public void setReduction(boolean reduction) {
     this.reduction = reduction;
   }
-
+    /**
+     * renvoie le nombre de km prévisonnel
+     * @return nbKmPrevisionnel
+     */
   public int getNbKmPrevisionnel() {
     return nbKmPrevisionnel;
   }
@@ -99,7 +105,10 @@ public class Location {
   public void setNbKmPrevisionnel(int nbKmPrevisionnel) {
     this.nbKmPrevisionnel = nbKmPrevisionnel;
   }
-
+    /**
+     * renvoie la date de fin
+     * @return dateFin la date de fin
+     */
   public Date getDateFin() {
     return dateFin;
   }
@@ -107,7 +116,10 @@ public class Location {
   public void setDateFin(Date dateFin) {
     this.dateFin = dateFin;
   }
-
+    /**
+     * renvoie  la date de début
+     * @return  dateDebut la date de fin
+     */
   public Date getDateDebut() {
     return dateDebut;
   }
