@@ -27,6 +27,15 @@ public class Location {
   }
 
    //Méthodes :
+
+  /**
+   * Calcule la majoration du prix de la location en fonction du nombre de km parcourus.
+   *
+   * @param   nbKM
+   *          Le nombre de km que le véhicule a parcourus.
+   *
+   * @return  majoration du prix de la location
+   */
   public static int prixKMSupplementaires(int nbKM){
     int majoration;
     if(nbKM <= 50){
@@ -51,6 +60,10 @@ public class Location {
     }
     return majoration;
   }
+    /**
+     * Calcule le prix prévisionnel de la location
+     * @return  majoration du prix de la location
+     */
   public int prixPrevisionnel(){
       int prix;
       Date duree = new Date();
@@ -60,7 +73,11 @@ public class Location {
       return prix;
   }
 
-  public void accordReduction(){         //accorde une réduction si la durée de location est supérieure à 4j...
+    /**
+     * autorise l'accord d'une réduction si la durée de cette location est supérieure à 4j
+     *
+     */
+  public void accordReduction(){
     Date duree = new Date();
     duree.setTime(dateFin.getTime()-dateDebut.getTime());
     if(duree.getTime()<604800000){ //604800000 = une semaine en millisecondes
