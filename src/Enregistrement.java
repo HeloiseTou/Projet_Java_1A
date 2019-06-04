@@ -4,11 +4,11 @@ import java.util.Date;
 
 public class Enregistrement {
     //attributs
-    public static ArrayList <Client> listeEnregistrementClient;
-    public static ArrayList<Location> listeEnregistrementLocation;
-    public static ArrayList <Avion> listeEnregistrementAvion;
-    public static ArrayList <Moto> listeEnregistrementMoto;
-    public static ArrayList <Voiture> listeEnregistrementVoiture;
+    private ArrayList <Client> listeEnregistrementClient;
+    private ArrayList<Location> listeEnregistrementLocation;
+    private ArrayList <Avion> listeEnregistrementAvion;
+    private ArrayList <Moto> listeEnregistrementMoto;
+    private ArrayList <Voiture> listeEnregistrementVoiture;
 
     public Enregistrement() {
         this.listeEnregistrementClient = new ArrayList();

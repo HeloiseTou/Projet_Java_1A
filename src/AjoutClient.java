@@ -17,6 +17,7 @@ public class AjoutClient extends JFrame implements ActionListener{
     private JTextField entreeNumTel;
     private JButton annuler;
     private JButton confirmer;
+    public static Enregistrement listeDesClients = new Enregistrement();
 
     AjoutClient() {
         nomClient = new JLabel("Nom du client");
@@ -66,8 +67,8 @@ public class AjoutClient extends JFrame implements ActionListener{
             if(entreeNom.getText().equals("")||entreePrenom.getText().equals("") || entreeAdresse.getText().equals("") || entreeAge.getText().equals("") || entreeNumTel.getText().equals("") ){
                 JOptionPane.showMessageDialog(rootPane, "Merci de remplir toutes les cases");
             }else {
-                Enregistrement nouveau = new Enregistrement();
-                nouveau.enregistrerClient(entreeNom.getText(), entreePrenom.getText(), Integer.valueOf(entreeAge.getText()), entreeAdresse.getText(), entreeNumTel.getText());
+
+                listeDesClients.enregistrerClient(entreeNom.getText(), entreePrenom.getText(), Integer.valueOf(entreeAge.getText()), entreeAdresse.getText(), entreeNumTel.getText());
                 JOptionPane.showMessageDialog(rootPane, "Client enregistré !");
                 this.setVisible(false);
                 this.dispose();

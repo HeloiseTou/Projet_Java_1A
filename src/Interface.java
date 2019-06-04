@@ -11,7 +11,7 @@ public class Interface extends JFrame implements ActionListener{
     private JButton boutonListeClient;
     private JButton boutonNouvelleLocation;
     private JButton boutonRestitutionVehicule;
-    private JComboBox listeVehicule;
+    private JButton boutonListeVehicule;
 
 
     public Interface(){
@@ -23,7 +23,6 @@ public class Interface extends JFrame implements ActionListener{
         setResizable(false);
         setContentPane(panneau);
         setButtons();
-        setJComboBox();
         setPanel();
         setActions();
 
@@ -37,19 +36,16 @@ public class Interface extends JFrame implements ActionListener{
         boutonNouveauClient.setPreferredSize(new Dimension(200, 40));
         boutonNouveauVehicule= new JButton ("Nouveau Véhicule");
         boutonNouveauVehicule.setPreferredSize(new Dimension(200, 40));
-        boutonListeClient = new JButton ("Liste Clients");
+        boutonListeClient = new JButton ("Liste des clients");
         boutonListeClient.setPreferredSize(new Dimension(200, 40));
         boutonNouvelleLocation = new JButton ("Nouvelle Location");
         boutonNouvelleLocation.setPreferredSize(new Dimension(200, 40));
         boutonRestitutionVehicule = new JButton ("Resitution Véhicule");
         boutonRestitutionVehicule.setPreferredSize(new Dimension(200, 40));
+        boutonListeVehicule = new JButton ("Liste des véhicules");
+        boutonListeVehicule.setPreferredSize(new Dimension(200, 40));
     }
 
-    private void setJComboBox(){
-        String[] typeVehicule = {"Avions","Motos","Voitures"};
-        listeVehicule = new JComboBox(typeVehicule);
-        listeVehicule.setPreferredSize(new Dimension(200, 40));
-    }
 
 
 
@@ -60,7 +56,7 @@ public class Interface extends JFrame implements ActionListener{
         panneau.add(boutonNouvelleLocation);
         panneau.add(boutonListeClient);
         panneau.add(boutonRestitutionVehicule);
-        panneau.add(listeVehicule);
+        panneau.add(boutonListeVehicule);
     }
 
     private void setActions(){
@@ -69,6 +65,7 @@ public class Interface extends JFrame implements ActionListener{
         boutonNouvelleLocation.addActionListener(this);
         boutonRestitutionVehicule.addActionListener(this);
         boutonListeClient.addActionListener(this);
+        boutonListeVehicule.addActionListener(this);
     }
 
 
@@ -92,6 +89,8 @@ public class Interface extends JFrame implements ActionListener{
             AfficherListeClient liste = new AfficherListeClient();
         }else if (e.getSource() == boutonRestitutionVehicule){
             restitutionVehicule();
+        }else if (e.getSource() == boutonListeVehicule){
+            AfficherListeVehicule listeVeh = new AfficherListeVehicule();
         }
     }
 
