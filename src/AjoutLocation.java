@@ -31,7 +31,7 @@ public class AjoutLocation extends JFrame implements ListSelectionListener {
 
 
     public void valueChanged(ListSelectionEvent event) {
-        clientChoisi = AjoutClient.listeDesClients.get(container.getSelectedRow());
+        clientChoisi = Stockage.listeDesClients.get(container.getSelectedRow());
         LocationVehicule listeVehicule = new LocationVehicule();
         this.setVisible(false);
         this.dispose();
@@ -40,12 +40,12 @@ public class AjoutLocation extends JFrame implements ListSelectionListener {
 
     private String[][] listeClient(){
         String[][] liste ;
-        if (AjoutClient.listeDesClients==null){
+        if (Stockage.listeDesClients==null){
             liste = new String[0][0];
         }else {
-            liste = new String[AjoutClient.listeDesClients.size()][5];
-            for (int i = 0; i < AjoutClient.listeDesClients.size(); i++) {
-                liste[i] = new String[]{AjoutClient.listeDesClients.get(i).getNom(), AjoutClient.listeDesClients.get(i).getPrenom(), String.valueOf(AjoutClient.listeDesClients.get(i).getAge()), AjoutClient.listeDesClients.get(i).getAdresse(), AjoutClient.listeDesClients.get(i).getNumeroTel()};
+            liste = new String[Stockage.listeDesClients.size()][5];
+            for (int i = 0; i < Stockage.listeDesClients.size(); i++) {
+                liste[i] = new String[]{Stockage.listeDesClients.get(i).getNom(), Stockage.listeDesClients.get(i).getPrenom(), String.valueOf(Stockage.listeDesClients.get(i).getAge()), Stockage.listeDesClients.get(i).getAdresse(), Stockage.listeDesClients.get(i).getNumeroTel()};
             }
         }
         return (liste);

@@ -16,7 +16,10 @@ public class Location {
 
    //Constructeurs
 
-  public Location(Date dateDebut, Date dateFin, int nbKmPrevisionnel) {
+  public Location(Date dateDebut, Date dateFin, int nbKmPrevisionnel, boolean reduction, Vehicule vehicule, Client client) {
+    this.reduction = reduction;
+    this.vehicule = vehicule;
+    this.client = client;
     this.dateDebut = dateDebut;
     this.dateFin = dateFin;
     this.nbKmPrevisionnel = nbKmPrevisionnel;
@@ -65,7 +68,8 @@ public class Location {
       Date duree = new Date();
       duree.setTime(dateFin.getTime()-dateDebut.getTime());
       int nbJours = ((int)duree.getTime())/86400; //86400 = nb secondes en 24h...
-      prix = (this.vehicule.getPrixLocationParJour())*nbJours + prixKMSupplementaires(nbKmPrevisionnel);
+    prix =
+            ((this.vehicule.getPrixLocationParJour()) * nbJours) + (prixKMSupplementaires(nbKmPrevisionnel)/100);
       return prix;
   }
 

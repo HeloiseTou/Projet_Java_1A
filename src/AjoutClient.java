@@ -18,7 +18,6 @@ public class AjoutClient extends JFrame implements ActionListener {
     private JTextField entreeNumTel;
     private JButton annuler;
     private JButton confirmer;
-    public static ArrayList<Client> listeDesClients = new ArrayList<>();
 
     AjoutClient() {
         nomClient = new JLabel("Nom du client");
@@ -53,9 +52,6 @@ public class AjoutClient extends JFrame implements ActionListener {
         getContentPane().add(confirmer);
         confirmer.addActionListener(this);
         annuler.addActionListener(this);
-
-
-        //Pour rendre la fenêtre visible et la fermer à la fin
         setVisible(true);
     }
 
@@ -79,6 +75,6 @@ public class AjoutClient extends JFrame implements ActionListener {
 
     public void enregistrerClient(String nom, String prenom, int age, String adresse, String numeroTel) {
         Client nouveauClient = new Client(nom, prenom, age, adresse, numeroTel);
-        this.listeDesClients.add(nouveauClient);
+        Stockage.listeDesClients.add(nouveauClient);
     }
 }

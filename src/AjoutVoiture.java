@@ -71,9 +71,6 @@ public class AjoutVoiture extends JFrame implements ActionListener{
         getContentPane().add(confirmer);
         confirmer.addActionListener(this);
         annuler.addActionListener(this);
-
-
-        //Pour rendre la fenêtre visible et la fermer à la fin
         setVisible(true);
     }
 
