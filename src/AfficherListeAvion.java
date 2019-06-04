@@ -30,14 +30,14 @@ public class AfficherListeAvion extends JFrame implements ListSelectionListener 
 
 
     public void valueChanged(ListSelectionEvent event) {
-        avionChoisi = Enregistrement.listeEnregistrementAvion.get(container.getSelectedRow());
+        avionChoisi = AjoutAvion.listeDesAvions.get(container.getSelectedRow());
     }
 
 
     private String[][] listeAvion(){
-        String[][] liste = new String[Enregistrement.listeEnregistrementAvion.size()][7];
-        for (int i = 0; i < Enregistrement.listeEnregistrementAvion.size(); i++) {
-            liste[i]= new String[]{String.valueOf(Enregistrement.listeEnregistrementAvion.get(i).getNbHeureVol()), Enregistrement.listeEnregistrementAvion.get(i).getEtat(), Enregistrement.listeEnregistrementAvion.get(i).getModele(), Enregistrement.listeEnregistrementAvion.get(i).getMarque(), String.valueOf(Enregistrement.listeEnregistrementAvion.get(i).getPrixLocationParJour()),  String.valueOf(Enregistrement.listeEnregistrementAvion.get(i).getNbMoteur()), String.valueOf(Enregistrement.listeEnregistrementAvion.get(i).getVitesseMax())};
+        String[][] liste = new String[AjoutAvion.listeDesAvions.size()][7];
+        for (int i = 0; i < AjoutAvion.listeDesAvions.size(); i++) {
+            liste[i]= new String[]{String.valueOf(AjoutAvion.listeDesAvions.get(i).getNbHeureVol()), AjoutAvion.listeDesAvions.get(i).getEtat(), AjoutAvion.listeDesAvions.get(i).getModele(), AjoutAvion.listeDesAvions.get(i).getMarque(), String.valueOf(AjoutAvion.listeDesAvions.get(i).getPrixLocationParJour()),  String.valueOf(AjoutAvion.listeDesAvions.get(i).getNbMoteur()), String.valueOf(AjoutAvion.listeDesAvions.get(i).getVitesseMax())};
         }
         return (liste);
     }

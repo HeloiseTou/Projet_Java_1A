@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 
 public class AjoutMoto extends JFrame implements ActionListener{
 
@@ -21,6 +22,7 @@ public class AjoutMoto extends JFrame implements ActionListener{
     private JTextField entreeVitesse;
     private JButton annuler;
     private JButton confirmer;
+    public static ArrayList<Moto> listeDesMotos = new ArrayList<>();
 
     AjoutMoto() {
         km = new JLabel("Nombre de km");
@@ -78,12 +80,28 @@ public class AjoutMoto extends JFrame implements ActionListener{
             if(entreeKm.getText().equals("")||entreeMarque.getText().equals("") || entreePuissance.getText().equals("") || entreePrix.getText().equals("") || entreeEtat.getText().equals("") || entreeModele.getText().equals("") || entreeVitesse.getText().equals("")){
                 JOptionPane.showMessageDialog(rootPane, "Merci de remplir toutes les cases");
             }else{
-                Enregistrement nouveau = new Enregistrement();
-                nouveau.enregistrerMoto(Integer.valueOf(entreeKm.getText()), entreeMarque.getText(), Integer.valueOf(entreePuissance.getText()), Integer.valueOf(entreePrix.getText()), entreeEtat.getText(), entreeModele.getText(), Integer.valueOf(entreeVitesse.getText()));
+                enregistrerMoto(Integer.valueOf(entreeKm.getText()), entreeMarque.getText(), Integer.valueOf(entreePuissance.getText()), Integer.valueOf(entreePrix.getText()), entreeEtat.getText(), entreeModele.getText(), Integer.valueOf(entreeVitesse.getText()));
                 JOptionPane.showMessageDialog(rootPane, "Moto enregistrée !");
                 this.setVisible(false);
                 this.dispose();
             }
         }
+    }
+
+
+    public void enregistrerMoto(int km, String marque, int puissance,int prixLocationParJour, String etat,  String modele, int vitesseMax){
+        Moto moto = new Moto();
+        setVehicule(marque, modele, prixLocationParJour, vitesseMax, etat, moto);
+        moto.setKm(km);
+        moto.setPuissance(puissance);
+        this.listeDesMotos.add(moto);
+    }
+
+    public void setVehicule(String marque, String modele, int prixLocationParJour, int vitesseMax, String etat, Vehicule vehicule) {
+        vehicule.setMarque(marque);
+        vehicule.setModele(modele);
+        vehicule.setEtat(etat);
+        vehicule.setPrixLocationParJour(prixLocationParJour);
+        vehicule.setVitesseMax(vitesseMax);
     }
 }

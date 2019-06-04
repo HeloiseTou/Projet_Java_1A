@@ -12,7 +12,7 @@ public class AfficherListeClient extends JFrame implements ListSelectionListener
 
     AfficherListeClient() {
         enTete = new String[]{"Nom", "Prénom", "Age", "Adresse", "Téléphone"};
-      //  clients= listeClient();
+        clients= listeClient();
         container = new JTable(clients, enTete);
         setTitle("Liste clients");
         setSize(700, 250);
@@ -29,10 +29,10 @@ public class AfficherListeClient extends JFrame implements ListSelectionListener
 
 
         public void valueChanged(ListSelectionEvent event) {
-           // clientChoisi = AjoutClient.listeDesClients.get(container.getSelectedRow());
+           clientChoisi = AjoutClient.listeDesClients.get(container.getSelectedRow());
         }
 
-/*
+
     private String[][] listeClient(){
         String[][] liste ;
         if (AjoutClient.listeDesClients==null){
@@ -40,10 +40,10 @@ public class AfficherListeClient extends JFrame implements ListSelectionListener
         }else {
             liste = new String[AjoutClient.listeDesClients.size()][5];
             for (int i = 0; i < AjoutClient.listeDesClients.size(); i++) {
-                liste[i] = new String[],AjoutClient.listeDesClients.get(i).getNom(), AjoutClient.listeDesClients.get(i).getPrenom(), String.valueOf(AjoutClient.listeDesClients.get(i).getAge()), AjoutClient.listeDesClients.get(i).getAdresse(), AjoutClient.listeDesClients.get(i).getNumeroTel()};
+                liste[i] = new String[]{AjoutClient.listeDesClients.get(i).getNom(), AjoutClient.listeDesClients.get(i).getPrenom(), String.valueOf(AjoutClient.listeDesClients.get(i).getAge()), AjoutClient.listeDesClients.get(i).getAdresse(), AjoutClient.listeDesClients.get(i).getNumeroTel()};
             }
         }
         return (liste);
 
-    }*/
+    }
 }

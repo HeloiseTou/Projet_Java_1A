@@ -42,18 +42,19 @@ public class AjoutVehicule extends JFrame implements ActionListener{
 
 
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource()== avion){
+        if (e.getSource() == avion) {
             AjoutAvion avion = new AjoutAvion();
             this.setVisible(false);
             this.dispose();
-        }else if (e.getSource()==moto){
+        } else if (e.getSource() == moto) {
             AjoutMoto moto = new AjoutMoto();
             this.setVisible(false);
             this.dispose();
-        }else if (e.getSource()==voiture){
+        } else if (e.getSource() == voiture) {
             AjoutVoiture voiture = new AjoutVoiture();
             this.setVisible(false);
             this.dispose();
         }
     }
+
 }

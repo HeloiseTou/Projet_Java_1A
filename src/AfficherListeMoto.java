@@ -30,14 +30,14 @@ public class AfficherListeMoto extends JFrame implements ListSelectionListener {
 
 
     public void valueChanged(ListSelectionEvent event) {
-        motoChoisie = Enregistrement.listeEnregistrementMoto.get(container.getSelectedRow());
+        motoChoisie = AjoutMoto.listeDesMotos.get(container.getSelectedRow());
     }
 
 
     private String[][] listeMoto(){
-        String[][] liste = new String[Enregistrement.listeEnregistrementMoto.size()][7];
-        for (int i = 0; i < Enregistrement.listeEnregistrementMoto.size(); i++) {
-            liste[i]= new String[]{String.valueOf(Enregistrement.listeEnregistrementMoto.get(i).getKm()), Enregistrement.listeEnregistrementMoto.get(i).getEtat(), Enregistrement.listeEnregistrementMoto.get(i).getModele(), Enregistrement.listeEnregistrementMoto.get(i).getMarque(), String.valueOf(Enregistrement.listeEnregistrementMoto.get(i).getPrixLocationParJour()),  String.valueOf(Enregistrement.listeEnregistrementMoto.get(i).getPuissance()), String.valueOf(Enregistrement.listeEnregistrementMoto.get(i).getVitesseMax())};
+        String[][] liste = new String[AjoutMoto.listeDesMotos.size()][7];
+        for (int i = 0; i < AjoutMoto.listeDesMotos.size(); i++) {
+            liste[i]= new String[]{String.valueOf(AjoutMoto.listeDesMotos.get(i).getKm()), AjoutMoto.listeDesMotos.get(i).getEtat(), AjoutMoto.listeDesMotos.get(i).getModele(), AjoutMoto.listeDesMotos.get(i).getMarque(), String.valueOf(AjoutMoto.listeDesMotos.get(i).getPrixLocationParJour()),  String.valueOf(AjoutMoto.listeDesMotos.get(i).getPuissance()), String.valueOf(AjoutMoto.listeDesMotos.get(i).getVitesseMax())};
         }
         return (liste);
     }

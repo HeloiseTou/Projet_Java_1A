@@ -30,15 +30,17 @@ public class AfficherListeVoiture extends JFrame implements ListSelectionListene
 
 
     public void valueChanged(ListSelectionEvent event) {
-        voitureChoisie = Enregistrement.listeEnregistrementVoiture.get(container.getSelectedRow());
+        voitureChoisie = AjoutVoiture.listeDesVoitures.get(container.getSelectedRow());
     }
 
 
     private String[][] listeVoiture(){
-        String[][] liste = new String[Enregistrement.listeEnregistrementVoiture.size()][8];
-        for (int i = 0; i < Enregistrement.listeEnregistrementVoiture.size(); i++) {
-            liste[i]= new String[]{String.valueOf(Enregistrement.listeEnregistrementVoiture.get(i).getKm()), Enregistrement.listeEnregistrementVoiture.get(i).getEtat(), Enregistrement.listeEnregistrementVoiture.get(i).getModele(), Enregistrement.listeEnregistrementVoiture.get(i).getMarque(), String.valueOf(Enregistrement.listeEnregistrementVoiture.get(i).getPrixLocationParJour()),  String.valueOf(Enregistrement.listeEnregistrementVoiture.get(i).getPuissance()), String.valueOf(Enregistrement.listeEnregistrementVoiture.get(i).getVitesseMax()), String.valueOf(Enregistrement.listeEnregistrementVoiture.get(i).getNbPlace())};
+        String[][] liste = new String[AjoutVoiture.listeDesVoitures.size()][8];
+        for (int i = 0; i < AjoutVoiture.listeDesVoitures.size(); i++) {
+            liste[i]= new String[]{String.valueOf(AjoutVoiture.listeDesVoitures.get(i).getKm()), AjoutVoiture.listeDesVoitures.get(i).getEtat(), AjoutVoiture.listeDesVoitures.get(i).getModele(), AjoutVoiture.listeDesVoitures.get(i).getMarque(), String.valueOf(AjoutVoiture.listeDesVoitures.get(i).getPrixLocationParJour()),  String.valueOf(AjoutVoiture.listeDesVoitures.get(i).getPuissance()), String.valueOf(AjoutVoiture.listeDesVoitures.get(i).getVitesseMax()), String.valueOf(AjoutVoiture.listeDesVoitures.get(i).getNbPlace())};
         }
         return (liste);
     }
+
+
 }

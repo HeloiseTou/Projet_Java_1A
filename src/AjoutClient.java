@@ -1,8 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 
-public class AjoutClient extends JFrame implements ActionListener{
+public class AjoutClient extends JFrame implements ActionListener {
 
     //Déclaration des variable lors de l'ajout d'un client
     private JLabel nomClient;
@@ -17,7 +18,7 @@ public class AjoutClient extends JFrame implements ActionListener{
     private JTextField entreeNumTel;
     private JButton annuler;
     private JButton confirmer;
-    public static Enregistrement listeDesClients = new Enregistrement();
+    public static ArrayList<Client> listeDesClients = new ArrayList<>();
 
     AjoutClient() {
         nomClient = new JLabel("Nom du client");
@@ -35,8 +36,8 @@ public class AjoutClient extends JFrame implements ActionListener{
         setTitle("Ajout client");
         setLayout(new GridLayout(7, 2));
         setSize(700, 250);
-        Dimension localisationFenetre= Toolkit.getDefaultToolkit().getScreenSize();
-        setLocation((int)localisationFenetre.getWidth()/2 - this.getWidth()/2, (int)localisationFenetre.getHeight()/2 - this.getHeight()/2);
+        Dimension localisationFenetre = Toolkit.getDefaultToolkit().getScreenSize();
+        setLocation((int) localisationFenetre.getWidth() / 2 - this.getWidth() / 2, (int) localisationFenetre.getHeight() / 2 - this.getHeight() / 2);
         setResizable(false);
         getContentPane().add(nomClient);
         getContentPane().add(entreeNom);
@@ -60,19 +61,24 @@ public class AjoutClient extends JFrame implements ActionListener{
 
 
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource()== annuler){
+        if (e.getSource() == annuler) {
             this.setVisible(false);
             this.dispose();
-        }else if (e.getSource()==confirmer){
-            if(entreeNom.getText().equals("")||entreePrenom.getText().equals("") || entreeAdresse.getText().equals("") || entreeAge.getText().equals("") || entreeNumTel.getText().equals("") ){
+        } else if (e.getSource() == confirmer) {
+            if (entreeNom.getText().equals("") || entreePrenom.getText().equals("") || entreeAdresse.getText().equals("") || entreeAge.getText().equals("") || entreeNumTel.getText().equals("")) {
                 JOptionPane.showMessageDialog(rootPane, "Merci de remplir toutes les cases");
-            }else {
-
-                listeDesClients.enregistrerClient(entreeNom.getText(), entreePrenom.getText(), Integer.valueOf(entreeAge.getText()), entreeAdresse.getText(), entreeNumTel.getText());
+            } else {
+                enregistrerClient(entreeNom.getText(), entreePrenom.getText(), Integer.valueOf(entreeAge.getText()), entreeAdresse.getText(), entreeNumTel.getText());
                 JOptionPane.showMessageDialog(rootPane, "Client enregistré !");
                 this.setVisible(false);
                 this.dispose();
             }
         }
+    }
+
+
+    public void enregistrerClient(String nom, String prenom, int age, String adresse, String numeroTel) {
+        Client nouveauClient = new Client(nom, prenom, age, adresse, numeroTel);
+        this.listeDesClients.add(nouveauClient);
     }
 }
