@@ -1,6 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class AfficherFenetreLocation extends JFrame implements ActionListener {
@@ -14,6 +17,8 @@ public class AfficherFenetreLocation extends JFrame implements ActionListener {
     private JTextField entreeKm;
     private JButton annuler;
     private JButton confirmer;
+    public static ArrayList<Location> listeDesLocations = new ArrayList<>();
+    private SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 
     AfficherFenetreLocation() {
         dateDebut = new JLabel("Date de début de la location");
@@ -26,7 +31,7 @@ public class AfficherFenetreLocation extends JFrame implements ActionListener {
         entreeKm = new JTextField("");
         annuler = new JButton("Annuler");
         confirmer = new JButton("Confirmer");
-        setTitle("Ajout avion");
+        setTitle("Ajout d'une location");
         setLayout(new GridLayout(8, 2));
         setSize(800, 400);
         Dimension localisationFenetre= Toolkit.getDefaultToolkit().getScreenSize();
@@ -52,12 +57,26 @@ public class AfficherFenetreLocation extends JFrame implements ActionListener {
             this.setVisible(false);
             this.dispose();
         }else if (e.getSource()==confirmer){
-            Enregistrement nouveau = new Enregistrement();
             boolean reduction = true;
-           // nouveau.enregisterLocation(entreeDateDebut.getText(), entreeDateFin.getText(),  Integer.valueOf(entreeKm.getText()),  Integer.valueOf(entreePrix.getText()), reduction, AfficherListeVehicule.vehiculeChoisi, AfficherListeClient.clientChoisi){
+            try {
+                Date dateDeb = formatter.parse(entreeDateDebut.getText());
+                Date dateFi = formatter.parse(entreeDateFin.getText());
+                enregistrerLocation(dateDeb, dateFi,  Integer.valueOf(entreeKm.getText()),  Integer.valueOf(entreePrix.getText()), reduction, AfficherListeVehicule.vehiculeChoisi, AfficherListeClient.clientChoisi);
+            } catch (ParseException eve) {
+                eve.printStackTrace();
+            }
             JOptionPane.showMessageDialog(rootPane, "Location enregistrée !");
             this.setVisible(false);
             this.dispose();
         }
+    }
+
+
+    public void enregistrerLocation(Date dateDebut, Date dateFin, int prixPrevi, int nbKmPrevisionnel, boolean reduction, Vehicule vehicule, Client client){
+        Location loc = new Location(dateDebut, dateFin, prixPrevi, nbKmPrevisionnel);
+        loc.setReduction(reduction);
+        loc.setVehicule(vehicule);
+        loc.setClient(client);
+        this.listeDesLocations.add(loc);
     }
 }

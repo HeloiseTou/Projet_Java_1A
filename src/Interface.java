@@ -52,11 +52,11 @@ public class Interface extends JFrame implements ActionListener{
     private void setPanel(){
         panneau.setLayout(new FlowLayout(FlowLayout.CENTER, 50, 40));
         panneau.add(boutonNouveauClient);
-        panneau.add(boutonNouveauVehicule);
-        panneau.add(boutonNouvelleLocation);
         panneau.add(boutonListeClient);
-        panneau.add(boutonRestitutionVehicule);
+        panneau.add(boutonNouveauVehicule);
         panneau.add(boutonListeVehicule);
+        panneau.add(boutonNouvelleLocation);
+        panneau.add(boutonRestitutionVehicule);
     }
 
     private void setActions(){

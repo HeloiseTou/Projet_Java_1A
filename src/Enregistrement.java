@@ -22,7 +22,7 @@ public class Enregistrement {
 
 
 
-    public void enregisterLocation(Date dateDebut, Date dateFin, int prixPrevi, int nbKmPrevisionnel, boolean reduction, Vehicule vehicule, Client client){
+    public void enregisterLocation(Date dateDebut, Date dateFin, int nbKmPrevisionnel, boolean reduction, Vehicule vehicule, Client client){
         Location loc = new Location(dateDebut, dateFin, nbKmPrevisionnel);
         loc.setReduction(reduction);
         loc.setVehicule(vehicule);
@@ -42,8 +42,6 @@ public class Enregistrement {
             }
         }
     }
-
-    //getteurs et setteurs
 
 
     public String toStringMoto() {

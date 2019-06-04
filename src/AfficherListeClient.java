@@ -27,7 +27,7 @@ public class AfficherListeClient extends JFrame implements ListSelectionListener
     }
 
 
-
+//
         public void valueChanged(ListSelectionEvent event) {
            clientChoisi = AjoutClient.listeDesClients.get(container.getSelectedRow());
         }
