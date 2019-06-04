@@ -22,12 +22,6 @@ public class Enregistrement {
 
 
 
-    public void enregisterLocation(Date dateDebut, Date dateFin, int prixPrevi, int nbKmPrevisionnel, boolean reduction, Vehicule vehicule, Client client){
-        Location loc = new Location(dateDebut, dateFin, prixPrevi, nbKmPrevisionnel);
-        loc.setReduction(reduction);
-        loc.setVehicule(vehicule);
-        loc.setClient(client);
-    }
 
 
 
