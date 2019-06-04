@@ -67,7 +67,9 @@ abstract class Vehicule {
   }
 
 
-  // toString
+  /**
+   * affiche ce Véhicule
+   */
   public String imprime(){
     return  "marque='" + marque + '\'' +
             ", modele='" + modele + '\'' +

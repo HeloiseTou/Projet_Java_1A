@@ -26,8 +26,9 @@ public class Voiture extends VehiculeTerrestre {
     return nbPlace;
   }
 
-  // toString
-//
+    /**
+     * affiche cette Voiture
+     */
     public String toString() {
         return "Voiture{" +//
                 this.imprime() +
