@@ -77,6 +77,9 @@ public class Client {
   }
 
   @Override
+  /**
+   * affiche ce client
+   */
   public String toString() {
     return "Client{" +
             "nom='" + nom + '\'' +

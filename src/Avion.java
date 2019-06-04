@@ -7,9 +7,9 @@ public class Avion extends VehiculeAerien{
     public Avion () {
     };
 
-    // toString()
-
-
+    /**
+     * affiche cet Avion
+     */
     public String toString() {
         return "Avion{" +
                 this.imprime() +

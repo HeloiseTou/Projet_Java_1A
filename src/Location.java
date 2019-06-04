@@ -125,6 +125,9 @@ public class Location {
   }
 
   @Override
+  /**
+   * affiche cette location
+   */
   public String toString() {
     return "Location{" +
             "dateDebut=" + dateDebut +
