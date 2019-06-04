@@ -14,7 +14,7 @@ public class AfficherListeClient extends JFrame implements ListSelectionListener
         enTete = new String[]{"Nom", "Prénom", "Age", "Adresse", "Téléphone"};
         clients= listeClient();
         container = new JTable(clients, enTete);
-        setTitle("Liste client");
+        setTitle("Liste clients");
         setSize(700, 250);
         Dimension localisationFenetre= Toolkit.getDefaultToolkit().getScreenSize();
         setLocation((int)localisationFenetre.getWidth()/2 - this.getWidth()/2, (int)localisationFenetre.getHeight()/2 - this.getHeight()/2);
@@ -34,10 +34,11 @@ public class AfficherListeClient extends JFrame implements ListSelectionListener
 
 
     private String[][] listeClient(){
-        String[][] liste = new String[Enregistrement.listeEnregistrementClient.size()][0];
-        if (Enregistrement.listeEnregistrementClient.size() == 0){
-            JOptionPane.showMessageDialog(rootPane, "Merci d'ajouter un client !");
+        String[][] liste ;
+        if (Enregistrement.listeEnregistrementClient==null){
+            liste = new String[0][0];
         }else {
+            liste = new String[Enregistrement.listeEnregistrementClient.size()][5];
             for (int i = 0; i < Enregistrement.listeEnregistrementClient.size(); i++) {
                 liste[i] = new String[]{Enregistrement.listeEnregistrementClient.get(i).getNom(), Enregistrement.listeEnregistrementClient.get(i).getPrenom(), String.valueOf(Enregistrement.listeEnregistrementClient.get(i).getAge()), Enregistrement.listeEnregistrementClient.get(i).getAdresse(), Enregistrement.listeEnregistrementClient.get(i).getNumeroTel()};
             }

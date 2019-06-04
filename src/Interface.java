@@ -8,7 +8,7 @@ public class Interface extends JFrame implements ActionListener{
     private JPanel panneau = new JPanel();
     private JButton boutonNouveauClient;
     private JButton boutonNouveauVehicule;
-    private JButton boutonSuppressionVehicule;
+    private JButton boutonListeClient;
     private JButton boutonNouvelleLocation;
     private JButton boutonRestitutionVehicule;
     private JComboBox listeVehicule;
@@ -37,8 +37,8 @@ public class Interface extends JFrame implements ActionListener{
         boutonNouveauClient.setPreferredSize(new Dimension(200, 40));
         boutonNouveauVehicule= new JButton ("Nouveau Véhicule");
         boutonNouveauVehicule.setPreferredSize(new Dimension(200, 40));
-        boutonSuppressionVehicule = new JButton ("Supprimer Véhicule");
-        boutonSuppressionVehicule.setPreferredSize(new Dimension(200, 40));
+        boutonListeClient = new JButton ("Liste Clients");
+        boutonListeClient.setPreferredSize(new Dimension(200, 40));
         boutonNouvelleLocation = new JButton ("Nouvelle Location");
         boutonNouvelleLocation.setPreferredSize(new Dimension(200, 40));
         boutonRestitutionVehicule = new JButton ("Resitution Véhicule");
@@ -58,7 +58,7 @@ public class Interface extends JFrame implements ActionListener{
         panneau.add(boutonNouveauClient);
         panneau.add(boutonNouveauVehicule);
         panneau.add(boutonNouvelleLocation);
-        panneau.add(boutonSuppressionVehicule);
+        panneau.add(boutonListeClient);
         panneau.add(boutonRestitutionVehicule);
         panneau.add(listeVehicule);
     }
@@ -68,7 +68,7 @@ public class Interface extends JFrame implements ActionListener{
         boutonNouveauVehicule.addActionListener(this);
         boutonNouvelleLocation.addActionListener(this);
         boutonRestitutionVehicule.addActionListener(this);
-        boutonSuppressionVehicule.addActionListener(this);
+        boutonListeClient.addActionListener(this);
     }
 
 
@@ -88,8 +88,8 @@ public class Interface extends JFrame implements ActionListener{
             AjoutVehicule vehicule = new AjoutVehicule();
         }else if (e.getSource() == boutonNouvelleLocation){
             AjoutLocation location = new AjoutLocation();
-        }else if (e.getSource() == boutonSuppressionVehicule){
-            suppressionVehicule();
+        }else if (e.getSource() == boutonListeClient){
+            AfficherListeClient liste = new AfficherListeClient();
         }else if (e.getSource() == boutonRestitutionVehicule){
             restitutionVehicule();
         }
