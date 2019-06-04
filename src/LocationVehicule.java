@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class AfficherListeVehicule extends JFrame implements ActionListener{
+public class LocationVehicule extends JFrame implements ActionListener{
 
     //Déclaration des variable lors de l'ajout d'un véhicule
     private JPanel panneau = new JPanel();
@@ -10,8 +10,9 @@ public class AfficherListeVehicule extends JFrame implements ActionListener{
     private JButton avion;
     private JButton moto;
     private JButton voiture;
+    public static Vehicule vehiculeChoisi;
 
-    AfficherListeVehicule() {
+    LocationVehicule() {
         message = new JLabel("Quel est le type de véhicule que vous voulez louer ?");
         avion = new JButton("Avion");
         avion.setPreferredSize(new Dimension(150, 40));
@@ -34,24 +35,24 @@ public class AfficherListeVehicule extends JFrame implements ActionListener{
         avion.addActionListener(this);
         moto.addActionListener(this);
         voiture.addActionListener(this);
-
-
-        //Pour rendre la fenêtre visible et la fermer à la fin
         setVisible(true);
     }
 
 
     public void actionPerformed(ActionEvent e) {
         if (e.getSource()== avion){
-            AfficherListeAvion avion = new AfficherListeAvion();
+            LocationAvion avion = new LocationAvion();
+            vehiculeChoisi = LocationAvion.avionChoisi;
             this.setVisible(false);
             this.dispose();
         }else if (e.getSource()==moto){
-            AfficherListeMoto moto = new AfficherListeMoto();
+            LocationMoto moto = new LocationMoto();
+            vehiculeChoisi = LocationMoto.motoChoisie;
             this.setVisible(false);
             this.dispose();
         }else if (e.getSource()==voiture){
-            AfficherListeVoiture voit = new AfficherListeVoiture();
+            LocationVoiture voit = new LocationVoiture();
+            vehiculeChoisi = LocationVoiture.voitureChoisie;
             this.setVisible(false);
             this.dispose();
         }

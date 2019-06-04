@@ -20,7 +20,7 @@ public class AfficherFenetreLocation extends JFrame implements ActionListener {
     public static ArrayList<Location> listeDesLocations = new ArrayList<>();
     private SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 
-    AfficherFenetreLocation() {
+    AfficherFenetreLocation(Client client, Vehicule vehicule) {
         dateDebut = new JLabel("Date de début de la location");
         dateFin = new JLabel("Date de fin de la location");
         prixPrevi = new JLabel("Prix prévisionnel");
@@ -61,7 +61,7 @@ public class AfficherFenetreLocation extends JFrame implements ActionListener {
             try {
                 Date dateDeb = formatter.parse(entreeDateDebut.getText());
                 Date dateFi = formatter.parse(entreeDateFin.getText());
-                enregistrerLocation(dateDeb, dateFi,  Integer.valueOf(entreeKm.getText()),  Integer.valueOf(entreePrix.getText()), reduction, AfficherListeVehicule.vehiculeChoisi, AfficherListeClient.clientChoisi);
+                enregistrerLocation(dateDeb, dateFi, Integer.valueOf(entreeKm.getText()),  Integer.valueOf(entreePrix.getText()), reduction, LocationVehicule.vehiculeChoisi, AjoutLocation.clientChoisi);
             } catch (ParseException eve) {
                 eve.printStackTrace();
             }

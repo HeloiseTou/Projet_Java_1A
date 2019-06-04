@@ -40,7 +40,7 @@ public class Interface extends JFrame implements ActionListener{
         boutonListeClient.setPreferredSize(new Dimension(200, 40));
         boutonNouvelleLocation = new JButton ("Nouvelle Location");
         boutonNouvelleLocation.setPreferredSize(new Dimension(200, 40));
-        boutonRestitutionVehicule = new JButton ("Resitution Véhicule");
+        boutonRestitutionVehicule = new JButton ("Restitution Véhicule");
         boutonRestitutionVehicule.setPreferredSize(new Dimension(200, 40));
         boutonListeVehicule = new JButton ("Liste des véhicules");
         boutonListeVehicule.setPreferredSize(new Dimension(200, 40));

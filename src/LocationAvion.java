@@ -1,15 +1,17 @@
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.lang.String;
 
-public class AfficherListeAvion extends JFrame  {
+public class LocationAvion extends JFrame implements ListSelectionListener {
 
     private String[] enTete;
     private String[][] avions;
     private JTable container;
     public static Avion avionChoisi;
 
-    AfficherListeAvion() {
+    LocationAvion() {
         enTete = new String[]{"Nombre d'heures de vol", "État", "Modèle", "Marque", "Prix de la location par jour", "Nombre de moteurs", "Vitesse maximale"};
         avions= listeAvion();
         container = new JTable(avions, enTete);
@@ -21,10 +23,20 @@ public class AfficherListeAvion extends JFrame  {
         setLayout(new BorderLayout());
         add(container.getTableHeader(), BorderLayout.PAGE_START);
         add(container, BorderLayout.CENTER);
+        container.getSelectionModel().addListSelectionListener(this);
         setVisible(true);
     }
 
 
+
+    public void valueChanged(ListSelectionEvent event) {
+        avionChoisi = AjoutAvion.listeDesAvions.get(container.getSelectedRow());
+        Client client = AjoutLocation.clientChoisi;
+        Vehicule vehicule = LocationVehicule.vehiculeChoisi;
+        AfficherFenetreLocation location = new AfficherFenetreLocation(client, vehicule);
+        this.setVisible(false);
+        this.dispose();
+    }
 
 
     private String[][] listeAvion(){
