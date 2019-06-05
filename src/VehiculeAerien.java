@@ -14,7 +14,10 @@ abstract class VehiculeAerien extends Vehicule {
 
     // Getteurs et setteurs
 
-
+    /**
+     * renvoie  le nombre d'heures de vol
+     * @return  nbHeureVol le nombre d'heures de vol
+     */
     public int getNbHeureVol() {
         return nbHeureVol;
     }
@@ -22,7 +25,10 @@ abstract class VehiculeAerien extends Vehicule {
     public void setNbHeureVol(int nbHeureVol) {
         this.nbHeureVol = nbHeureVol;
     }
-
+    /**
+     * renvoie  le nombre de moteurs
+     * @return  nbMoteur le nombre de moteurs
+     */
     public int getNbMoteur() {
         return nbMoteur;
     }

@@ -10,11 +10,17 @@ abstract class VehiculeTerrestre extends Vehicule {
     protected void setPuissance(int puissance) {
         this.puissance = puissance;
     }
-
+    /**
+     * renvoie  la puissance de la voiture ou de la moto
+     * @return  puissance la puissance de la voiture ou de la moto
+     */
     public int getPuissance () {
         return this.puissance;
     }
-
+    /**
+     * renvoie  le nombre de km de la voiture ou de la moto
+     * @return  km le nombre de km de la voiture ou de la moto
+     */
     public int getKm () {
         return this.km;
     }

@@ -24,7 +24,10 @@ abstract class Vehicule {
 
 
  // Getteurs et setteurs et setteurs
-
+  /**
+   * renvoie  la marque de ce véhicule
+   * @return  marque la marque de ce véhicule
+   */
   public String getMarque() {
     return marque;
   }
@@ -32,7 +35,10 @@ abstract class Vehicule {
   public void setMarque(String marque) {
     this.marque = marque;
   }
-
+  /**
+   * renvoie  le modèle de ce véhicule
+   * @return  modele : la modèle de ce véhicule
+   */
   public String getModele() {
     return modele;
   }
@@ -40,7 +46,10 @@ abstract class Vehicule {
   public void setModele(String modele) {
     this.modele = modele;
   }
-
+  /**
+   * renvoie  le prix de location par jour de ce véhicule
+   * @return  prixLocationParJour : le prix de location par jour de ce véhicule
+   */
   public int getPrixLocationParJour() {
     return prixLocationParJour;
   }
@@ -48,7 +57,10 @@ abstract class Vehicule {
   public void setPrixLocationParJour(int prixLocationParJour) {
     this.prixLocationParJour = prixLocationParJour;
   }
-
+  /**
+   * renvoie  la vitesse maximale de ce véhicule
+   * @return  vitesseMax la vitesse maximale de ce véhicule
+   */
   public int getVitesseMax() {
     return vitesseMax;
   }
@@ -56,7 +68,10 @@ abstract class Vehicule {
   public void setVitesseMax(int vitesseMax) {
     this.vitesseMax = vitesseMax;
   }
-
+  /**
+   * renvoie  l'état de ce véhicule (s'il est disponible ou non)
+   * @return  etat l'état de ce véhicule
+   */
   public boolean getEtat() {
     return etat;
   }

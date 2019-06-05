@@ -36,6 +36,10 @@ public class Client {
     this.location = location;
   }
 */
+/**
+     * renvoie  le numéro de téléphone de ce Cient
+     * @return  numerTel le numéro de téléphone de ce Cient
+     */
   public String getNumeroTel() {
     return numeroTel;
   }
@@ -43,7 +47,10 @@ public class Client {
   public void setNumeroTel(String numeroTel) {
     this.numeroTel = numeroTel;
   }
-
+/**
+     * renvoie  l'adresse de ce client
+     * @return  adresse l'adresse de ce client
+     */
   public String getAdresse() {
     return adresse;
   }
@@ -51,7 +58,10 @@ public class Client {
   public void setAdresse(String adresse) {
     this.adresse = adresse;
   }
-
+/**
+     * renvoie  l'âge de ce client
+     * @return  age l'âge de ce client
+     */
   public int getAge() {
     return age;
   }
@@ -59,7 +69,10 @@ public class Client {
   public void setAge(int age) {
     this.age = age;
   }
-
+/**
+     * renvoie  le prénom de ce client
+     * @return  prenom le prénom de ce client
+     */
   public String getPrenom() {
     return prenom;
   }
@@ -67,7 +80,10 @@ public class Client {
   public void setPrenom(String prenom) {
     this.prenom = prenom;
   }
-
+/**
+     * renvoie  le nom de ce client
+     * @return  nom  le nom de ce client
+     */
   public String getNom() {
     return nom;
   }
