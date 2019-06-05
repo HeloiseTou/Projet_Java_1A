@@ -8,8 +8,7 @@ abstract class Vehicule {
   protected String modele;
   protected int prixLocationParJour;
   protected int vitesseMax;
-  protected String etat;
-//  private boolean loue = false; // disponibilité du véhicule
+  protected boolean etat;
   
 
   // Constructeurs
@@ -58,11 +57,11 @@ abstract class Vehicule {
     this.vitesseMax = vitesseMax;
   }
 
-  public String getEtat() {
+  public boolean getEtat() {
     return etat;
   }
 
-  public void setEtat(String etat) {
+  public void setEtat(boolean etat) {
     this.etat = etat;
   }
 

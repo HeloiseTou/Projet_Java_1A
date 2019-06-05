@@ -7,7 +7,6 @@ public class AfficherListeVoiture extends JFrame {
     private String[] enTete;
     private String[][] voitures;
     private JTable container;
-    public static Voiture voitureChoisie;
 
     AfficherListeVoiture() {
         enTete = new String[]{"Nombre de km", "État", "Modèle", "Marque", "Prix de la location par jour", "Puissance", "Vitesse maximale", "Nombre de places"};
@@ -29,9 +28,15 @@ public class AfficherListeVoiture extends JFrame {
 
 
     private String[][] listeVoiture(){
-        String[][] liste = new String[AjoutVoiture.listeDesVoitures.size()][8];
-        for (int i = 0; i < AjoutVoiture.listeDesVoitures.size(); i++) {
-            liste[i]= new String[]{String.valueOf(AjoutVoiture.listeDesVoitures.get(i).getKm()), AjoutVoiture.listeDesVoitures.get(i).getEtat(), AjoutVoiture.listeDesVoitures.get(i).getModele(), AjoutVoiture.listeDesVoitures.get(i).getMarque(), String.valueOf(AjoutVoiture.listeDesVoitures.get(i).getPrixLocationParJour()),  String.valueOf(AjoutVoiture.listeDesVoitures.get(i).getPuissance()), String.valueOf(AjoutVoiture.listeDesVoitures.get(i).getVitesseMax()), String.valueOf(AjoutVoiture.listeDesVoitures.get(i).getNbPlace())};
+        String[][] liste = new String[Stockage.listeDesVoitures.size()][8];
+        String et;
+        for (int i = 0; i < Stockage.listeDesVoitures.size(); i++) {
+            if (Stockage.listeDesVoitures.get(i).getEtat()){
+                et = "Loué";
+            }else{
+                et = "Libre";
+            }
+            liste[i]= new String[]{String.valueOf(Stockage.listeDesVoitures.get(i).getKm()), et, Stockage.listeDesVoitures.get(i).getModele(), Stockage.listeDesVoitures.get(i).getMarque(), String.valueOf(Stockage.listeDesVoitures.get(i).getPrixLocationParJour()),  String.valueOf(Stockage.listeDesVoitures.get(i).getPuissance()), String.valueOf(Stockage.listeDesVoitures.get(i).getVitesseMax()), String.valueOf(Stockage.listeDesVoitures.get(i).getNbPlace())};
         }
         return (liste);
     }

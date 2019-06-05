@@ -30,7 +30,8 @@ public class LocationVoiture extends JFrame implements ListSelectionListener {
 
 
     public void valueChanged(ListSelectionEvent event) {
-        voitureChoisie = AjoutVoiture.listeDesVoitures.get(container.getSelectedRow());
+        Stockage.listeDesVoitures.get(container.getSelectedRow()).setEtat(true);
+        voitureChoisie = Stockage.listeDesVoitures.get(container.getSelectedRow());
         Client client = AjoutLocation.clientChoisi;
         AfficherFenetreLocation location = new AfficherFenetreLocation(client, voitureChoisie);
         this.setVisible(false);
@@ -39,9 +40,15 @@ public class LocationVoiture extends JFrame implements ListSelectionListener {
 
 
     private String[][] listeVoiture(){
-        String[][] liste = new String[AjoutVoiture.listeDesVoitures.size()][8];
-        for (int i = 0; i < AjoutVoiture.listeDesVoitures.size(); i++) {
-            liste[i]= new String[]{String.valueOf(AjoutVoiture.listeDesVoitures.get(i).getKm()), AjoutVoiture.listeDesVoitures.get(i).getEtat(), AjoutVoiture.listeDesVoitures.get(i).getModele(), AjoutVoiture.listeDesVoitures.get(i).getMarque(), String.valueOf(AjoutVoiture.listeDesVoitures.get(i).getPrixLocationParJour()),  String.valueOf(AjoutVoiture.listeDesVoitures.get(i).getPuissance()), String.valueOf(AjoutVoiture.listeDesVoitures.get(i).getVitesseMax()), String.valueOf(AjoutVoiture.listeDesVoitures.get(i).getNbPlace())};
+        String[][] liste = new String[Stockage.listeDesVoitures.size()][8];
+        String et;
+        for (int i = 0; i < Stockage.listeDesVoitures.size(); i++) {
+            if (Stockage.listeDesVoitures.get(i).getEtat()){
+                et = "Loué";
+            }else {
+                et = "Libre";
+            }
+            liste[i]= new String[]{String.valueOf(Stockage.listeDesVoitures.get(i).getKm()), et, Stockage.listeDesVoitures.get(i).getModele(), Stockage.listeDesVoitures.get(i).getMarque(), String.valueOf(Stockage.listeDesVoitures.get(i).getPrixLocationParJour()),  String.valueOf(Stockage.listeDesVoitures.get(i).getPuissance()), String.valueOf(Stockage.listeDesVoitures.get(i).getVitesseMax()), String.valueOf(Stockage.listeDesVoitures.get(i).getNbPlace())};
         }
         return (liste);
     }

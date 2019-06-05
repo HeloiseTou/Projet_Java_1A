@@ -10,7 +10,6 @@ public class LocationVehicule extends JFrame implements ActionListener{
     private JButton avion;
     private JButton moto;
     private JButton voiture;
-    public static Vehicule vehiculeChoisi;
 
     LocationVehicule() {
         message = new JLabel("Quel est le type de véhicule que vous voulez louer ?");

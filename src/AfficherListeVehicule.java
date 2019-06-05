@@ -12,14 +12,14 @@ public class AfficherListeVehicule extends JFrame implements ActionListener{
     private JButton voiture;
 
     AfficherListeVehicule() {
-        message = new JLabel("Quel est le type de véhicule que vous voulez louer ?");
+        message = new JLabel("Quel est le type de véhicule que vous voulez afficher ?");
         avion = new JButton("Avion");
         avion.setPreferredSize(new Dimension(150, 40));
         moto = new JButton("Moto");
         moto.setPreferredSize(new Dimension(150, 40));
         voiture = new JButton("Voiture");
         voiture.setPreferredSize(new Dimension(150, 40));
-        setTitle("Location véhicule");
+        setTitle("Affichage de la liste des véhicules");
         setLayout(new GridLayout(2, 1));
         setSize(600, 200);
         Dimension localisationFenetre= Toolkit.getDefaultToolkit().getScreenSize();
@@ -34,9 +34,6 @@ public class AfficherListeVehicule extends JFrame implements ActionListener{
         avion.addActionListener(this);
         moto.addActionListener(this);
         voiture.addActionListener(this);
-
-
-        //Pour rendre la fenêtre visible et la fermer à la fin
         setVisible(true);
     }
 

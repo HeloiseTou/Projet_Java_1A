@@ -1,20 +1,17 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.ArrayList;
 
 public class AjoutAvion extends JFrame implements ActionListener{
 
     //Déclaration des variable lors de l'ajout d'un avion
     private JLabel nbHeureVol;
-    private JLabel etat;
     private JLabel modele;
     private JLabel marque;
     private JLabel prixLocParJour;
     private JLabel nbMoteur;
     private JLabel vitesseMax;
     private JTextField entreeNbHeureVol;
-    private JTextField entreeEtat;
     private JTextField entreeModele;
     private JTextField entreeMarque;
     private JTextField entreePrix;
@@ -22,18 +19,15 @@ public class AjoutAvion extends JFrame implements ActionListener{
     private JTextField entreeVitesse;
     private JButton annuler;
     private JButton confirmer;
-    public static ArrayList<Avion> listeDesAvions = new ArrayList<>();
 
     AjoutAvion() {
         nbHeureVol = new JLabel("Nombre d'heures de vol");
-        etat = new JLabel("État de l'avion");
         modele = new JLabel("Modèle de l'avion");
         marque = new JLabel("Marque de l'avion");
         prixLocParJour = new JLabel("Prix de la location par jour");
         nbMoteur = new JLabel("Nombre de moteurs");
         vitesseMax = new JLabel("Vistesse maximale");
         entreeNbHeureVol = new JTextField("");
-        entreeEtat = new JTextField("");
         entreeModele = new JTextField("");
         entreeMarque = new JTextField("");
         entreePrix = new JTextField("");
@@ -49,8 +43,6 @@ public class AjoutAvion extends JFrame implements ActionListener{
         setResizable(false);
         getContentPane().add(nbHeureVol);
         getContentPane().add(entreeNbHeureVol);
-        getContentPane().add(etat);
-        getContentPane().add(entreeEtat);
         getContentPane().add(modele);
         getContentPane().add(entreeModele);
         getContentPane().add(marque);
@@ -77,10 +69,10 @@ public class AjoutAvion extends JFrame implements ActionListener{
             this.setVisible(false);
             this.dispose();
         }else if (e.getSource()==confirmer){
-            if(entreeNbHeureVol.getText().equals("")||entreeMarque.getText().equals("") || entreeNbMoteur.getText().equals("") || entreePrix.getText().equals("") || entreeEtat.getText().equals("") || entreeModele.getText().equals("") || entreeVitesse.getText().equals("")){
+            if(entreeNbHeureVol.getText().equals("")||entreeMarque.getText().equals("") || entreeNbMoteur.getText().equals("") || entreePrix.getText().equals("") || entreeModele.getText().equals("") || entreeVitesse.getText().equals("")){
                 JOptionPane.showMessageDialog(rootPane, "Merci de remplir toutes les cases");
             }else {
-                enregistrerAvion(Integer.valueOf(entreeNbHeureVol.getText()), entreeEtat.getText(), entreeModele.getText(), entreeMarque.getText(), Integer.valueOf(entreePrix.getText()), Integer.valueOf(entreeNbMoteur.getText()), Integer.valueOf(entreeVitesse.getText()));
+                enregistrerAvion(Integer.valueOf(entreeNbHeureVol.getText()), false, entreeModele.getText(), entreeMarque.getText(), Integer.valueOf(entreePrix.getText()), Integer.valueOf(entreeNbMoteur.getText()), Integer.valueOf(entreeVitesse.getText()));
                 JOptionPane.showMessageDialog(rootPane, "Avion enregistré !");
                 this.setVisible(false);
                 this.dispose();
@@ -89,16 +81,16 @@ public class AjoutAvion extends JFrame implements ActionListener{
     }
 
 
-    public void enregistrerAvion(int nbHeureVol,String etat, String modele,String marque,int prixLocationParJour, int nbMoteur,int vitesseMax) {////////// est ce qu'on doit mettre aussi dans l'enregistrement du noveau client la location???
+    public void enregistrerAvion(int nbHeureVol,boolean etat, String modele,String marque,int prixLocationParJour, int nbMoteur,int vitesseMax) {////////// est ce qu'on doit mettre aussi dans l'enregistrement du noveau client la location???
         Avion av = new Avion();
         setVehicule(marque, modele, prixLocationParJour, vitesseMax, etat, av);
         av.setNbHeureVol(nbHeureVol);
         av.setNbMoteur(nbMoteur);
-        this.listeDesAvions.add(av);
+        Stockage.listeDesAvions.add(av);
     }
 
 
-    public void setVehicule(String marque, String modele, int prixLocationParJour, int vitesseMax, String etat, Vehicule vehicule) {
+    public void setVehicule(String marque, String modele, int prixLocationParJour, int vitesseMax, boolean etat, Vehicule vehicule) {
         vehicule.setMarque(marque);
         vehicule.setModele(modele);
         vehicule.setEtat(etat);

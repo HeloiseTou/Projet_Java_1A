@@ -30,7 +30,8 @@ public class LocationMoto extends JFrame implements ListSelectionListener {
 
 
     public void valueChanged(ListSelectionEvent event) {
-        motoChoisie = AjoutMoto.listeDesMotos.get(container.getSelectedRow());
+        Stockage.listeDesMotos.get(container.getSelectedRow()).setEtat(true);
+        motoChoisie = Stockage.listeDesMotos.get(container.getSelectedRow());
         Client client = AjoutLocation.clientChoisi;
         AfficherFenetreLocation location = new AfficherFenetreLocation(client, motoChoisie);
         this.setVisible(false);
@@ -40,9 +41,15 @@ public class LocationMoto extends JFrame implements ListSelectionListener {
 
 
     private String[][] listeMoto(){
-        String[][] liste = new String[AjoutMoto.listeDesMotos.size()][7];
-        for (int i = 0; i < AjoutMoto.listeDesMotos.size(); i++) {
-            liste[i]= new String[]{String.valueOf(AjoutMoto.listeDesMotos.get(i).getKm()), AjoutMoto.listeDesMotos.get(i).getEtat(), AjoutMoto.listeDesMotos.get(i).getModele(), AjoutMoto.listeDesMotos.get(i).getMarque(), String.valueOf(AjoutMoto.listeDesMotos.get(i).getPrixLocationParJour()),  String.valueOf(AjoutMoto.listeDesMotos.get(i).getPuissance()), String.valueOf(AjoutMoto.listeDesMotos.get(i).getVitesseMax())};
+        String[][] liste = new String[Stockage.listeDesMotos.size()][7];
+        String et;
+        for (int i = 0; i < Stockage.listeDesMotos.size(); i++) {
+            if (Stockage.listeDesMotos.get(i).getEtat()){
+                et = "Loué";
+            }else {
+                et = "Libre";
+            }
+            liste[i]= new String[]{String.valueOf(Stockage.listeDesMotos.get(i).getKm()), et, Stockage.listeDesMotos.get(i).getModele(), Stockage.listeDesMotos.get(i).getMarque(), String.valueOf(Stockage.listeDesMotos.get(i).getPrixLocationParJour()),  String.valueOf(Stockage.listeDesMotos.get(i).getPuissance()), String.valueOf(Stockage.listeDesMotos.get(i).getVitesseMax())};
         }
         return (liste);
     }

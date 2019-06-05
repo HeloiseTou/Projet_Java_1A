@@ -16,7 +16,6 @@ public class AfficherFenetreLocation extends JFrame implements ActionListener {
     private JButton annuler;
     private JButton confirmer;
     private int prixPrevi;
-    public static ArrayList<Location> listeDesLocations = new ArrayList<>();
     private SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
     private Vehicule vehiculeChoisi ;
 
@@ -54,14 +53,18 @@ public class AfficherFenetreLocation extends JFrame implements ActionListener {
             this.setVisible(false);
             this.dispose();
         }else if (e.getSource()==confirmer){
-            boolean reduction = false;
-            try {
-                Date dateDeb = formatter.parse(entreeDateDebut.getText());
-                Date dateFi = formatter.parse(entreeDateFin.getText());
-                enregistrerLocation(dateDeb, dateFi, Integer.valueOf(entreeKm.getText()), reduction, vehiculeChoisi, AjoutLocation.clientChoisi);
-            } catch (ParseException eve) {
-                eve.printStackTrace();
-            }
+            //if(entreeKm.getText().equals("")||entreeMarque.getText().equals("") || entreePuissance.getText().equals("") || entreePrix.getText().equals("") ||  entreeModele.getText().equals("") || entreeVitesse.getText().equals("")){
+              //  JOptionPane.showMessageDialog(rootPane, "Merci de remplir toutes les cases");
+            //}else {
+                boolean reduction = false;
+                try {
+                    Date dateDeb = formatter.parse(entreeDateDebut.getText());
+                    Date dateFi = formatter.parse(entreeDateFin.getText());
+                    enregistrerLocation(dateDeb, dateFi, Integer.valueOf(entreeKm.getText()), reduction, vehiculeChoisi, AjoutLocation.clientChoisi);
+                } catch (ParseException eve) {
+                    eve.printStackTrace();
+                }
+            //}
             JOptionPane.showMessageDialog(rootPane, "Prix prévisionnel = "+prixPrevi+" euros");
             JOptionPane.showMessageDialog(rootPane, "Location enregistrée !");
             this.setVisible(false);
@@ -73,6 +76,6 @@ public class AfficherFenetreLocation extends JFrame implements ActionListener {
     public void enregistrerLocation(Date dateDebut, Date dateFin, int nbKmPrevisionnel, boolean reduction, Vehicule vehicule, Client client){
         Location loc = new Location(dateDebut, dateFin, nbKmPrevisionnel, reduction, vehicule, client);
         prixPrevi = loc.prixPrevisionnel();
-        this.listeDesLocations.add(loc);
+        Stockage.listeDesLocations.add(loc);
     }
 }

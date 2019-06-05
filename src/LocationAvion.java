@@ -30,7 +30,8 @@ public class LocationAvion extends JFrame implements ListSelectionListener {
 
 
     public void valueChanged(ListSelectionEvent event) {
-        avionChoisi = AjoutAvion.listeDesAvions.get(container.getSelectedRow());
+        Stockage.listeDesAvions.get(container.getSelectedRow()).setEtat(true);
+        avionChoisi = Stockage.listeDesAvions.get(container.getSelectedRow());
         Client client = AjoutLocation.clientChoisi;
         AfficherFenetreLocation location = new AfficherFenetreLocation(client, avionChoisi);
         this.setVisible(false);
@@ -39,9 +40,15 @@ public class LocationAvion extends JFrame implements ListSelectionListener {
 
 
     private String[][] listeAvion(){
-        String[][] liste = new String[AjoutAvion.listeDesAvions.size()][7];
-        for (int i = 0; i < AjoutAvion.listeDesAvions.size(); i++) {
-            liste[i]= new String[]{String.valueOf(AjoutAvion.listeDesAvions.get(i).getNbHeureVol()), AjoutAvion.listeDesAvions.get(i).getEtat(), AjoutAvion.listeDesAvions.get(i).getModele(), AjoutAvion.listeDesAvions.get(i).getMarque(), String.valueOf(AjoutAvion.listeDesAvions.get(i).getPrixLocationParJour()),  String.valueOf(AjoutAvion.listeDesAvions.get(i).getNbMoteur()), String.valueOf(AjoutAvion.listeDesAvions.get(i).getVitesseMax())};
+        String[][] liste = new String[Stockage.listeDesAvions.size()][7];
+        String et;
+        for (int i = 0; i < Stockage.listeDesAvions.size(); i++) {
+            if (Stockage.listeDesAvions.get(i).getEtat()){
+                et = "Loué";
+            }else {
+                et = "Libre";
+            }
+            liste[i]= new String[]{String.valueOf(Stockage.listeDesAvions.get(i).getNbHeureVol()), et, Stockage.listeDesAvions.get(i).getModele(), Stockage.listeDesAvions.get(i).getMarque(), String.valueOf(Stockage.listeDesAvions.get(i).getPrixLocationParJour()),  String.valueOf(Stockage.listeDesAvions.get(i).getNbMoteur()), String.valueOf(Stockage.listeDesAvions.get(i).getVitesseMax())};
         }
         return (liste);
     }
