@@ -27,12 +27,12 @@ public class AfficherListeLocation extends JFrame {
 
     private String[][] listeLocation() {
         String[][] liste;
-        if (Stockage.listeDesLocations == null) {
+        if (SerializeStockage.listeDesLocations == null) {
             liste = new String[0][0];
         } else {
-            liste = new String[Stockage.listeDesLocations.size()][5];
-            for (int i = 0; i < Stockage.listeDesLocations.size(); i++) {
-                liste[i] = new String[]{Stockage.listeDesClients.get(i).getNom(), Stockage.listeDesClients.get(i).getPrenom(), String.valueOf(Stockage.listeDesClients.get(i).getAge()), Stockage.listeDesClients.get(i).getAdresse(), Stockage.listeDesClients.get(i).getNumeroTel()};
+            liste = new String[SerializeStockage.listeDesLocations.size()][5];
+            for (int i = 0; i < SerializeStockage.listeDesLocations.size(); i++) {
+                liste[i] = new String[]{SerializeStockage.listeDesClients.get(i).getNom(), SerializeStockage.listeDesClients.get(i).getPrenom(), String.valueOf(SerializeStockage.listeDesClients.get(i).getAge()), SerializeStockage.listeDesClients.get(i).getAdresse(), SerializeStockage.listeDesClients.get(i).getNumeroTel()};
             }
         }
         return (liste);

@@ -86,7 +86,7 @@ public class AjoutAvion extends JFrame implements ActionListener{
         setVehicule(marque, modele, prixLocationParJour, vitesseMax, etat, av);
         av.setNbHeureVol(nbHeureVol);
         av.setNbMoteur(nbMoteur);
-        Stockage.listeDesAvions.add(av);
+        SerializeStockage.listeDesAvions.add(av);
     }
 
 

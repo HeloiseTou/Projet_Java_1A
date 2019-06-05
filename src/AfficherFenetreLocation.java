@@ -3,7 +3,6 @@ import java.awt.*;
 import java.awt.event.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 
 public class AfficherFenetreLocation extends JFrame implements ActionListener {
@@ -76,6 +75,6 @@ public class AfficherFenetreLocation extends JFrame implements ActionListener {
     public void enregistrerLocation(Date dateDebut, Date dateFin, int nbKmPrevisionnel, boolean reduction, Vehicule vehicule, Client client){
         Location loc = new Location(dateDebut, dateFin, nbKmPrevisionnel, reduction, vehicule, client);
         prixPrevi = loc.prixPrevisionnel();
-        Stockage.listeDesLocations.add(loc);
+        SerializeStockage.listeDesLocations.add(loc);
     }
 }

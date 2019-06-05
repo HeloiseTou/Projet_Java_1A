@@ -92,7 +92,7 @@ public class AjoutVoiture extends JFrame implements ActionListener{
         voitu.setKm(km);
         voitu.setNbPlace(nbPlace);
         voitu.setPuissance(puissance);
-        Stockage.listeDesVoitures.add(voitu);
+        SerializeStockage.listeDesVoitures.add(voitu);
     }
 
     public void setVehicule(String marque, String modele, int prixLocationParJour, int vitesseMax, boolean etat, Vehicule vehicule) {

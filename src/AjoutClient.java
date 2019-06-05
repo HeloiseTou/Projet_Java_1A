@@ -1,7 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.ArrayList;
 
 public class AjoutClient extends JFrame implements ActionListener {
 
@@ -75,6 +74,6 @@ public class AjoutClient extends JFrame implements ActionListener {
 
     public void enregistrerClient(String nom, String prenom, int age, String adresse, String numeroTel) {
         Client nouveauClient = new Client(nom, prenom, age, adresse, numeroTel);
-        Stockage.listeDesClients.add(nouveauClient);
+        SerializeStockage.listeDesClients.add(nouveauClient);
     }
 }

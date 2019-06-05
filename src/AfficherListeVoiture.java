@@ -28,15 +28,15 @@ public class AfficherListeVoiture extends JFrame {
 
 
     private String[][] listeVoiture(){
-        String[][] liste = new String[Stockage.listeDesVoitures.size()][8];
+        String[][] liste = new String[SerializeStockage.listeDesVoitures.size()][8];
         String et;
-        for (int i = 0; i < Stockage.listeDesVoitures.size(); i++) {
-            if (Stockage.listeDesVoitures.get(i).getEtat()){
+        for (int i = 0; i < SerializeStockage.listeDesVoitures.size(); i++) {
+            if (SerializeStockage.listeDesVoitures.get(i).getEtat()){
                 et = "Loué";
             }else{
                 et = "Libre";
             }
-            liste[i]= new String[]{String.valueOf(Stockage.listeDesVoitures.get(i).getKm()), et, Stockage.listeDesVoitures.get(i).getModele(), Stockage.listeDesVoitures.get(i).getMarque(), String.valueOf(Stockage.listeDesVoitures.get(i).getPrixLocationParJour()),  String.valueOf(Stockage.listeDesVoitures.get(i).getPuissance()), String.valueOf(Stockage.listeDesVoitures.get(i).getVitesseMax()), String.valueOf(Stockage.listeDesVoitures.get(i).getNbPlace())};
+            liste[i]= new String[]{String.valueOf(SerializeStockage.listeDesVoitures.get(i).getKm()), et, SerializeStockage.listeDesVoitures.get(i).getModele(), SerializeStockage.listeDesVoitures.get(i).getMarque(), String.valueOf(SerializeStockage.listeDesVoitures.get(i).getPrixLocationParJour()),  String.valueOf(SerializeStockage.listeDesVoitures.get(i).getPuissance()), String.valueOf(SerializeStockage.listeDesVoitures.get(i).getVitesseMax()), String.valueOf(SerializeStockage.listeDesVoitures.get(i).getNbPlace())};
         }
         return (liste);
     }
