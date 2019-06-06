@@ -11,6 +11,7 @@ public class SerializeStockage{
     public static ArrayList<Voiture> listeDesVoitures = new ArrayList<>();
     public static ArrayList<Avion> listeDesAvions = new ArrayList<>();
     public static ArrayList<Location> listeDesLocations = new ArrayList<>();
+    public static int numeroVehicule;
 
     public static void main(String[] args) {
        Stockage me = new Stockage(); // 2

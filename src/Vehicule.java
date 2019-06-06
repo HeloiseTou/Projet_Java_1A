@@ -9,6 +9,7 @@ abstract class Vehicule {
   protected int prixLocationParJour;
   protected int vitesseMax;
   protected boolean etat;
+  protected int id;
 
   // Constructeurs
 
@@ -100,6 +101,22 @@ abstract class Vehicule {
     public void setEtat(boolean etat){
         this.etat = etat;
     }
+
+  /**
+   * renvoie  l'dentifiant de ce véhicule
+   * @return  id l'identifiant de ce véhicule
+   */
+  public int getId() {
+    return id;
+  }
+
+  /**
+   * Donne la id à l'attribut id de ce Véhicule
+   * @param  id : l'identifiant de ce véhicule
+   */
+  public void setId(int id) {
+    this.id = id;
+  }
 
   /**
    * affiche ce Véhicule

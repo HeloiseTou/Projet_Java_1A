@@ -52,9 +52,9 @@ public class AfficherFenetreLocation extends JFrame implements ActionListener {
             this.setVisible(false);
             this.dispose();
         }else if (e.getSource()==confirmer){
-            //if(entreeKm.getText().equals("")||entreeMarque.getText().equals("") || entreePuissance.getText().equals("") || entreePrix.getText().equals("") ||  entreeModele.getText().equals("") || entreeVitesse.getText().equals("")){
-              //  JOptionPane.showMessageDialog(rootPane, "Merci de remplir toutes les cases");
-            //}else {
+            if(entreeDateDebut.getText().equals("")||entreeDateFin.getText().equals("") ||  entreeKm.getText().equals("") ){
+                JOptionPane.showMessageDialog(rootPane, "Merci de remplir toutes les cases");
+            }else {
                 boolean reduction = false;
                 try {
                     Date dateDeb = formatter.parse(entreeDateDebut.getText());
@@ -63,7 +63,7 @@ public class AfficherFenetreLocation extends JFrame implements ActionListener {
                 } catch (ParseException eve) {
                     eve.printStackTrace();
                 }
-            //}
+            }
             JOptionPane.showMessageDialog(rootPane, "Prix prévisionnel = "+prixPrevi+" euros");
             JOptionPane.showMessageDialog(rootPane, "Location enregistrée !");
             this.setVisible(false);
