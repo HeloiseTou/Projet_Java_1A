@@ -25,6 +25,10 @@ abstract class VehiculeTerrestre extends Vehicule {
         return this.km;
     }
 
+    /**
+     * Donne à l'attribut km la nouvelle valeur km.
+     * @param km : les km
+     */
     protected void setKm(int km) {
         this.km = km;
     }

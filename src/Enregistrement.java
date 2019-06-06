@@ -31,9 +31,9 @@ public class Enregistrement {
     /**
      * Supprime une moto de la liste qui enregistre les motos
      */
-    public void supprimerMoto(String marq,String mod,int prixLocParJour,int veMax,String e){
+    public void supprimerMoto(String marq,String mod,int prixLocParJour,int veMax, boolean e){
         for (int i = 0; i < this.listeEnregistrementMoto.size(); i++){
-            if(marq.equals(this.listeEnregistrementMoto.get(i).getMarque()) && mod.equals(this.listeEnregistrementMoto.get(i).getModele()) && (prixLocParJour==this.listeEnregistrementMoto.get(i).getPrixLocationParJour()) && (veMax==this.listeEnregistrementMoto.get(i).getVitesseMax())){
+            if(marq.equals(this.listeEnregistrementMoto.get(i).getMarque()) && mod.equals(this.listeEnregistrementMoto.get(i).getModele()) && (prixLocParJour==this.listeEnregistrementMoto.get(i).getPrixLocationParJour()) && (veMax==this.listeEnregistrementMoto.get(i).getVitesseMax()) && (e==this.listeEnregistrementMoto.get(i).getEtat())){
                this.listeEnregistrementMoto.remove(this.listeEnregistrementMoto.get(i));
             }
         }

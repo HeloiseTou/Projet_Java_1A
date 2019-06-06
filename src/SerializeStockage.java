@@ -37,3 +37,106 @@ public class SerializeStockage{
         }
     }
 }
+
+/*
+public final class XMLTools {
+
+
+    private XMLTools() {}
+
+     * Serialisation d'un objet dans un fichier
+     * @param object objet a serialiser
+     * @param filename chemin du fichier
+
+public static void encodeToFile(Object object, String fileName) throws FileNotFoundException, IOException {
+    // ouverture de l'encodeur vers le fichier
+    XMLEncoder encoder = new XMLEncoder(new FileOutputStream(fileName));
+    try {
+        // serialisation de l'objet
+        encoder.writeObject(object);
+        encoder.flush();
+    } finally {
+        // fermeture de l'encodeur
+        encoder.close();
+    }
+}
+}
+public class User {
+
+    private String login;
+    private String password;
+
+    public User() {
+	    this("anonymous", "");
+    }
+
+    public User(String login, String password) {
+        this.login = login;
+        this.password = password;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String toString() {
+        return login;
+    }
+
+    public static void main(String[] args) {
+        try {
+            User user = new User("admin", "azerty");
+            XMLTools.encodeToFile(user, "user.xml");
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+Désérialisation :
+
+ * Deserialisation d'un objet depuis un fichier
+ * @param filename chemin du fichier
+ *
+ */
+/*
+public static Object decodeFromFile(String fileName) throws FileNotFoundException, IOException {
+    Object object = null;
+    // ouverture de decodeur
+    XMLDecoder decoder = new XMLDecoder(new FileInputStream(fileName));
+    try {
+        // deserialisation de l'objet
+        object = decoder.readObject();
+    } finally {
+        // fermeture du decodeur
+        decoder.close();
+    }
+    return object;
+}
+
+public static void main(String[] args) {
+    try {
+        User user = new User("admin", "azerty");
+        XMLTools.encodeToFile(user, "user.xml");
+        System.out.println(user);
+        user = new User("newAdmin", "123456");
+        System.out.println(user);
+        user = (User) XMLTools.decodeFromFile("user.xml");
+        System.out.println(user);
+    } catch(Exception e) {
+        e.printStackTrace();
+    }
+}
+*/
