@@ -95,6 +95,12 @@ abstract class Vehicule {
             ", vitesseMax=" + vitesseMax +
             ", ";
   }
+    /**
+     * méthode abstraite qui permet d'afficher un Véhicule.
+     * @see Avion
+     * @see Voiture
+     * @see Moto
+     */
   public abstract String toString();
 
 }
