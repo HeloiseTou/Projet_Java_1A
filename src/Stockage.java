@@ -25,10 +25,10 @@ public class Stockage {
             }
             ArrayList <Voiture> liste2 = (ArrayList<Voiture>) XMLTools.decodeFromFile("voitures.xml");
             Vehicule voit = liste2.get(0);
-           // Date debut = (Date)"12/02/2020";
-            //Location av = new Location("12/02/2020","20/02/2020",200,false,voit,nouveau);
-            //Stockage.listeDesLocations.add(av);
-           // XMLTools.encodeToFile(listeDesLocations, "Locations.xml");
+           Date debut = new Date();
+           Location av = new Location(debut,debut,200,false,voit,nouveau);
+            Stockage.listeDesLocations.add(av);
+            XMLTools.encodeToFile(listeDesLocations, "locations.xml");
         } catch (Exception e) {
             e.printStackTrace();
         }
