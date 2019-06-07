@@ -45,25 +45,9 @@ public class AfficherFenetreRestitution extends JFrame implements ActionListener
 
     public void actionPerformed(ActionEvent e) {
         if (e.getSource()== annuler){
-            if (typeVehicule.equals("avion")) {
-                for (int i=0; i<Stockage.listeDesAvions.size(); i++){
-                    if (Stockage.listeDesAvions.get(i).getId()==vehiculeChoisi.getId()){
-                        Stockage.listeDesAvions.get(i).setEtat(true);
-                    }
-                }
-            }
-            if (typeVehicule.equals("moto")) {
-                for (int i=0; i<Stockage.listeDesMotos.size(); i++){
-                    if (Stockage.listeDesMotos.get(i).getId()==vehiculeChoisi.getId()){
-                        Stockage.listeDesMotos.get(i).setEtat(true);
-                    }
-                }
-            }
-            if (typeVehicule.equals("voiture")) {
-                for (int i=0; i<Stockage.listeDesVoitures.size(); i++){
-                    if (Stockage.listeDesVoitures.get(i).getId()==vehiculeChoisi.getId()){
-                        Stockage.listeDesVoitures.get(i).setEtat(true);
-                    }
+            for (int i=0; i<Stockage.listeDesLocations.size(); i++){
+                if (Stockage.listeDesLocations.get(i).getVehicule().getId()==vehiculeChoisi.getId()){
+                    Stockage.listeDesLocations.get(i).getVehicule().setEtat(true);
                 }
             }
             this.setVisible(false);
