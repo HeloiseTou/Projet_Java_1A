@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.IOException;
 
 public class AjoutAvion extends JFrame implements ActionListener{
 
@@ -85,6 +86,11 @@ public class AjoutAvion extends JFrame implements ActionListener{
         av.setNbHeureVol(nbHeureVol);
         av.setNbMoteur(nbMoteur);
         Stockage.listeDesAvions.add(av);
+        try {
+            XMLTools.encodeToFile(Stockage.listeDesAvions, "avions.xml"); // sérialisation de la liste des clients
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 

@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -99,5 +100,10 @@ public class AfficherFenetreLocation extends JFrame implements ActionListener {
         Location loc = new Location(dateDebut, dateFin, nbKmPrevisionnel, reduction, vehicule, client);
         prixPrevi = loc.prixPrevisionnel();
         Stockage.listeDesLocations.add(loc);
+        try {
+            XMLTools.encodeToFile(Stockage.listeDesLocations, "location.xml"); // sérialisation de la liste des locations
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

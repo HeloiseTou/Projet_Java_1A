@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.IOException;
 
 public class AjoutMoto extends JFrame implements ActionListener{
 
@@ -85,6 +86,11 @@ public class AjoutMoto extends JFrame implements ActionListener{
         moto.setKm(km);
         moto.setPuissance(puissance);
         Stockage.listeDesMotos.add(moto);
+        try {
+            XMLTools.encodeToFile(Stockage.listeDesMotos, "motos.xml"); // sérialisation de la liste des motos
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void setVehicule(int id, String marque, String modele, int prixLocationParJour, int vitesseMax, boolean etat, Vehicule vehicule) {

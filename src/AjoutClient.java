@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.IOException;
 
 public class AjoutClient extends JFrame implements ActionListener {
 
@@ -75,5 +76,10 @@ public class AjoutClient extends JFrame implements ActionListener {
     public void enregistrerClient(String nom, String prenom, int age, String adresse, String numeroTel) {
         Client nouveauClient = new Client(nom, prenom, age, adresse, numeroTel);
         Stockage.listeDesClients.add(nouveauClient);
+        try {
+            XMLTools.encodeToFile(Stockage.listeDesClients, "clients.xml"); // sérialisation de la liste des clients
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -1,9 +1,10 @@
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Stockage {
 
-    private static final String FILE_NAME = "stockage.xml";
+    private static final String FILE_NAME = "clients.xml";
     public static ArrayList<Client> listeDesClients = new ArrayList<>();
     public static ArrayList<Moto> listeDesMotos = new ArrayList<>();
     public static ArrayList<Voiture> listeDesVoitures = new ArrayList<>();
@@ -15,15 +16,19 @@ public class Stockage {
 
     public static void main(String[] args) {
         try {
-            Stockage user = new Stockage();
-            Client nouveau = new Client("Joe","Dalton",18,"3 rue des pommiers","003784993");
-            Client nouveau2 = new Client("Gui","Toup",21,"67 reu Marcadet","Touuuup");
+            Client nouveau = new Client("Obama","Barack",57,"Maison blanche","téléphone rouge");
             Stockage.listeDesClients.add(nouveau);
-            Stockage.listeDesClients.add(nouveau2);
-            XMLTools.encodeToFile(listeDesClients, "stockage.xml");
-            System.out.println(listeDesClients.toString());
-            ArrayList <Client> liste2 = (ArrayList<Client>) XMLTools.decodeFromFile("stockage.xml");
-            System.out.println(liste2.toString());
+            try {
+                XMLTools.encodeToFile(Stockage.listeDesClients, "clients.xml"); // sérialisation de la liste des clients
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            ArrayList <Voiture> liste2 = (ArrayList<Voiture>) XMLTools.decodeFromFile("voitures.xml");
+            Vehicule voit = liste2.get(0);
+           // Date debut = (Date)"12/02/2020";
+            //Location av = new Location("12/02/2020","20/02/2020",200,false,voit,nouveau);
+            //Stockage.listeDesLocations.add(av);
+           // XMLTools.encodeToFile(listeDesLocations, "Locations.xml");
         } catch (Exception e) {
             e.printStackTrace();
         }
