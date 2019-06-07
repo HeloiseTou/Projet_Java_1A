@@ -30,17 +30,20 @@ public class SuppressionAvion extends JFrame implements ListSelectionListener {
 
 
     public void valueChanged(ListSelectionEvent event) {
-        for (int i=0; i<Stockage.listeDesAvions.size(); i++){
-            if (Stockage.listeDesAvions.get(i).getId()==Stockage.listeDesAvions.get(container.getSelectedRow()).getId()){
-                Stockage.listeDesAvions.remove(Stockage.listeDesAvions.get(i));
-                try {
-                    XMLTools.encodeToFile(Stockage.listeDesAvions, "avions.xml"); // sérialisation de la liste des clients
-                } catch (IOException e) {
-                    e.printStackTrace();
+        Confirmation fenetre = new Confirmation();
+        if (Confirmation.choix == 0) {
+            for (int i = 0; i < Stockage.listeDesAvions.size(); i++) {
+                if (Stockage.listeDesAvions.get(i).getId() == Stockage.listeDesAvions.get(container.getSelectedRow()).getId()) {
+                    Stockage.listeDesAvions.remove(Stockage.listeDesAvions.get(i));
+                    try {
+                        XMLTools.encodeToFile(Stockage.listeDesAvions, "avions.xml"); // sérialisation de la liste des clients
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
-         }
-        JOptionPane.showMessageDialog(rootPane, "Avion supprimé !");
+            JOptionPane.showMessageDialog(rootPane, "Avion supprimé !");
+        }
         this.setVisible(false);
         this.dispose();
     }

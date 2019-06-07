@@ -109,6 +109,7 @@ public class AfficherFenetreLocation extends JFrame implements ActionListener {
         Location loc = new Location(dateDebut, dateFin, nbKmPrevisionnel, reduction, vehicule, client);
         prixPrevi = loc.prixPrevisionnel();
         if (loc.accordReduction()) {
+            System.out.println("bouh");
             AccordReduction reduc = new AccordReduction();
             if (AccordReduction.reduc == 0) {
                 loc.setReduction(true);

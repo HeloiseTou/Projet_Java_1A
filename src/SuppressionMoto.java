@@ -30,17 +30,20 @@ public class SuppressionMoto extends JFrame implements ListSelectionListener {
 
 
     public void valueChanged(ListSelectionEvent event) {
-        for (int i=0; i<Stockage.listeDesMotos.size(); i++){
-            if (Stockage.listeDesMotos.get(i).getId()==Stockage.listeDesMotos.get(container.getSelectedRow()).getId()){
-                Stockage.listeDesMotos.remove(Stockage.listeDesMotos.get(i));
-                try {
-                    XMLTools.encodeToFile(Stockage.listeDesMotos, "motos.xml"); // sérialisation de la liste des motos
-                } catch (IOException e) {
-                    e.printStackTrace();
+        Confirmation fenetre = new Confirmation();
+        if (Confirmation.choix == 0) {
+            for (int i = 0; i < Stockage.listeDesMotos.size(); i++) {
+                if (Stockage.listeDesMotos.get(i).getId() == Stockage.listeDesMotos.get(container.getSelectedRow()).getId()) {
+                    Stockage.listeDesMotos.remove(Stockage.listeDesMotos.get(i));
+                    try {
+                        XMLTools.encodeToFile(Stockage.listeDesMotos, "motos.xml"); // sérialisation de la liste des motos
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
+            JOptionPane.showMessageDialog(rootPane, "Moto supprimée !");
         }
-        JOptionPane.showMessageDialog(rootPane, "Moto supprimée !");
         this.setVisible(false);
         this.dispose();
 

@@ -26,6 +26,10 @@ public class AfficherListeMoto extends JFrame  {
 
 
 
+    /**
+     * Renvoie la liste des motos
+     * @return la liste des motos
+     */
     private String[][] listeMoto(){
         String[][] liste = new String[Stockage.listeDesMotos.size()][7];
         String et;

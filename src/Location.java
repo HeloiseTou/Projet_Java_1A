@@ -81,9 +81,9 @@ public class Location {
     Date duree = new Date();
     duree.setTime(dateFin.getTime()-dateDebut.getTime());
     if(duree.getTime()<604800000){ //604800000 = une semaine en millisecondes
-      return true;
+      return false;
     }
-    return false;
+    return true;
   }
 
     //Méthodes d'accès

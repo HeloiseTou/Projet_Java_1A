@@ -27,6 +27,10 @@ public class AfficherListeVoiture extends JFrame {
 
 
 
+    /**
+     * Renvoie la liste des voitures
+     * @return la liste des voitures
+     */
     private String[][] listeVoiture(){
         String[][] liste = new String[Stockage.listeDesVoitures.size()][8];
         String et;

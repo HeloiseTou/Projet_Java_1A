@@ -28,6 +28,12 @@ public class AfficherListeLocation extends JFrame {
     }
 
 
+
+    /**
+     * Renvoie la liste des locations
+     * @return la liste des locations
+     */
+
     private String[][] listeLocation() {
         String[][] liste;
         if (Stockage.listeDesLocations == null) {

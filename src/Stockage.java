@@ -15,7 +15,7 @@ public class Stockage {
 
 
     public Stockage(){}
-
+/*
     public static void main(String[] args) {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         try {
@@ -36,5 +36,5 @@ public class Stockage {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
+    }*/
 }

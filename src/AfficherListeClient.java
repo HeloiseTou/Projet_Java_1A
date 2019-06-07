@@ -25,6 +25,12 @@ public class AfficherListeClient extends JFrame {
     }
 
 
+
+    /**
+     * Renvoie la liste des clients
+     * @return la liste des clients
+     */
+
     private String[][] listeClient() {
         String[][] liste;
         if (Stockage.listeDesClients == null) {

@@ -80,6 +80,17 @@ public class AjoutAvion extends JFrame implements ActionListener{
     }
 
 
+    /**
+     * Enregistre la location dans la liste des locations
+     * @param  id : l'identifiant du véhicule
+     * @param nbHeureVol : le nombre d'heures de vol du véhicule
+     * @param etat : l'état du véhicule (s'il est libre ou loué)
+     * @param modele : le modèle du véhicule     *
+     * @param  marque :la marque du véhicule
+     * @param prixLocationParJour : le prix de la location du véhicule par jour
+     * @param vitesseMax : la vitesse maximale du véhicule
+     */
+
     public void enregistrerAvion(int id, int nbHeureVol,boolean etat, String modele,String marque,int prixLocationParJour, int nbMoteur,int vitesseMax) {////////// est ce qu'on doit mettre aussi dans l'enregistrement du noveau client la location???
         Avion av = new Avion();
         setVehicule(id, marque, modele, prixLocationParJour, vitesseMax, etat, av);
@@ -93,6 +104,17 @@ public class AjoutAvion extends JFrame implements ActionListener{
         }
     }
 
+
+    /**
+     * Met à jour les paramètres du nouveau véhicule
+     * @param  id : l'identifiant du véhicule
+     * @param  marque :la marque du véhicule
+     * @param modele : le modèle du véhicule
+     * @param prixLocationParJour : le prix de la location du véhicule par jour
+     * @param vitesseMax : la vitesse maximale du véhicule
+     * @param etat : l'état du véhicule (s'il est libre ou loué)
+     * @param vehicule : le véhicule loué
+     */
 
     public void setVehicule(int id, String marque, String modele, int prixLocationParJour, int vitesseMax, boolean etat, Vehicule vehicule) {
         vehicule.setMarque(marque);

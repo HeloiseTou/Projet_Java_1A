@@ -24,7 +24,10 @@ public class AfficherListeAvion extends JFrame  {
     }
 
 
-
+    /**
+     * Renvoie la liste des avions
+     * @return la liste des avions
+     */
 
     private String[][] listeAvion(){
         String[][] liste = new String[Stockage.listeDesAvions.size()][7];
