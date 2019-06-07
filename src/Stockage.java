@@ -15,26 +15,4 @@ public class Stockage {
 
 
     public Stockage(){}
-/*
-    public static void main(String[] args) {
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-        try {
-            Client nouveau = new Client("Obama","Barack",57,"Maison blanche","téléphone rouge");
-            Stockage.listeDesClients.add(nouveau);
-            try {
-                XMLTools.encodeToFile(Stockage.listeDesClients, "clients.xml"); // sérialisation de la liste des clients
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            ArrayList <Voiture> liste2 = (ArrayList<Voiture>) XMLTools.decodeFromFile("voitures.xml");
-            Vehicule voit = liste2.get(0);
-           Date debut = new Date();
-           debut = formatter.parse("21/03/1999");
-           Location av = new Location(debut,debut,200,false,voit,nouveau);
-            Stockage.listeDesLocations.add(av);
-            XMLTools.encodeToFile(listeDesLocations, "locations.xml");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }*/
 }
