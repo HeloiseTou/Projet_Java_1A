@@ -18,3 +18,8 @@ Lors de l'appui sur ce bouton, un élément de la classe AfficherListeVehicule e
 Bouton « Nouvelle location » :
 Lors de l'appui sur ce bouton, un élément de la classe AjoutLocation est créé et une nouvelle fenêtre s'ouvre avec la liste de tous les clients. Lors de l'appui sur l'un de ses clients, la liste des clients se ferme et une fenêtre avec le choix de véhicule à louer (élément de la classe LocationVehicule) est créé. L'utilisateur choisi alors le type de véhicule à louer, et une nouvelle fenêtre s'ouvre avec la liste de tous les vehicules (élément de la classe Location
 
+Partie Sérialisation :
+
+Nous souhaitions sérialiser les objets Client, Location, Voiture, Moto, Avion car on veut conserver les objets que l'on a rentré même lorsqu'on ouvre et qu'on ferme l'interface.
+
+Pour cela, nous créons des fichiers XML. Nous avons créé une classe XMLTools qui contient les méthodes permettant de sérialiser puis de désérialiser un objet.
