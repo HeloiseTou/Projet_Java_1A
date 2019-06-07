@@ -67,7 +67,8 @@ public class Location {
       int prix;
       Date duree = new Date();
       duree.setTime(dateFin.getTime()-dateDebut.getTime());
-      int nbJours = ((int)duree.getTime())/86400; //86400 = nb secondes en 24h...
+      int nbJours = ((int)duree.getTime())/(86400*1000); //86400 = nb secondes en 24h...
+    System.out.println("Nombre de jouuuuurs : " + nbJours);
     prix =
             ((this.vehicule.getPrixLocationParJour()) * nbJours) + (prixKMSupplementaires(nbKmPrevisionnel)/100);
       return prix;
