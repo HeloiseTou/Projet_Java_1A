@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="11.0.2" class="java.beans.XMLDecoder">
+<java version="11.0.3" class="java.beans.XMLDecoder">
  <object class="java.util.ArrayList">
   <void method="add">
    <object class="Voiture">
@@ -7,16 +7,16 @@
      <int>1</int>
     </void>
     <void property="marque">
-     <string>Renault</string>
+     <string>46</string>
     </void>
     <void property="modele">
-     <string>Twingo</string>
+     <string>46</string>
     </void>
     <void property="prixLocationParJour">
-     <int>50</int>
+     <int>46</int>
     </void>
     <void property="vitesseMax">
-     <int>160</int>
+     <int>654</int>
     </void>
    </object>
   </void>

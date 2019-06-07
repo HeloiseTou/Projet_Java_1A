@@ -29,14 +29,17 @@ public class SuppressionVoiture extends JFrame implements ListSelectionListener 
 
 
     public void valueChanged(ListSelectionEvent event) {
-        for (int i=0; i<Stockage.listeDesVoitures.size(); i++){
-            if (Stockage.listeDesVoitures.get(i).getId()==Stockage.listeDesVoitures.get(container.getSelectedRow()).getId()){
-                Stockage.listeDesVoitures.remove(Stockage.listeDesVoitures.get(i));
+        Confirmation fenetre = new Confirmation();
+        if (Confirmation.choix == 0) {
+            for (int i = 0; i < Stockage.listeDesVoitures.size(); i++) {
+                if (Stockage.listeDesVoitures.get(i).getId() == Stockage.listeDesVoitures.get(container.getSelectedRow()).getId()) {
+                    Stockage.listeDesVoitures.remove(Stockage.listeDesVoitures.get(i));
+                }
             }
+            JOptionPane.showMessageDialog(rootPane, "Voiture supprimée !");
+            this.setVisible(false);
+            this.dispose();
         }
-        JOptionPane.showMessageDialog(rootPane, "Voiture supprimée !");
-        this.setVisible(false);
-        this.dispose();
     }
 
 
