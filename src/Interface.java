@@ -12,12 +12,14 @@ public class Interface extends JFrame implements ActionListener{
     private JButton boutonNouvelleLocation;
     private JButton boutonRestitutionVehicule;
     private JButton boutonListeVehicule;
+    private JButton boutonListeLocation;
+    private JButton boutonSuppressionVehicule;
 
 
     public Interface(){
         //Création de la fenêtre
         setTitle("Interface Loueur");
-        setSize(700,300);
+        setSize(700,400);
         Dimension localisationFenetre= Toolkit.getDefaultToolkit().getScreenSize();
         setLocation((int)localisationFenetre.getWidth()/2 - this.getWidth()/2, (int)localisationFenetre.getHeight()/2 - this.getHeight()/2);
         setResizable(false);
@@ -31,17 +33,23 @@ public class Interface extends JFrame implements ActionListener{
 
     private void setButtons(){
         boutonNouveauClient= new JButton ("Nouveau Client");
-        boutonNouveauClient.setPreferredSize(new Dimension(200, 40));
+        boutonNouveauClient.setPreferredSize(new Dimension(250, 40));
         boutonNouveauVehicule= new JButton ("Nouveau Véhicule");
-        boutonNouveauVehicule.setPreferredSize(new Dimension(200, 40));
+        boutonNouveauVehicule.setPreferredSize(new Dimension(250, 40));
         boutonListeClient = new JButton ("Liste des clients");
-        boutonListeClient.setPreferredSize(new Dimension(200, 40));
+        boutonListeClient.setPreferredSize(new Dimension(250, 40));
         boutonNouvelleLocation = new JButton ("Nouvelle Location");
-        boutonNouvelleLocation.setPreferredSize(new Dimension(200, 40));
+        boutonNouvelleLocation.setPreferredSize(new Dimension(250, 40));
         boutonRestitutionVehicule = new JButton ("Restitution Véhicule");
-        boutonRestitutionVehicule.setPreferredSize(new Dimension(200, 40));
+        boutonRestitutionVehicule.setPreferredSize(new Dimension(250, 40));
         boutonListeVehicule = new JButton ("Liste des véhicules");
-        boutonListeVehicule.setPreferredSize(new Dimension(200, 40));
+        boutonListeVehicule.setPreferredSize(new Dimension(250, 40));
+        boutonListeLocation = new JButton("Liste des locations");
+        boutonListeLocation.setPreferredSize(new Dimension(250, 40));
+        boutonSuppressionVehicule = new JButton("Supression d'un véhicule");
+        boutonSuppressionVehicule.setPreferredSize(new Dimension(250, 40));
+
+
     }
 
 
@@ -54,7 +62,9 @@ public class Interface extends JFrame implements ActionListener{
         panneau.add(boutonNouveauVehicule);
         panneau.add(boutonListeVehicule);
         panneau.add(boutonNouvelleLocation);
+        panneau.add(boutonListeLocation);
         panneau.add(boutonRestitutionVehicule);
+        panneau.add(boutonSuppressionVehicule);
     }
 
     private void setActions(){
@@ -64,6 +74,8 @@ public class Interface extends JFrame implements ActionListener{
         boutonRestitutionVehicule.addActionListener(this);
         boutonListeClient.addActionListener(this);
         boutonListeVehicule.addActionListener(this);
+        boutonListeLocation.addActionListener(this);
+        boutonSuppressionVehicule.addActionListener(this);
     }
 
 
@@ -72,9 +84,6 @@ public class Interface extends JFrame implements ActionListener{
         JOptionPane.showMessageDialog(rootPane, "Vous voulez supprimer un véhicule");
     }
 
-    private void restitutionVehicule(){
-        JOptionPane.showMessageDialog(rootPane, "Vous voulez restituer un véhicule");
-    }
 
     public void actionPerformed(ActionEvent e){
         if(e.getSource() == boutonNouveauClient){
@@ -86,9 +95,13 @@ public class Interface extends JFrame implements ActionListener{
         }else if (e.getSource() == boutonListeClient){
             AfficherListeClient liste = new AfficherListeClient();
         }else if (e.getSource() == boutonRestitutionVehicule){
-            restitutionVehicule();
+            RestitutionVehicule restitution = new RestitutionVehicule();
         }else if (e.getSource() == boutonListeVehicule){
             AfficherListeVehicule listeVeh = new AfficherListeVehicule();
+        }else if (e.getSource() == boutonSuppressionVehicule){
+            suppressionVehicule();
+        }else if (e.getSource() == boutonListeLocation){
+            AfficherListeLocation loc = new AfficherListeLocation();
         }
     }
 

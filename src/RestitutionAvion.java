@@ -4,18 +4,18 @@ import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.lang.String;
 
-public class LocationAvion extends JFrame implements ListSelectionListener {
+public class RestitutionAvion extends JFrame implements ListSelectionListener {
 
     private String[] enTete;
     private String[][] avions;
     private JTable container;
     public static Avion avionChoisi;
 
-    LocationAvion() {
+    RestitutionAvion() {
         enTete = new String[]{"Nombre d'heures de vol", "État", "Modèle", "Marque", "Prix de la location par jour", "Nombre de moteurs", "Vitesse maximale"};
         avions= listeAvion();
         container = new JTable(avions, enTete);
-        setTitle("Liste avions");
+        setTitle("Restitution d'un avion");
         setSize(1200, 250);
         Dimension localisationFenetre= Toolkit.getDefaultToolkit().getScreenSize();
         setLocation((int)localisationFenetre.getWidth()/2 - this.getWidth()/2, (int)localisationFenetre.getHeight()/2 - this.getHeight()/2);
@@ -30,10 +30,9 @@ public class LocationAvion extends JFrame implements ListSelectionListener {
 
 
     public void valueChanged(ListSelectionEvent event) {
-        Stockage.listeDesAvions.get(container.getSelectedRow()).setEtat(true);
+        Stockage.listeDesAvions.get(container.getSelectedRow()).setEtat(false);
         avionChoisi = Stockage.listeDesAvions.get(container.getSelectedRow());
-        Client client = AjoutLocation.clientChoisi;
-        AfficherFenetreLocation location = new AfficherFenetreLocation(client, avionChoisi, "avion");
+        AfficherFenetreRestitution restitution = new AfficherFenetreRestitution(avionChoisi, "avion");
         this.setVisible(false);
         this.dispose();
     }

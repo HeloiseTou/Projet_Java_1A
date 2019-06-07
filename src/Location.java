@@ -130,9 +130,13 @@ public class Location {
     this.dateDebut = dateDebut;
   }
 
+  public Client getClient () {return client;}
+
   public void setClient (Client client){
     this.client = client;
   }
+
+  public Vehicule getVehicule(){return vehicule;}
 
   public void setVehicule(Vehicule vehicule){
     this.vehicule = vehicule;
