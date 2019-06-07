@@ -88,6 +88,7 @@ public class AjoutAvion extends JFrame implements ActionListener{
      * @param modele : le modèle du véhicule     *
      * @param  marque :la marque du véhicule
      * @param prixLocationParJour : le prix de la location du véhicule par jour
+     * @param nbMoteur : le nombre de moteurs du véhicule
      * @param vitesseMax : la vitesse maximale du véhicule
      */
 
