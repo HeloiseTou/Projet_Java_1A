@@ -20,24 +20,5 @@
     </void>
    </object>
   </void>
-  <void method="add">
-   <object class="Client">
-    <void property="adresse">
-     <string>Lannion</string>
-    </void>
-    <void property="age">
-     <int>20</int>
-    </void>
-    <void property="nom">
-     <string>Héloïse</string>
-    </void>
-    <void property="numeroTel">
-     <string>Secret</string>
-    </void>
-    <void property="prenom">
-     <string>Ostier</string>
-    </void>
-   </object>
-  </void>
  </object>
 </java>

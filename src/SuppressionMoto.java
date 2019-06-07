@@ -2,6 +2,7 @@ import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import java.awt.*;
+import java.io.IOException;
 import java.lang.String;
 
 public class SuppressionMoto extends JFrame implements ListSelectionListener {
@@ -32,6 +33,11 @@ public class SuppressionMoto extends JFrame implements ListSelectionListener {
         for (int i=0; i<Stockage.listeDesMotos.size(); i++){
             if (Stockage.listeDesMotos.get(i).getId()==Stockage.listeDesMotos.get(container.getSelectedRow()).getId()){
                 Stockage.listeDesMotos.remove(Stockage.listeDesMotos.get(i));
+                try {
+                    XMLTools.encodeToFile(Stockage.listeDesMotos, "motos.xml"); // sérialisation de la liste des motos
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
         JOptionPane.showMessageDialog(rootPane, "Moto supprimée !");
