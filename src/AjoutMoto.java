@@ -69,7 +69,8 @@ public class AjoutMoto extends JFrame implements ActionListener{
             if(entreeKm.getText().equals("")||entreeMarque.getText().equals("") || entreePuissance.getText().equals("") || entreePrix.getText().equals("") ||  entreeModele.getText().equals("") || entreeVitesse.getText().equals("")){
                 JOptionPane.showMessageDialog(rootPane, "Merci de remplir toutes les cases");
             }else{
-                enregistrerMoto(Integer.valueOf(entreeKm.getText()), entreeMarque.getText(), Integer.valueOf(entreePuissance.getText()), Integer.valueOf(entreePrix.getText()), false, entreeModele.getText(), Integer.valueOf(entreeVitesse.getText()));
+                Stockage.numeroVehicule ++;
+                enregistrerMoto(Stockage.numeroVehicule, Integer.valueOf(entreeKm.getText()), entreeMarque.getText(), Integer.valueOf(entreePuissance.getText()), Integer.valueOf(entreePrix.getText()), false, entreeModele.getText(), Integer.valueOf(entreeVitesse.getText()));
                 JOptionPane.showMessageDialog(rootPane, "Moto enregistrée !");
                 this.setVisible(false);
                 this.dispose();
@@ -78,19 +79,20 @@ public class AjoutMoto extends JFrame implements ActionListener{
     }
 
 
-    public void enregistrerMoto(int km, String marque, int puissance,int prixLocationParJour, boolean etat,  String modele, int vitesseMax){
+    public void enregistrerMoto(int id, int km, String marque, int puissance,int prixLocationParJour, boolean etat,  String modele, int vitesseMax){
         Moto moto = new Moto();
-        setVehicule(marque, modele, prixLocationParJour, vitesseMax, etat, moto);
+        setVehicule(id, marque, modele, prixLocationParJour, vitesseMax, etat, moto);
         moto.setKm(km);
         moto.setPuissance(puissance);
         Stockage.listeDesMotos.add(moto);
     }
 
-    public void setVehicule(String marque, String modele, int prixLocationParJour, int vitesseMax, boolean etat, Vehicule vehicule) {
+    public void setVehicule(int id, String marque, String modele, int prixLocationParJour, int vitesseMax, boolean etat, Vehicule vehicule) {
         vehicule.setMarque(marque);
         vehicule.setModele(modele);
         vehicule.setEtat(etat);
         vehicule.setPrixLocationParJour(prixLocationParJour);
         vehicule.setVitesseMax(vitesseMax);
+        vehicule.setId(id);
     }
 }

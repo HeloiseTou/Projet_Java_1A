@@ -33,7 +33,7 @@ public class LocationVoiture extends JFrame implements ListSelectionListener {
         Stockage.listeDesVoitures.get(container.getSelectedRow()).setEtat(true);
         voitureChoisie = Stockage.listeDesVoitures.get(container.getSelectedRow());
         Client client = AjoutLocation.clientChoisi;
-        AfficherFenetreLocation location = new AfficherFenetreLocation(client, voitureChoisie);
+        AfficherFenetreLocation location = new AfficherFenetreLocation(client, voitureChoisie, "voiture");
         this.setVisible(false);
         this.dispose();
     }

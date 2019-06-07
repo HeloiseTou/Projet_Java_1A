@@ -17,8 +17,10 @@ public class AfficherFenetreLocation extends JFrame implements ActionListener {
     private int prixPrevi;
     private SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
     private Vehicule vehiculeChoisi ;
+    private String typeVehicule;
 
-    AfficherFenetreLocation(Client client, Vehicule vehicule) {
+    AfficherFenetreLocation(Client client, Vehicule vehicule, String typeVehi) {
+        typeVehicule = typeVehi;
         dateDebut = new JLabel("Date de début de la location");
         dateFin = new JLabel("Date de fin de la location");
         kmPrevi = new JLabel("Nombre de km prévisionnel");
@@ -49,6 +51,27 @@ public class AfficherFenetreLocation extends JFrame implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         if (e.getSource()== annuler){
+            if (typeVehicule.equals("avion")) {
+                for (int i=0; i<Stockage.listeDesAvions.size(); i++){
+                    if (Stockage.listeDesAvions.get(i).getId()==vehiculeChoisi.getId()){
+                        Stockage.listeDesAvions.get(i).setEtat(false);
+                    }
+                }
+            }
+            if (typeVehicule.equals("moto")) {
+                for (int i=0; i<Stockage.listeDesMotos.size(); i++){
+                    if (Stockage.listeDesMotos.get(i).getId()==vehiculeChoisi.getId()){
+                        Stockage.listeDesMotos.get(i).setEtat(false);
+                    }
+                }
+            }
+            if (typeVehicule.equals("voiture")) {
+                for (int i=0; i<Stockage.listeDesVoitures.size(); i++){
+                    if (Stockage.listeDesVoitures.get(i).getId()==vehiculeChoisi.getId()){
+                        Stockage.listeDesVoitures.get(i).setEtat(false);
+                    }
+                }
+            }
             this.setVisible(false);
             this.dispose();
         }else if (e.getSource()==confirmer){

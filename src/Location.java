@@ -4,8 +4,6 @@ public class Location {
 
 
    // Attributs
-
-
   private Date dateDebut;
   private Date dateFin;
   private int nbKmPrevisionnel;
@@ -15,7 +13,6 @@ public class Location {
   
 
    //Constructeurs
-
   public Location(Date dateDebut, Date dateFin, int nbKmPrevisionnel, boolean reduction, Vehicule vehicule, Client client) {
     this.reduction = reduction;
     this.vehicule = vehicule;

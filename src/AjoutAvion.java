@@ -57,9 +57,6 @@ public class AjoutAvion extends JFrame implements ActionListener{
         getContentPane().add(confirmer);
         confirmer.addActionListener(this);
         annuler.addActionListener(this);
-
-
-        //Pour rendre la fenêtre visible et la fermer à la fin
         setVisible(true);
     }
 
@@ -72,7 +69,8 @@ public class AjoutAvion extends JFrame implements ActionListener{
             if(entreeNbHeureVol.getText().equals("")||entreeMarque.getText().equals("") || entreeNbMoteur.getText().equals("") || entreePrix.getText().equals("") || entreeModele.getText().equals("") || entreeVitesse.getText().equals("")){
                 JOptionPane.showMessageDialog(rootPane, "Merci de remplir toutes les cases");
             }else {
-                enregistrerAvion(Integer.valueOf(entreeNbHeureVol.getText()), false, entreeModele.getText(), entreeMarque.getText(), Integer.valueOf(entreePrix.getText()), Integer.valueOf(entreeNbMoteur.getText()), Integer.valueOf(entreeVitesse.getText()));
+                Stockage.numeroVehicule ++;
+                enregistrerAvion(Stockage.numeroVehicule,Integer.valueOf(entreeNbHeureVol.getText()), false, entreeModele.getText(), entreeMarque.getText(), Integer.valueOf(entreePrix.getText()), Integer.valueOf(entreeNbMoteur.getText()), Integer.valueOf(entreeVitesse.getText()));
                 JOptionPane.showMessageDialog(rootPane, "Avion enregistré !");
                 this.setVisible(false);
                 this.dispose();
@@ -81,20 +79,21 @@ public class AjoutAvion extends JFrame implements ActionListener{
     }
 
 
-    public void enregistrerAvion(int nbHeureVol,boolean etat, String modele,String marque,int prixLocationParJour, int nbMoteur,int vitesseMax) {////////// est ce qu'on doit mettre aussi dans l'enregistrement du noveau client la location???
+    public void enregistrerAvion(int id, int nbHeureVol,boolean etat, String modele,String marque,int prixLocationParJour, int nbMoteur,int vitesseMax) {////////// est ce qu'on doit mettre aussi dans l'enregistrement du noveau client la location???
         Avion av = new Avion();
-        setVehicule(marque, modele, prixLocationParJour, vitesseMax, etat, av);
+        setVehicule(id, marque, modele, prixLocationParJour, vitesseMax, etat, av);
         av.setNbHeureVol(nbHeureVol);
         av.setNbMoteur(nbMoteur);
         Stockage.listeDesAvions.add(av);
     }
 
 
-    public void setVehicule(String marque, String modele, int prixLocationParJour, int vitesseMax, boolean etat, Vehicule vehicule) {
+    public void setVehicule(int id, String marque, String modele, int prixLocationParJour, int vitesseMax, boolean etat, Vehicule vehicule) {
         vehicule.setMarque(marque);
         vehicule.setModele(modele);
         vehicule.setEtat(etat);
         vehicule.setPrixLocationParJour(prixLocationParJour);
         vehicule.setVitesseMax(vitesseMax);
+        vehicule.setId(id);
     }
 }

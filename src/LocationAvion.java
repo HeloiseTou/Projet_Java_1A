@@ -34,7 +34,7 @@ public class LocationAvion extends JFrame implements ListSelectionListener {
         Stockage.numeroVehicule = container.getSelectedRow();
         avionChoisi = Stockage.listeDesAvions.get(container.getSelectedRow());
         Client client = AjoutLocation.clientChoisi;
-        AfficherFenetreLocation location = new AfficherFenetreLocation(client, avionChoisi);
+        AfficherFenetreLocation location = new AfficherFenetreLocation(client, avionChoisi, "avion");
         this.setVisible(false);
         this.dispose();
     }

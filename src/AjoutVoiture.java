@@ -78,7 +78,8 @@ public class AjoutVoiture extends JFrame implements ActionListener{
             if(entreeKm.getText().equals("")|| entreeNbPlace.getText().equals("") || entreeMarque.getText().equals("") || entreePuissance.getText().equals("") || entreePrix.getText().equals("") ||entreeModele.getText().equals("") || entreeVitesse.getText().equals("")){
                 JOptionPane.showMessageDialog(rootPane, "Merci de remplir toutes les cases");
             }else {
-                enregistrerVoiture(Integer.valueOf(entreeKm.getText()), Integer.valueOf(entreeNbPlace.getText()), entreeMarque.getText(), entreeModele.getText(), Integer.valueOf(entreePuissance.getText()), Integer.valueOf(entreePrix.getText()), false, Integer.valueOf(entreeVitesse.getText()));
+                Stockage.numeroVehicule ++;
+                enregistrerVoiture(Stockage.numeroVehicule,Integer.valueOf(entreeKm.getText()), Integer.valueOf(entreeNbPlace.getText()), entreeMarque.getText(), entreeModele.getText(), Integer.valueOf(entreePuissance.getText()), Integer.valueOf(entreePrix.getText()), false, Integer.valueOf(entreeVitesse.getText()));
                 JOptionPane.showMessageDialog(rootPane, "Voiture enregistrée !");
                 this.setVisible(false);
                 this.dispose();
@@ -86,20 +87,21 @@ public class AjoutVoiture extends JFrame implements ActionListener{
         }
     }
 
-    public void enregistrerVoiture(int km, int nbPlace, String marque, String modele, int puissance,int prixLocationParJour, boolean etat, int vitesseMax){
+    public void enregistrerVoiture(int id,int km, int nbPlace, String marque, String modele, int puissance,int prixLocationParJour, boolean etat, int vitesseMax){
         Voiture voitu = new Voiture();
-        setVehicule(marque, modele, prixLocationParJour, vitesseMax, etat, voitu);
+        setVehicule(id, marque, modele, prixLocationParJour, vitesseMax, etat, voitu);
         voitu.setKm(km);
         voitu.setNbPlace(nbPlace);
         voitu.setPuissance(puissance);
         Stockage.listeDesVoitures.add(voitu);
     }
 
-    public void setVehicule(String marque, String modele, int prixLocationParJour, int vitesseMax, boolean etat, Vehicule vehicule) {
+    public void setVehicule(int id, String marque, String modele, int prixLocationParJour, int vitesseMax, boolean etat, Vehicule vehicule) {
         vehicule.setMarque(marque);
         vehicule.setModele(modele);
         vehicule.setEtat(etat);
         vehicule.setPrixLocationParJour(prixLocationParJour);
         vehicule.setVitesseMax(vitesseMax);
+        vehicule.setId(id);
     }
 }

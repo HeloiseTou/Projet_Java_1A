@@ -33,7 +33,7 @@ public class LocationMoto extends JFrame implements ListSelectionListener {
         Stockage.listeDesMotos.get(container.getSelectedRow()).setEtat(true);
         motoChoisie = Stockage.listeDesMotos.get(container.getSelectedRow());
         Client client = AjoutLocation.clientChoisi;
-        AfficherFenetreLocation location = new AfficherFenetreLocation(client, motoChoisie);
+        AfficherFenetreLocation location = new AfficherFenetreLocation(client, motoChoisie, "moto");
         this.setVisible(false);
         this.dispose();
 
