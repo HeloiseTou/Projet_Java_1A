@@ -7,22 +7,22 @@
      <int>1</int>
     </void>
     <void property="marque">
-     <string>Airbus</string>
+     <string>ATYZU</string>
     </void>
     <void property="modele">
-     <string>747</string>
+     <string>airbus</string>
     </void>
     <void property="nbHeureVol">
-     <int>10000</int>
+     <int>2222</int>
     </void>
     <void property="nbMoteur">
-     <int>3</int>
+     <int>678</int>
     </void>
     <void property="prixLocationParJour">
-     <int>40000</int>
+     <int>2789</int>
     </void>
     <void property="vitesseMax">
-     <int>1000</int>
+     <int>5678</int>
     </void>
    </object>
   </void>

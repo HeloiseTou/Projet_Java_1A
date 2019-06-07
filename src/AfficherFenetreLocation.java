@@ -116,7 +116,7 @@ public class AfficherFenetreLocation extends JFrame implements ActionListener {
         }
         Stockage.listeDesLocations.add(loc);
         try {
-            XMLTools.encodeToFile(Stockage.listeDesLocations, "location.xml"); // sérialisation de la liste des locations
+            XMLTools.encodeToFile(Stockage.listeDesLocations, "locations.xml"); // sérialisation de la liste des locations
         } catch (IOException e) {
             e.printStackTrace();
         }

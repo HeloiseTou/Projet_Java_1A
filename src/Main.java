@@ -8,7 +8,7 @@ public class Main {
             Stockage.listeDesVoitures = (ArrayList<Voiture>) XMLTools.decodeFromFile("voitures.xml");
             Stockage.listeDesAvions = (ArrayList<Avion>) XMLTools.decodeFromFile("avions.xml");
             Stockage.listeDesMotos = (ArrayList<Moto>) XMLTools.decodeFromFile("motos.xml");
-            //Stockage.listeDesLocations = (ArrayList<Location>) XMLTools.decodeFromFile("location.xml");
+            Stockage.listeDesLocations = (ArrayList<Location>) XMLTools.decodeFromFile("locations.xml");
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="11.0.3" class="java.beans.XMLDecoder">
+<java version="11.0.2" class="java.beans.XMLDecoder">
  <object class="java.util.ArrayList">
   <void method="add">
    <object class="Client">
     <void property="adresse">
-     <string>99648</string>
+     <string>Maison blanche</string>
     </void>
     <void property="age">
-     <int>94</int>
+     <int>57</int>
     </void>
     <void property="nom">
-     <string>9494984</string>
+     <string>Obama</string>
     </void>
     <void property="numeroTel">
-     <string>4889</string>
+     <string>téléphone rouge</string>
     </void>
     <void property="prenom">
-     <string>4</string>
+     <string>Barack</string>
     </void>
    </object>
   </void>
