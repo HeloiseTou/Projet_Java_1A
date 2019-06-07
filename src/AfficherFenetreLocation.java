@@ -75,6 +75,6 @@ public class AfficherFenetreLocation extends JFrame implements ActionListener {
     public void enregistrerLocation(Date dateDebut, Date dateFin, int nbKmPrevisionnel, boolean reduction, Vehicule vehicule, Client client){
         Location loc = new Location(dateDebut, dateFin, nbKmPrevisionnel, reduction, vehicule, client);
         prixPrevi = loc.prixPrevisionnel();
-        SerializeStockage.listeDesLocations.add(loc);
+        Stockage.listeDesLocations.add(loc);
     }
 }

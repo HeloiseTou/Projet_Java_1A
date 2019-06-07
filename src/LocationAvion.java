@@ -30,9 +30,9 @@ public class LocationAvion extends JFrame implements ListSelectionListener {
 
 
     public void valueChanged(ListSelectionEvent event) {
-        SerializeStockage.listeDesAvions.get(container.getSelectedRow()).setEtat(true);
-        SerializeStockage.numeroVehicule = container.getSelectedRow();
-        avionChoisi = SerializeStockage.listeDesAvions.get(container.getSelectedRow());
+        Stockage.listeDesAvions.get(container.getSelectedRow()).setEtat(true);
+        Stockage.numeroVehicule = container.getSelectedRow();
+        avionChoisi = Stockage.listeDesAvions.get(container.getSelectedRow());
         Client client = AjoutLocation.clientChoisi;
         AfficherFenetreLocation location = new AfficherFenetreLocation(client, avionChoisi);
         this.setVisible(false);
@@ -41,15 +41,15 @@ public class LocationAvion extends JFrame implements ListSelectionListener {
 
 
     private String[][] listeAvion(){
-        String[][] liste = new String[SerializeStockage.listeDesAvions.size()][7];
+        String[][] liste = new String[Stockage.listeDesAvions.size()][7];
         String et;
-        for (int i = 0; i < SerializeStockage.listeDesAvions.size(); i++) {
-            if (SerializeStockage.listeDesAvions.get(i).getEtat()){
+        for (int i = 0; i < Stockage.listeDesAvions.size(); i++) {
+            if (Stockage.listeDesAvions.get(i).getEtat()){
                 et = "Loué";
             }else {
                 et = "Libre";
             }
-            liste[i]= new String[]{String.valueOf(SerializeStockage.listeDesAvions.get(i).getNbHeureVol()), et, SerializeStockage.listeDesAvions.get(i).getModele(), SerializeStockage.listeDesAvions.get(i).getMarque(), String.valueOf(SerializeStockage.listeDesAvions.get(i).getPrixLocationParJour()),  String.valueOf(SerializeStockage.listeDesAvions.get(i).getNbMoteur()), String.valueOf(SerializeStockage.listeDesAvions.get(i).getVitesseMax())};
+            liste[i]= new String[]{String.valueOf(Stockage.listeDesAvions.get(i).getNbHeureVol()), et, Stockage.listeDesAvions.get(i).getModele(), Stockage.listeDesAvions.get(i).getMarque(), String.valueOf(Stockage.listeDesAvions.get(i).getPrixLocationParJour()),  String.valueOf(Stockage.listeDesAvions.get(i).getNbMoteur()), String.valueOf(Stockage.listeDesAvions.get(i).getVitesseMax())};
         }
         return (liste);
     }

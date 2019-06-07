@@ -95,7 +95,7 @@ public class Interface extends JFrame implements ActionListener{
 
 
     public static void main (String args[]){
-        SerializeStockage stock = new SerializeStockage();
+        //Stockage stock = new Stockage();
         Interface loueur = new Interface();
     }
 

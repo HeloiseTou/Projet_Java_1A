@@ -12,6 +12,7 @@ public class Client {
   //private Location location;
 
   // Constructeurs
+public Client(){}
 
   public Client(String nom, String prenom, int age, String adresse, String numeroTel) {
     this.nom = nom;

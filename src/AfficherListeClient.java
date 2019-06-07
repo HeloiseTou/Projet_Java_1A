@@ -27,12 +27,12 @@ public class AfficherListeClient extends JFrame {
 
     private String[][] listeClient() {
         String[][] liste;
-        if (SerializeStockage.listeDesClients == null) {
+        if (Stockage.listeDesClients == null) {
             liste = new String[0][0];
         } else {
-            liste = new String[SerializeStockage.listeDesClients.size()][5];
-            for (int i = 0; i < SerializeStockage.listeDesClients.size(); i++) {
-                liste[i] = new String[]{SerializeStockage.listeDesClients.get(i).getNom(), SerializeStockage.listeDesClients.get(i).getPrenom(), String.valueOf(SerializeStockage.listeDesClients.get(i).getAge()), SerializeStockage.listeDesClients.get(i).getAdresse(), SerializeStockage.listeDesClients.get(i).getNumeroTel()};
+            liste = new String[Stockage.listeDesClients.size()][5];
+            for (int i = 0; i < Stockage.listeDesClients.size(); i++) {
+                liste[i] = new String[]{Stockage.listeDesClients.get(i).getNom(), Stockage.listeDesClients.get(i).getPrenom(), String.valueOf(Stockage.listeDesClients.get(i).getAge()), Stockage.listeDesClients.get(i).getAdresse(), Stockage.listeDesClients.get(i).getNumeroTel()};
             }
         }
         return (liste);

@@ -74,6 +74,6 @@ public class AjoutClient extends JFrame implements ActionListener {
 
     public void enregistrerClient(String nom, String prenom, int age, String adresse, String numeroTel) {
         Client nouveauClient = new Client(nom, prenom, age, adresse, numeroTel);
-        SerializeStockage.listeDesClients.add(nouveauClient);
+        Stockage.listeDesClients.add(nouveauClient);
     }
 }

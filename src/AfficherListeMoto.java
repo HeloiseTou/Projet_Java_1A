@@ -27,15 +27,15 @@ public class AfficherListeMoto extends JFrame  {
 
 
     private String[][] listeMoto(){
-        String[][] liste = new String[SerializeStockage.listeDesMotos.size()][7];
+        String[][] liste = new String[Stockage.listeDesMotos.size()][7];
         String et;
-        for (int i = 0; i < SerializeStockage.listeDesMotos.size(); i++) {
-            if (SerializeStockage.listeDesMotos.get(i).getEtat()){
+        for (int i = 0; i < Stockage.listeDesMotos.size(); i++) {
+            if (Stockage.listeDesMotos.get(i).getEtat()){
                 et = "Loué";
             }else {
                 et = "Libre";
             }
-            liste[i]= new String[]{String.valueOf(SerializeStockage.listeDesMotos.get(i).getKm()), et, SerializeStockage.listeDesMotos.get(i).getModele(), SerializeStockage.listeDesMotos.get(i).getMarque(), String.valueOf(SerializeStockage.listeDesMotos.get(i).getPrixLocationParJour()),  String.valueOf(SerializeStockage.listeDesMotos.get(i).getPuissance()), String.valueOf(SerializeStockage.listeDesMotos.get(i).getVitesseMax())};
+            liste[i]= new String[]{String.valueOf(Stockage.listeDesMotos.get(i).getKm()), et, Stockage.listeDesMotos.get(i).getModele(), Stockage.listeDesMotos.get(i).getMarque(), String.valueOf(Stockage.listeDesMotos.get(i).getPrixLocationParJour()),  String.valueOf(Stockage.listeDesMotos.get(i).getPuissance()), String.valueOf(Stockage.listeDesMotos.get(i).getVitesseMax())};
         }
         return (liste);
     }

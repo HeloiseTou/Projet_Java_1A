@@ -83,7 +83,7 @@ public class AjoutMoto extends JFrame implements ActionListener{
         setVehicule(marque, modele, prixLocationParJour, vitesseMax, etat, moto);
         moto.setKm(km);
         moto.setPuissance(puissance);
-        SerializeStockage.listeDesMotos.add(moto);
+        Stockage.listeDesMotos.add(moto);
     }
 
     public void setVehicule(String marque, String modele, int prixLocationParJour, int vitesseMax, boolean etat, Vehicule vehicule) {
