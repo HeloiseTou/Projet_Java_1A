@@ -4,38 +4,38 @@
   <void method="add">
    <object class="Client">
     <void property="adresse">
-     <string>3 rue des pommiers</string>
+     <string>Maison blanche</string>
     </void>
     <void property="age">
-     <int>18</int>
+     <int>57</int>
     </void>
     <void property="nom">
-     <string>Jack</string>
+     <string>Obama</string>
     </void>
     <void property="numeroTel">
-     <string>003784993</string>
+     <string>téléphone rouge</string>
     </void>
     <void property="prenom">
-     <string>Dalton</string>
+     <string>Barack</string>
     </void>
    </object>
   </void>
   <void method="add">
    <object class="Client">
     <void property="adresse">
-     <string>67 reu Marcadet</string>
+     <string>Lannion</string>
     </void>
     <void property="age">
-     <int>21</int>
+     <int>20</int>
     </void>
     <void property="nom">
-     <string>Gui</string>
+     <string>Héloïse</string>
     </void>
     <void property="numeroTel">
-     <string>Touuuup</string>
+     <string>Secret</string>
     </void>
     <void property="prenom">
-     <string>Toup</string>
+     <string>Ostier</string>
     </void>
    </object>
   </void>
