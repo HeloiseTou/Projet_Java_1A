@@ -42,7 +42,10 @@ public class SuppressionVoiture extends JFrame implements ListSelectionListener 
         }
     }
 
-
+    /**
+     * renvoie  la liste de toutes les voitures
+     * @return  listeVoiture : la liste des voitures
+     */
     private String[][] listeVoiture(){
         String[][] liste = new String[Stockage.listeDesVoitures.size()][8];
         String et;

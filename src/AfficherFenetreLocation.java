@@ -95,10 +95,25 @@ public class AfficherFenetreLocation extends JFrame implements ActionListener {
         }
     }
 
+    /**
+     * Enregistre la location dans la liste des locations
+     * @param  dateDebut : la date du début de la location
+     * @param  dateFin :la date de fin de la  location
+     * @param nbKmPrevisionnel : le nombre de km prévisionnels
+     * @param reduction : booléen indiquant si la réduction est accordée ou non
+     * @param vehicule : le véhicule loué
+     * @param client : le locataire
+     */
 
     public void enregistrerLocation(Date dateDebut, Date dateFin, int nbKmPrevisionnel, boolean reduction, Vehicule vehicule, Client client){
         Location loc = new Location(dateDebut, dateFin, nbKmPrevisionnel, reduction, vehicule, client);
         prixPrevi = loc.prixPrevisionnel();
+        if (loc.accordReduction()) {
+            AccordReduction reduc = new AccordReduction();
+            if (AccordReduction.reduc == 0) {
+                loc.setReduction(true);
+            }
+        }
         Stockage.listeDesLocations.add(loc);
         try {
             XMLTools.encodeToFile(Stockage.listeDesLocations, "location.xml"); // sérialisation de la liste des locations

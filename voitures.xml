@@ -7,16 +7,16 @@
      <int>1</int>
     </void>
     <void property="marque">
-     <string>46</string>
+     <string>56</string>
     </void>
     <void property="modele">
-     <string>46</string>
+     <string>468</string>
     </void>
     <void property="prixLocationParJour">
-     <int>46</int>
+     <int>1</int>
     </void>
     <void property="vitesseMax">
-     <int>654</int>
+     <int>61</int>
     </void>
    </object>
   </void>

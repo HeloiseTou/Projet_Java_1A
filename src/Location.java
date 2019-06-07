@@ -75,12 +75,13 @@ public class Location {
      * autorise l'accord d'une réduction si la durée de cette location est supérieure à 4j
      *
      */
-  public void accordReduction(){
+  public boolean accordReduction(){
     Date duree = new Date();
     duree.setTime(dateFin.getTime()-dateDebut.getTime());
     if(duree.getTime()<604800000){ //604800000 = une semaine en millisecondes
-      reduction = true;
+      return true;
     }
+    return false;
   }
 
     //Méthodes d'accès
