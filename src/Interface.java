@@ -48,8 +48,6 @@ public class Interface extends JFrame implements ActionListener{
         boutonListeLocation.setPreferredSize(new Dimension(250, 40));
         boutonSuppressionVehicule = new JButton("Supression d'un véhicule");
         boutonSuppressionVehicule.setPreferredSize(new Dimension(250, 40));
-
-
     }
 
 
@@ -99,7 +97,7 @@ public class Interface extends JFrame implements ActionListener{
         }else if (e.getSource() == boutonListeVehicule){
             AfficherListeVehicule listeVeh = new AfficherListeVehicule();
         }else if (e.getSource() == boutonSuppressionVehicule){
-            suppressionVehicule();
+            SuppressionVehicule supprVehi = new SuppressionVehicule();
         }else if (e.getSource() == boutonListeLocation){
             AfficherListeLocation loc = new AfficherListeLocation();
         }
