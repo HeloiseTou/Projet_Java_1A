@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="11.0.2" class="java.beans.XMLDecoder">
+ <object class="java.util.ArrayList">
+  <void method="add">
+   <object class="Client">
+    <void property="adresse">
+     <string>3 rue des pommiers</string>
+    </void>
+    <void property="age">
+     <int>18</int>
+    </void>
+    <void property="nom">
+     <string>Jack</string>
+    </void>
+    <void property="numeroTel">
+     <string>003784993</string>
+    </void>
+    <void property="prenom">
+     <string>Dalton</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="Client">
+    <void property="adresse">
+     <string>67 reu Marcadet</string>
+    </void>
+    <void property="age">
+     <int>21</int>
+    </void>
+    <void property="nom">
+     <string>Gui</string>
+    </void>
+    <void property="numeroTel">
+     <string>Touuuup</string>
+    </void>
+    <void property="prenom">
+     <string>Toup</string>
+    </void>
+   </object>
+  </void>
+ </object>
+</java>
